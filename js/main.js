@@ -16,14 +16,26 @@ myApp.factory('pjFactory', function () {
   factory.vars = {};
   // Vars
   factory.vars.attributes = {
-    FOR: 0,
-    CON: 0,
-    DEX: 0,
-    TAI: 0,
-    INT: 0,
-    POU: 0,
-    CHA: 0,
+    FOR: 12,
+    CON: 13,
+    DEX: 14,
+    TAI: 12,
+    INT: 10,
+    POU: 12,
+    CHA: 14,
   };
+  factory.vars.name = "Jon Snow";
+  factory.vars.player = "Cyberj";
+  factory.vars.race = "Humain";
+  factory.vars.sex = "Homme";
+  factory.vars.culture = "Civilisée";
+  factory.vars.origin = "Nordique";
+  factory.vars.job = "Patrouilleur";
+  factory.vars.family = "Starck";
+  factory.vars.age = "22";
+  factory.vars.hair = "Noir";
+  factory.vars.eyes = "Noirs";
+  factory.vars.weigth = "75Kg";
   factory.vars.skills = [
     {name: "Athlétisme", init:["FOR", "DEX"]},
     {name: "Bagarre", init:["FOR", "DEX"]},
@@ -84,4 +96,11 @@ myApp.controller('skillsCtrl', function ($scope, pjFactory) {
 
 myApp.controller('attrCtrl', function ($scope, pjFactory) {
   $scope.vars = pjFactory.vars;
+  $scope.edit = false;
+  $scope.test = "Test";
+});
+myApp.controller('headCtrl', function ($scope, pjFactory) {
+  $scope.pj = pjFactory.vars;
+  $scope.edit = false;
+  $scope.test = "Test";
 });

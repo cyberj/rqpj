@@ -16,12 +16,20 @@ body {
   padding-right: 10px;
 }
 
+.controls p {
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 10px;
+  font-size: 16px;
+  border-bottom: 1px solid black;
+  height: 1em ;
+}
+#pjName p {
+  font-size: 18px;
+}
+
 .form-horizontal .control-label {
   text-align: left;
-  width: 0;
-}
-.form-horizontal .controls {
-  margin-left: 0;
 }
 .form-horizontal .control-group {
   margin-bottom: 10px;
@@ -62,10 +70,19 @@ body {
   text-align: right;
 
 }
+#ccharHead p {
+ float: right;
+  
+}
 
 
 
-
+/*
+ * width: 150px;
+ * float: right;
+ * display: inline-block;
+ * margin-bottom: 0;
+ * vertical-align: middle;
 
 
 
