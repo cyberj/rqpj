@@ -1,6 +1,6 @@
 var myApp = angular.module("myApp", []);
 
-
+// Directive template for later usage
 myApp.directive("editable", function () {
   return {
     restrict: 'E',
@@ -149,13 +149,12 @@ myApp.controller('skillsCtrl', function ($scope, pjFactory) {
 
 myApp.controller('attrCtrl', function ($scope, pjFactory) {
   $scope.vars = pjFactory.vars;
-  $scope.test = "Test";
+  $scope.pj = pjFactory.vars;
 });
 
 myApp.controller('headCtrl', function ($scope, pjFactory) {
   $scope.pj = pjFactory.vars;
   $scope.vars = pjFactory.vars;
-  $scope.test = "Test";
   $scope.save = pjFactory.save;
   $scope.load = pjFactory.load;
   $scope.reset = pjFactory.reset;

@@ -37,8 +37,7 @@ body {
 .block {
   background-color: Cornsilk;
   border:1px solid BurlyWood;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 1em;
   padding-left: 5px;
   padding-right: 5px;
   margin-top: 10px;
@@ -68,22 +67,11 @@ body {
 
 #charSkills input {
   text-align: right;
-
 }
-#ccharHead p {
- float: right;
-  
+#charStats label p {
+  display: inline;
+  margin-left: 2em;
+  margin-right: 2em;
 }
-
-
-
-/*
- * width: 150px;
- * float: right;
- * display: inline-block;
- * margin-bottom: 0;
- * vertical-align: middle;
-
-
 
 
