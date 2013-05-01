@@ -16,28 +16,28 @@ myApp.factory('pjFactory', function () {
   factory.vars = {};
   // Vars
   factory.vars.attributes = {
-    FOR: 12,
-    CON: 13,
-    DEX: 14,
-    TAI: 12,
-    INT: 10,
-    POU: 12,
-    CHA: 14,
+    FOR: 0,
+    CON: 0,
+    DEX: 0,
+    TAI: 0,
+    INT: 0,
+    POU: 0,
+    CHA: 0,
   };
   factory.vars.edit = false;
   factory.vars.head = {};
-  factory.vars.head.name = "Jon Snow";
-  factory.vars.head.player = "Cyberj";
-  factory.vars.head.race = "Humain";
-  factory.vars.head.sex = "Homme";
-  factory.vars.head.culture = "Civilisée";
-  factory.vars.head.origin = "Nordique";
-  factory.vars.head.job = "Patrouilleur";
-  factory.vars.head.family = "Starck";
-  factory.vars.head.age = "22";
-  factory.vars.head.hair = "Noir";
-  factory.vars.head.eyes = "Noirs";
-  factory.vars.head.weight = "75Kg";
+  factory.vars.head.name = "";
+  factory.vars.head.player = "";
+  factory.vars.head.race = "";
+  factory.vars.head.sex = "";
+  factory.vars.head.culture = "";
+  factory.vars.head.origin = "";
+  factory.vars.head.job = "";
+  factory.vars.head.family = "";
+  factory.vars.head.age = "";
+  factory.vars.head.hair = "";
+  factory.vars.head.eyes = "";
+  factory.vars.head.weight = "";
   factory.vars.skills = [
     {name: "Athlétisme", init:["FOR", "DEX"]},
     {name: "Bagarre", init:["FOR", "DEX"]},
@@ -60,7 +60,59 @@ myApp.factory('pjFactory', function () {
     {name: "Perspicacité", init:["INT", "POU"]},
     {name: "Premiers soins", init:["INT", "DEX"]},
   ];
-  // Constants
+  // Helpers
+  factory.save = function () {
+    localStorage["pjhead"] = JSON.stringify(factory.vars.head);
+    localStorage["pjskills"] = JSON.stringify(factory.vars.skills);
+    localStorage["pjattributes"] = JSON.stringify(factory.vars.attributes);
+    console.log("Saved");
+  };
+  factory.load = function () {
+    factory.vars.head = JSON.parse(localStorage["pjhead"]);
+    factory.vars.skills = JSON.parse(localStorage["pjskills"]);
+    factory.vars.attributes = JSON.parse(localStorage["pjattributes"]);
+    console.log("loaded");
+  };
+  factory.reset = function () {
+    //localStorage.removeItem("pjhead");
+    //localStorage.removeItem("pjskills");
+    //localStorage.removeItem("pjattributes");
+    angular.forEach(factory.vars.head, function (value, key) {
+      factory.vars.head[key] = "";
+    });
+    angular.forEach(factory.vars.attributes, function (value, key) {
+      factory.vars.attributes[key] = 0;
+    });
+    angular.forEach(factory.vars.skills, function (value, key) {
+      delete factory.vars.attributes[key]["base"];
+      delete factory.vars.attributes[key]["value"];
+    });
+    console.log("reset");
+  };
+  factory.example = function () {
+    factory.vars.attributes = {
+      FOR: 12,
+      CON: 13,
+      DEX: 14,
+      TAI: 12,
+      INT: 10,
+      POU: 12,
+      CHA: 14,
+    };
+    factory.vars.head.name = "Jon Snow";
+    factory.vars.head.player = "Cyberj";
+    factory.vars.head.race = "Humain";
+    factory.vars.head.sex = "Homme";
+    factory.vars.head.culture = "Civilisée";
+    factory.vars.head.origin = "Nordique";
+    factory.vars.head.job = "Patrouilleur";
+    factory.vars.head.family = "Starck";
+    factory.vars.head.age = "22";
+    factory.vars.head.hair = "Noir";
+    factory.vars.head.eyes = "Noirs";
+    factory.vars.head.weight = "75Kg";
+    console.log("example");
+  };
   factory.periods = [
     {key: "3days", value: "3 days"},
     {key: "curweek", value: "Current week"},
@@ -104,12 +156,8 @@ myApp.controller('headCtrl', function ($scope, pjFactory) {
   $scope.pj = pjFactory.vars;
   $scope.vars = pjFactory.vars;
   $scope.test = "Test";
-  $scope.save = function () {
-    localStorage["pjhead"] = JSON.stringify(pjFactory.vars.head);
-    console.log("Saved");
-  }; 
-  $scope.load = function () {
-    pjFactory.vars.head = JSON.parse(localStorage["pjhead"]);
-    console.log("loaded");
-  } 
+  $scope.save = pjFactory.save;
+  $scope.load = pjFactory.load;
+  $scope.reset = pjFactory.reset;
+  $scope.example = pjFactory.example;
 });
