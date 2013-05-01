@@ -24,18 +24,20 @@ myApp.factory('pjFactory', function () {
     POU: 12,
     CHA: 14,
   };
-  factory.vars.name = "Jon Snow";
-  factory.vars.player = "Cyberj";
-  factory.vars.race = "Humain";
-  factory.vars.sex = "Homme";
-  factory.vars.culture = "Civilisée";
-  factory.vars.origin = "Nordique";
-  factory.vars.job = "Patrouilleur";
-  factory.vars.family = "Starck";
-  factory.vars.age = "22";
-  factory.vars.hair = "Noir";
-  factory.vars.eyes = "Noirs";
-  factory.vars.weigth = "75Kg";
+  factory.vars.edit = false;
+  factory.vars.head = {};
+  factory.vars.head.name = "Jon Snow";
+  factory.vars.head.player = "Cyberj";
+  factory.vars.head.race = "Humain";
+  factory.vars.head.sex = "Homme";
+  factory.vars.head.culture = "Civilisée";
+  factory.vars.head.origin = "Nordique";
+  factory.vars.head.job = "Patrouilleur";
+  factory.vars.head.family = "Starck";
+  factory.vars.head.age = "22";
+  factory.vars.head.hair = "Noir";
+  factory.vars.head.eyes = "Noirs";
+  factory.vars.head.weight = "75Kg";
   factory.vars.skills = [
     {name: "Athlétisme", init:["FOR", "DEX"]},
     {name: "Bagarre", init:["FOR", "DEX"]},
@@ -73,7 +75,6 @@ myApp.factory('pjFactory', function () {
 });
 
 myApp.controller('skillsCtrl', function ($scope, pjFactory) {
-  $scope.edit = false;
   $scope.vars = pjFactory.vars;
   $scope.getBase = function (skill) {
     var base = $scope.vars.attributes[skill.init[0]]+$scope.vars.attributes[skill.init[1]];
@@ -96,11 +97,19 @@ myApp.controller('skillsCtrl', function ($scope, pjFactory) {
 
 myApp.controller('attrCtrl', function ($scope, pjFactory) {
   $scope.vars = pjFactory.vars;
-  $scope.edit = false;
   $scope.test = "Test";
 });
+
 myApp.controller('headCtrl', function ($scope, pjFactory) {
   $scope.pj = pjFactory.vars;
-  $scope.edit = false;
+  $scope.vars = pjFactory.vars;
   $scope.test = "Test";
+  $scope.save = function () {
+    localStorage["pjhead"] = JSON.stringify(pjFactory.vars.head);
+    console.log("Saved");
+  }; 
+  $scope.load = function () {
+    pjFactory.vars.head = JSON.parse(localStorage["pjhead"]);
+    console.log("loaded");
+  } 
 });

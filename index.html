@@ -18,96 +18,100 @@
     <div class="container" ng-app="myApp">
       <!-- Example row of columns -->
       <div id="charHead" class="block form-horizontal" ng-controller="headCtrl">
-        <p><i ng-click="edit=!edit" class="icon-edit"></i></p>
+        <p>
+          <i ng-click="vars.edit=!vars.edit" class="icon-edit"></i>
+          <i ng-click="save()" class="icon-arrow-up"></i>
+          <i ng-click="load()" class="icon-arrow-down"></i>
+        </p>
         <div class="row-fluid">
 
           <div class="span4">
             <div class="control-group" id="pjName">
-              <label ng-click="edit=true" class="control-label" for="charHeadName">Nom</label>
+              <label ng-click="vars.edit=true" class="control-label" for="charHeadName">Nom</label>
               <div class="controls">
-                <p ng-show="!edit">{{ pj.name }}</p>
-                <input ng-show="edit" class="pull-right input-medium" ng-model="pj.name" type="text">
+                <p ng-show="!vars.edit">{{ pj.head.name }}</p>
+                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.name" type="text">
               </div>
             </div>
             <div class="control-group">
-              <label ng-click="edit=true" class="control-label" for="charHeadPlayer">Joueur</label>
+              <label ng-click="vars.edit=true" class="control-label" for="charHeadPlayer">Joueur</label>
               <div class="controls">
-                <p ng-show="!edit">{{ pj.player }}</p>
-                <input ng-show="edit" class="pull-right input-medium" ng-model="pj.player" type="text">
+                <p ng-show="!vars.edit">{{ pj.head.player }}</p>
+                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.player" type="text">
               </div>
             </div>
             <div class="control-group">
-              <label ng-click="edit=true" class="control-label" for="charHeadRace">Race</label>
+              <label ng-click="vars.edit=true" class="control-label" for="charHeadRace">Race</label>
               <div class="controls">
-                <p ng-show="!edit">{{ pj.race }}</p>
-                <input ng-show="edit" class="pull-right input-medium" ng-model="pj.race" type="text">
+                <p ng-show="!vars.edit">{{ pj.head.race }}</p>
+                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.race" type="text">
               </div>
             </div>
             <div class="control-group">
-              <label ng-click="edit=true" class="control-label" for="charHeadSex">Sexe</label>
+              <label ng-click="vars.edit=true" class="control-label" for="charHeadSex">Sexe</label>
               <div class="controls">
-                <p ng-show="!edit">{{ pj.sex }}</p>
-                <input ng-show="edit" class="pull-right input-medium" ng-model="pj.sex" type="text">
-              </div>
-            </div>
-          </div>
-          <div class="span4">
-            <div class="control-group">
-              <label ng-click="edit=true" class="control-label" for="charHeadCulture">Culture</label>
-              <div class="controls">
-                <p ng-show="!edit">{{ pj.culture }}</p>
-                <input ng-show="edit" class="pull-right input-medium" ng-model="pj.culture" type="text">
-              </div>
-            </div>
-            <div class="control-group">
-              <label ng-click="edit=true" class="control-label" for="charHeadOrigin">Origin</label>
-              <div class="controls">
-                <p ng-show="!edit">{{ pj.origin }}</p>
-                <input ng-show="edit" class="pull-right input-medium" ng-model="pj.origin" type="text">
-              </div>
-            </div>
-            <div class="control-group">
-              <label ng-click="edit=true" class="control-label" for="charHeadProfession">Profession</label>
-              <div class="controls">
-                <p ng-show="!edit">{{ pj.job }}</p>
-                <input ng-show="edit" class="pull-right input-medium" ng-model="pj.job" type="text">
-              </div>
-            </div>
-            <div class="control-group">
-              <label ng-click="edit=true" class="control-label" for="charHeadFamily">Famille</label>
-              <div class="controls">
-                <p ng-show="!edit">{{ pj.family }}</p>
-                <input ng-show="edit" class="pull-right input-medium" ng-model="pj.family" type="text">
+                <p ng-show="!vars.edit">{{ pj.head.sex }}</p>
+                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.sex" type="text">
               </div>
             </div>
           </div>
           <div class="span4">
             <div class="control-group">
-              <label ng-click="edit=true" class="control-label" for="charHeadAge">Age</label>
+              <label ng-click="vars.edit=true" class="control-label" for="charHeadCulture">Culture</label>
               <div class="controls">
-                <p ng-show="!edit">{{ pj.age }}</p>
-                <input ng-show="edit" class="pull-right input-medium" ng-model="pj.age" type="text">
+                <p ng-show="!vars.edit">{{ pj.head.culture }}</p>
+                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.culture" type="text">
               </div>
             </div>
             <div class="control-group">
-              <label ng-click="edit=true" class="control-label" for="charHeadHair">Cheveux</label>
+              <label ng-click="vars.edit=true" class="control-label" for="charHeadOrigin">Origin</label>
               <div class="controls">
-                <p ng-show="!edit">{{ pj.hair }}</p>
-                <input ng-show="edit" class="pull-right input-medium" ng-model="pj.hair" type="text">
+                <p ng-show="!vars.edit">{{ pj.head.origin }}</p>
+                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.origin" type="text">
               </div>
             </div>
             <div class="control-group">
-              <label ng-click="edit=true" class="control-label" for="charHeadEyes">Yeux</label>
+              <label ng-click="vars.edit=true" class="control-label" for="charHeadProfession">Profession</label>
               <div class="controls">
-                <p ng-show="!edit">{{ pj.eyes }}</p>
-                <input ng-show="edit" class="pull-right input-medium" ng-model="pj.eyes" type="text">
+                <p ng-show="!vars.edit">{{ pj.head.job }}</p>
+                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.job" type="text">
               </div>
             </div>
             <div class="control-group">
-              <label ng-click="edit=true" class="control-label" for="charHeadWeight">Poids</label>
+              <label ng-click="vars.edit=true" class="control-label" for="charHeadFamily">Famille</label>
               <div class="controls">
-                <p ng-show="!edit">{{ pj.weight }}</p>
-                <input ng-show="edit" class="pull-right input-medium" ng-model="pj.weight" type="text">
+                <p ng-show="!vars.edit">{{ pj.head.family }}</p>
+                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.family" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="span4">
+            <div class="control-group">
+              <label ng-click="vars.edit=true" class="control-label" for="charHeadAge">Age</label>
+              <div class="controls">
+                <p ng-show="!vars.edit">{{ pj.head.age }}</p>
+                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.age" type="text">
+              </div>
+            </div>
+            <div class="control-group">
+              <label ng-click="vars.edit=true" class="control-label" for="charHeadHair">Cheveux</label>
+              <div class="controls">
+                <p ng-show="!vars.edit">{{ pj.head.hair }}</p>
+                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.hair" type="text">
+              </div>
+            </div>
+            <div class="control-group">
+              <label ng-click="vars.edit=true" class="control-label" for="charHeadEyes">Yeux</label>
+              <div class="controls">
+                <p ng-show="!vars.edit">{{ pj.head.eyes }}</p>
+                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.eyes" type="text">
+              </div>
+            </div>
+            <div class="control-group">
+              <label ng-click="vars.edit=true" class="control-label" for="charHeadWeight">Poids</label>
+              <div class="controls">
+                <p ng-show="!vars.edit">{{ pj.head.weight }}</p>
+                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.weight" type="text">
               </div>
             </div>
           </div>
@@ -160,7 +164,7 @@
                 <tr>
                   <th>Compétence</th>
                   <th>% de Base</th>
-                  <th>Score Actuel <i ng-click="edit = !edit;" class="icon-edit"></i></th>
+                  <th>Score Actuel <i ng-click="vars.edit = !vars.edit;" class="icon-edit"></i></th>
                 </tr>
               </thead>
               <tbody>
@@ -168,8 +172,8 @@
                   <td>{{ skill.name }}</td>
                   <td>{{ getBase(skill) }}</td>
                   <td>
-                    <div ng-show="!edit">{{ skill.value }}%</div>
-                    <div ng-show="edit" class="input-append"><input ng-model="skill.value" type="number" class="input-mini">%<span class="add-on">%</span></div>
+                    <div ng-show="!vars.edit">{{ skill.value }}%</div>
+                    <div ng-show="vars.edit" class="input-append"><input ng-model="skill.value" type="number" class="input-mini">%<span class="add-on">%</span></div>
                   </td>
                 </tr>
               </tbody>
