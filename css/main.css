@@ -38,11 +38,30 @@ body {
   /*arrondir les coins en haut à gauche et en bas à droite*/
   border-radius:10px 10px;
 }
+.block label {
+}
+.stats label {
+  margin-left: 1em;
+  font-weight:bold;
+}
+#attributes {
+  text-align: left;
+}
+#attributes label{
+  padding: 5px;
+  text-align: left;
+  margin-bottom: 10px
+}
+#attributes input {
+  float: right;
+  margin-left: auto;
+  text-align: right;
+}
 
+#charSkills input {
+  text-align: right;
 
-
-
-
+}
 
 
 
