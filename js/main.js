@@ -24,6 +24,23 @@ myApp.factory('pjFactory', function () {
     POU: 0,
     CHA: 0,
   };
+  factory.vars.calc = {}
+  factory.vars.calc.ac = 0
+  factory.vars.calc.md = 0
+  factory.vars.calc.ma = 0
+  factory.vars.calc.mv = "8m"
+  factory.vars.calc.pd = 0
+  factory.vars.calc.pm = 0
+  factory.vars.calc.ra = 0
+  factory.vars.body = {
+    head: {pv: 0, pa: 0},
+    chest: {pv: 0, pa: 0},
+    bide: {pv: 0, pa: 0},
+    rarm: {pv: 0, pa: 0},
+    larm: {pv: 0, pa: 0},
+    rfoot: {pv: 0, pa: 0},
+    lfoot: {pv: 0, pa: 0},
+  }
   factory.vars.edit = false;
   factory.vars.head = {};
   factory.vars.head.name = "";
@@ -84,6 +101,7 @@ myApp.factory('pjFactory', function () {
       factory.vars.attributes[key] = 0;
     });
     angular.forEach(factory.vars.skills, function (value, key) {
+      console.log(key);
       delete factory.vars.attributes[key]["base"];
       delete factory.vars.attributes[key]["value"];
     });
@@ -102,7 +120,7 @@ myApp.factory('pjFactory', function () {
     factory.vars.head.name = "Jon Snow";
     factory.vars.head.player = "Cyberj";
     factory.vars.head.race = "Humain";
-    factory.vars.head.sex = "Homme";
+    factory.vars.head.sex = "H";
     factory.vars.head.culture = "Civilisée";
     factory.vars.head.origin = "Nordique";
     factory.vars.head.job = "Patrouilleur";
@@ -111,7 +129,6 @@ myApp.factory('pjFactory', function () {
     factory.vars.head.hair = "Noir";
     factory.vars.head.eyes = "Noirs";
     factory.vars.head.weight = "75Kg";
-    console.log("example");
   };
   factory.periods = [
     {key: "3days", value: "3 days"},
@@ -123,6 +140,7 @@ myApp.factory('pjFactory', function () {
     {key: "year", value: "A year"},
     {key: "all", value: "Whole mailbox"},
   ];
+  factory.example();
   return factory;
 });
 
@@ -159,4 +177,92 @@ myApp.controller('headCtrl', function ($scope, pjFactory) {
   $scope.load = pjFactory.load;
   $scope.reset = pjFactory.reset;
   $scope.example = pjFactory.example;
+});
+
+myApp.controller('svgCtrl', function ($scope, pjFactory) {
+  $scope.pj = pjFactory.vars;
+  $scope.$watch('pj.attributes', function(newval, oldval) {
+    // Combat Actions
+    if (newval.DEX && newval.INT) { 
+      $scope.pj.calc.ac= Math.ceil(Math.ceil((newval.DEX + newval.INT)/2)/6);
+    } else {
+      $scope.pj.calc.ac = 0
+    };
+    // Damage Modifier
+    if (newval.FOR || newval.TAI) { 
+      dicetable = [
+        "-1D8", "-1D6", "-1D4", "-1D2",
+        "+0",
+        "+1D2", "+1D4", "+1D6", "+1D8", "+1D10", "+1D12",
+        "+2D6", "+2D8", "+2D10", "+2D12",
+        ];
+      dm = dicetable[Math.floor((newval.FOR + newval.TAI) / 5)];
+      $scope.pj.calc.dm = dm;
+    } else {
+      $scope.pj.calc.dm = "+0"
+    };
+    // Modificateur d'amélioration
+    if (newval.CHA) { 
+      ma = Math.floor((newval.CHA -7) / 6);
+      if (ma>0) { 
+        ma = "+" + ma;
+      } else {
+        ma = ""+ma
+      }
+      $scope.pj.calc.ma = ma;
+    } else {
+      $scope.pj.calc.ma = "0";
+    };
+    // Points de magie 
+    if (newval.POU) { 
+      $scope.pj.calc.pm = newval.POU - $scope.pj.calc.pd;
+    };
+    // Points de vie
+    if (newval.CON || newval.TAI) { 
+      contai = newval.CON + newval.TAI;
+      $scope.pj.body.head.pv = Math.ceil(contai/5);
+      $scope.pj.body.chest.pv = Math.ceil((contai+5)/5);
+      $scope.pj.body.bide.pv = Math.ceil((contai+10)/5);
+      $scope.pj.body.rarm.pv = Math.ceil(contai/5);
+      $scope.pj.body.larm.pv = Math.ceil(contai/5);
+      if (contai < 6) {
+        $scope.pj.body.rfoot.pv = 1;
+        $scope.pj.body.lfoot.pv = 1;
+      } else {
+        $scope.pj.body.rfoot.pv = Math.ceil((contai-5)/5);
+        $scope.pj.body.lfoot.pv = Math.ceil((contai-5)/5);
+      };
+    };
+  }, true);
+  
+  $scope.$watch('pj.body', function(newval, oldval) {
+    // Pénalité d'armure
+    totalpa = newval.head.pa +
+      newval.chest.pa +
+      newval.bide.pa +
+      newval.rarm.pa +
+      newval.larm.pa +
+      newval.rfoot.pa +
+      newval.lfoot.pa;
+    $scope.pj.calc.pa = Math.ceil(totalpa/5);
+  }, true);
+
+  
+  $scope.getBase = function (skill) {
+    var base = $scope.pj.attributes[skill.init[0]]+$scope.pj.attributes[skill.init[1]];
+    var text = "";
+    if (skill.base == null) {
+      skill.base = base;
+      skill.value = base;
+    } else if (skill.base != base) {
+      skill.value += base - skill.base;
+      skill.base = base;
+    };
+    if ( skill.init[0] == skill.init[1]) {
+      text = skill.init[0]+"x2";
+    } else {
+      text = skill.init[0]+"+"+skill.init[1];
+    };
+    return text + " ("+base+"%)"
+  };
 });

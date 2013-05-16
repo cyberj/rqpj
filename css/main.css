@@ -74,4 +74,9 @@ body {
   margin-right: 2em;
 }
 
-
+.svgodd {
+  fill: white;
+}
+.svgodd {
+  fill: ghostwhite;
+}

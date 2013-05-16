@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html> 
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -11,234 +11,911 @@
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="css/fondamento.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+    <style type="text/css">
+      .dynamicc {
+        display: none;
+      }
+      .dynamic #charHead {
+        display: block;
+      }
+      hr {
+        display: none;
+      }
+      .magicsvg svg {
+        display: block;
+        width:  100%
+        height:  100%
+      }
+    </style>
 
   </head>
   <body>
 
     <div class="container" ng-app="myApp">
-      <!-- Example row of columns -->
-      <div id="charHead" class="block form-horizontal" ng-controller="headCtrl">
-        <p>
-          <i ng-click="vars.edit=!vars.edit" class="icon-edit"></i>
-          <i ng-click="save()" class="icon-arrow-up"></i>
-          <i ng-click="load()" class="icon-arrow-down"></i>
-          <i ng-click="reset()" class="icon-remove"></i>
-          <i ng-click="example()" class="icon-heart"></i>
-        </p>
-        <div class="row-fluid">
+      <div class="dynamic">
+        <!-- Example row of columns -->
+        <div id="charHead" class="block form-horizontal" ng-controller="headCtrl">
+          <p>
+            <i ng-click="vars.edit=!vars.edit" class="icon-edit"></i>
+            <i ng-click="save()" class="icon-arrow-up"></i>
+            <i ng-click="load()" class="icon-arrow-down"></i>
+            <i ng-click="reset()" class="icon-remove"></i>
+            <i ng-click="example()" class="icon-heart"></i>
+          </p>
+          <div class="row-fluid">
 
-          <div class="span4">
-            <div class="control-group" id="pjName">
-              <label ng-click="vars.edit=true" class="control-label" for="charHeadName">Nom</label>
-              <div class="controls">
-                <p ng-show="!vars.edit">{{ pj.head.name }}</p>
-                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.name" type="text">
+            <div class="span4">
+              <div class="control-group" id="pjName">
+                <label ng-click="vars.edit=true" class="control-label" for="charHeadName">Nom</label>
+                <div class="controls">
+                  <p ng-show="!vars.edit">{{ pj.head.name }}</p>
+                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.name" type="text">
+                </div>
+              </div>
+              <div class="control-group">
+                <label ng-click="vars.edit=true" class="control-label" for="charHeadPlayer">Joueur</label>
+                <div class="controls">
+                  <p ng-show="!vars.edit">{{ pj.head.player }}</p>
+                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.player" type="text">
+                </div>
+              </div>
+              <div class="control-group">
+                <label ng-click="vars.edit=true" class="control-label" for="charHeadRace">Race</label>
+                <div class="controls">
+                  <p ng-show="!vars.edit">{{ pj.head.race }}</p>
+                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.race" type="text">
+                </div>
+              </div>
+              <div class="control-group">
+                <label ng-click="vars.edit=true" class="control-label" for="charHeadSex">Sexe</label>
+                <div class="controls">
+                  <p ng-show="!vars.edit">{{ pj.head.sex }}</p>
+                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.sex" type="text">
+                </div>
               </div>
             </div>
-            <div class="control-group">
-              <label ng-click="vars.edit=true" class="control-label" for="charHeadPlayer">Joueur</label>
-              <div class="controls">
-                <p ng-show="!vars.edit">{{ pj.head.player }}</p>
-                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.player" type="text">
+            <div class="span4">
+              <div class="control-group">
+                <label ng-click="vars.edit=true" class="control-label" for="charHeadCulture">Culture</label>
+                <div class="controls">
+                  <p ng-show="!vars.edit">{{ pj.head.culture }}</p>
+                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.culture" type="text">
+                </div>
+              </div>
+              <div class="control-group">
+                <label ng-click="vars.edit=true" class="control-label" for="charHeadOrigin">Origin</label>
+                <div class="controls">
+                  <p ng-show="!vars.edit">{{ pj.head.origin }}</p>
+                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.origin" type="text">
+                </div>
+              </div>
+              <div class="control-group">
+                <label ng-click="vars.edit=true" class="control-label" for="charHeadProfession">Profession</label>
+                <div class="controls">
+                  <p ng-show="!vars.edit">{{ pj.head.job }}</p>
+                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.job" type="text">
+                </div>
+              </div>
+              <div class="control-group">
+                <label ng-click="vars.edit=true" class="control-label" for="charHeadFamily">Famille</label>
+                <div class="controls">
+                  <p ng-show="!vars.edit">{{ pj.head.family }}</p>
+                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.family" type="text">
+                </div>
               </div>
             </div>
-            <div class="control-group">
-              <label ng-click="vars.edit=true" class="control-label" for="charHeadRace">Race</label>
-              <div class="controls">
-                <p ng-show="!vars.edit">{{ pj.head.race }}</p>
-                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.race" type="text">
+            <div class="span4">
+              <div class="control-group">
+                <label ng-click="vars.edit=true" class="control-label" for="charHeadAge">Age</label>
+                <div class="controls">
+                  <p ng-show="!vars.edit">{{ pj.head.age }}</p>
+                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.age" type="text">
+                </div>
               </div>
-            </div>
-            <div class="control-group">
-              <label ng-click="vars.edit=true" class="control-label" for="charHeadSex">Sexe</label>
-              <div class="controls">
-                <p ng-show="!vars.edit">{{ pj.head.sex }}</p>
-                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.sex" type="text">
+              <div class="control-group">
+                <label ng-click="vars.edit=true" class="control-label" for="charHeadHair">Cheveux</label>
+                <div class="controls">
+                  <p ng-show="!vars.edit">{{ pj.head.hair }}</p>
+                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.hair" type="text">
+                </div>
+              </div>
+              <div class="control-group">
+                <label ng-click="vars.edit=true" class="control-label" for="charHeadEyes">Yeux</label>
+                <div class="controls">
+                  <p ng-show="!vars.edit">{{ pj.head.eyes }}</p>
+                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.eyes" type="text">
+                </div>
+              </div>
+              <div class="control-group">
+                <label ng-click="vars.edit=true" class="control-label" for="charHeadWeight">Taille / Poids</label>
+                <div class="controls">
+                  <p ng-show="!vars.edit">{{ pj.head.weight }}</p>
+                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.weight" type="text">
+                </div>
               </div>
             </div>
           </div>
-          <div class="span4">
-            <div class="control-group">
-              <label ng-click="vars.edit=true" class="control-label" for="charHeadCulture">Culture</label>
-              <div class="controls">
-                <p ng-show="!vars.edit">{{ pj.head.culture }}</p>
-                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.culture" type="text">
-              </div>
-            </div>
-            <div class="control-group">
-              <label ng-click="vars.edit=true" class="control-label" for="charHeadOrigin">Origin</label>
-              <div class="controls">
-                <p ng-show="!vars.edit">{{ pj.head.origin }}</p>
-                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.origin" type="text">
-              </div>
-            </div>
-            <div class="control-group">
-              <label ng-click="vars.edit=true" class="control-label" for="charHeadProfession">Profession</label>
-              <div class="controls">
-                <p ng-show="!vars.edit">{{ pj.head.job }}</p>
-                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.job" type="text">
-              </div>
-            </div>
-            <div class="control-group">
-              <label ng-click="vars.edit=true" class="control-label" for="charHeadFamily">Famille</label>
-              <div class="controls">
-                <p ng-show="!vars.edit">{{ pj.head.family }}</p>
-                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.family" type="text">
-              </div>
-            </div>
-          </div>
-          <div class="span4">
-            <div class="control-group">
-              <label ng-click="vars.edit=true" class="control-label" for="charHeadAge">Age</label>
-              <div class="controls">
-                <p ng-show="!vars.edit">{{ pj.head.age }}</p>
-                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.age" type="text">
-              </div>
-            </div>
-            <div class="control-group">
-              <label ng-click="vars.edit=true" class="control-label" for="charHeadHair">Cheveux</label>
-              <div class="controls">
-                <p ng-show="!vars.edit">{{ pj.head.hair }}</p>
-                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.hair" type="text">
-              </div>
-            </div>
-            <div class="control-group">
-              <label ng-click="vars.edit=true" class="control-label" for="charHeadEyes">Yeux</label>
-              <div class="controls">
-                <p ng-show="!vars.edit">{{ pj.head.eyes }}</p>
-                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.eyes" type="text">
-              </div>
-            </div>
-            <div class="control-group">
-              <label ng-click="vars.edit=true" class="control-label" for="charHeadWeight">Poids</label>
-              <div class="controls">
-                <p ng-show="!vars.edit">{{ pj.head.weight }}</p>
-                <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.weight" type="text">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> 
+        </div> 
 
-      <div id="charStats" class="block" ng-controller="attrCtrl">
-        <div class="row-fluid">
-          <div class="span2">
-            <p>Caractéristiques</p>
+        <div id="charStats" class="block" ng-controller="attrCtrl">
+          <div class="row-fluid">
+            <div class="span2 complist">
+              <p>Caractéristiques</p>
+            </div>
+            <div class="stats span10 form-inline">
+              <label>FOR <p ng-show="!vars.edit">{{ pj.attributes.FOR }}</p><input ng-show="vars.edit" ng-model="pj.attributes.FOR" type="number" class="input-mini"></label>
+              <label>CON <p ng-show="!vars.edit">{{ pj.attributes.CON }}</p><input ng-show="vars.edit" ng-model="pj.attributes.CON" type="number" class="input-mini"></label>
+              <label>DEX <p ng-show="!vars.edit">{{ pj.attributes.DEX }}</p><input ng-show="vars.edit" ng-model="pj.attributes.DEX" type="number" class="input-mini"></label>
+              <label>TAI <p ng-show="!vars.edit">{{ pj.attributes.TAI }}</p><input ng-show="vars.edit" ng-model="pj.attributes.TAI" type="number" class="input-mini"></label>
+              <label>INT <p ng-show="!vars.edit">{{ pj.attributes.INT }}</p><input ng-show="vars.edit" ng-model="pj.attributes.INT" type="number" class="input-mini"></label>
+              <label>POU <p ng-show="!vars.edit">{{ pj.attributes.POU }}</p><input ng-show="vars.edit" ng-model="pj.attributes.POU" type="number" class="input-mini"></label>
+              <label>CHA <p ng-show="!vars.edit">{{ pj.attributes.CHA }}</p><input ng-show="vars.edit" ng-model="pj.attributes.CHA" type="number" class="input-mini"></label>
+            </div>
           </div>
-          <div class="stats span10 form-inline">
-            <label>FOR <p ng-show="!vars.edit">{{ pj.attributes.FOR }}</p><input ng-show="vars.edit" ng-model="pj.attributes.FOR" type="number" class="input-mini"></label>
-            <label>CON <p ng-show="!vars.edit">{{ pj.attributes.CON }}</p><input ng-show="vars.edit" ng-model="pj.attributes.CON" type="number" class="input-mini"></label>
-            <label>DEX <p ng-show="!vars.edit">{{ pj.attributes.DEX }}</p><input ng-show="vars.edit" ng-model="pj.attributes.DEX" type="number" class="input-mini"></label>
-            <label>TAI <p ng-show="!vars.edit">{{ pj.attributes.TAI }}</p><input ng-show="vars.edit" ng-model="pj.attributes.TAI" type="number" class="input-mini"></label>
-            <label>INT <p ng-show="!vars.edit">{{ pj.attributes.INT }}</p><input ng-show="vars.edit" ng-model="pj.attributes.INT" type="number" class="input-mini"></label>
-            <label>POU <p ng-show="!vars.edit">{{ pj.attributes.POU }}</p><input ng-show="vars.edit" ng-model="pj.attributes.POU" type="number" class="input-mini"></label>
-            <label>CHA <p ng-show="!vars.edit">{{ pj.attributes.CHA }}</p><input ng-show="vars.edit" ng-model="pj.attributes.CHA" type="number" class="input-mini"></label>
+          <div class="row-fluid" id="attributes">
+            <div class="span1">
+              <p>Attributs</p>
+            </div>
+            <div class="span2">
+              <label>Actions de Combat <p>{{ pj.calc.ac }}</p></label>
+              <label>Mouvement <p>{{ pj.calc.mv }}</p></label>
+            </div>
+            <div class="span2">
+              <label>Mod de dommage <p>{{ pj.calc.md }}</p></label>
+              <label>Jet d'amélioration <p>{{ pj.calc.ma }}</p></label>
+            </div>
+            <div class="span3">
+              <label>Pouvoir dédié <p ng-show="!vars.edit">{{ pj.calc.pd }}</p><input ng-show="vars.edit" ng-model="pj.calc.pd" type="number" class="input-mini"></label>
+              <label>Points de magie <p>{{ pj.calc.pm }}</label>
+            </div>
+            <div class="span3">
+              <!--<label>Point d'Héroïsme <input type="number" class="input-mini"></label>-->
+              <label>Pénalité d'armure <p>{{ pj.calc.pa }}</p></label>
+              <label>Rang d'Action <p>{{ pj.calc.dm }}</p></label>
+            </div>
           </div>
-        </div>
-        <div class="row-fluid" id="attributes">
-          <div class="span1">
-            <p>Attributs</p>
-          </div>
-          <div class="span3">
-            <label>Actions de Combat<input type="text" class="input-mini"></label>
-            <label>Mouvement<input type="text" class="input-mini"></label>
-          </div>
-          <div class="span3">
-            <label>Mod de dommage <input type="text" class="input-mini"></label>
-            <label>Jet d'amélioration <input type="text" class="input-mini"></label>
-          </div>
-          <div class="span3">
-            <label>Rang d'Action <input type="text" class="input-mini"></label>
-            <label>Pénalité d'armure <input type="text" class="input-mini"></label>
-          </div>
-          <div class="span2">
-            <label>Point d'Héroïsme <input type="number" class="input-mini"></label>
-          </div>
-        </div>
-      </div> 
-
-      <div id="charSkills" class="block" ng-controller="skillsCtrl">
-        <div class="row-fluid">
-          <div class="span6">
-            <h4>Compétences</h4>
+          <div class="row-fluid" id="attributes">
+            <div class="span6">
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>Compétence</th>
-                  <th>% de Base</th>
-                  <th>Score Actuel <i ng-click="vars.edit = !vars.edit;" class="icon-edit"></i></th>
+                  <th>Emplacement</th>
+                  <th>Armure</th>
+                  <th>Points de vie</th>
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="skill in vars.skills | orderBy:'name'">
-                  <td>{{ skill.name }}</td>
-                  <td>{{ getBase(skill) }}</td>
+                <tr>
+                  <td>Tête</td>
                   <td>
-                    <div ng-show="!vars.edit">{{ skill.value }}%</div>
-                    <div ng-show="vars.edit" class="input-append"><input ng-model="skill.value" type="number" class="input-mini">%<span class="add-on">%</span></div>
+                    <div ng-show="!vars.edit">{{ pj.body.head.pa }}</div>
+                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.head.pa" type="number" class="input-mini"></div>
                   </td>
+                  <td>{{ pj.body.head.pv }}</td>
+                </tr>
+                <tr>
+                  <td>Poitrine</td>
+                  <td>
+                    <div ng-show="!vars.edit">{{ pj.body.chest.pa }}</div>
+                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.chest.pa" type="number" class="input-mini"></div>
+                  </td>
+                  <td>{{ pj.body.chest.pv }}</td>
+                </tr>
+                <tr>
+                  <td>Ventre</td>
+                  <td>
+                    <div ng-show="!vars.edit">{{ pj.body.bide.pa }}</div>
+                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.bide.pa" type="number" class="input-mini"></span></div>
+                  </td>
+                  <td>{{ pj.body.bide.pv }}</td>
+                </tr>
+                <tr>
+                  <td>Bras droit</td>
+                  <td>
+                    <div ng-show="!vars.edit">{{ pj.body.rarm.pa }}</div>
+                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.rarm.pa" type="number" class="input-mini"></div>
+                  </td>
+                  <td>{{ pj.body.rarm.pv }}</td>
+                </tr>
+                <tr>
+                  <td>Bras gauche</td>
+                  <td>
+                    <div ng-show="!vars.edit">{{ pj.body.larm.pa }}</div>
+                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.larm.pa" type="number" class="input-mini"></div>
+                  </td>
+                  <td>{{ pj.body.larm.pv }}</td>
+                </tr>
+                <tr>
+                  <td>Jambe droite</td>
+                  <td>
+                    <div ng-show="!vars.edit">{{ pj.body.rfoot.pa }}</div>
+                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.rfoot.pa" type="number" class="input-mini"></div>
+                  </td>
+                  <td>{{ pj.body.rfoot.pv }}</td>
+                </tr>
+                <tr>
+                  <td>Jambe gauche</td>
+                  <td>
+                    <div ng-show="!vars.edit">{{ pj.body.lfoot.pa }}</div>
+                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.lfoot.pa" type="number" class="input-mini"></div>
+                  </td>
+                  <td>{{ pj.body.lfoot.pv }}</td>
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
-          <div class="span6">
-            <h4>Compétences avancées</h4>
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Compétence</th>
-                  <th>% de Base</th>
-                  <th>Score Actuel</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Athlétisme</td>
-                  <td>FOR+DEX (30%)</td>
-                  <td><div class="input-append"><input type="number" class="input-mini">%<span class="add-on">%</span></div></td>
-                </tr>
-                <tr>
-                  <td>Bagarre</td>
-                  <td>FOR+DEX (30%)</td>
-                  <td>60%</td>
-                </tr>
-                <tr>
-                  <td>Bagarre</td>
-                  <td>FOR+DEX (30%)</td>
-                  <td>60%</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div> 
+        </div> 
 
-      <div id="charOther" class="block form-horizontal">
-        <div class="row-fluid">
-          <div class="span4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
+        <div id="charSkills" class="block" ng-controller="skillsCtrl">
+          <div class="row-fluid">
+            <div class="span6 complist">
+              <h4>Compétences</h4>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Compétence</th>
+                    <th>% de Base</th>
+                    <th>Score Actuel <i ng-click="vars.edit = !vars.edit;" class="icon-edit"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="skill in vars.skills | orderBy:'name'">
+                    <td>{{ skill.name }}</td>
+                    <td>{{ getBase(skill) }}</td>
+                    <td>
+                      <div ng-show="!vars.edit">{{ skill.value }}%</div>
+                      <div ng-show="vars.edit" class="input-append"><input ng-model="skill.value" type="number" class="input-mini">%<span class="add-on">%</span></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="span6">
+              <h4>Compétences avancées</h4>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Compétence</th>
+                    <th>% de Base</th>
+                    <th>Score Actuel</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Athlétisme</td>
+                    <td>FOR+DEX (30%)</td>
+                    <td><div class="input-append"><input type="number" class="input-mini">%<span class="add-on">%</span></div></td>
+                  </tr>
+                  <tr>
+                    <td>Bagarre</td>
+                    <td>FOR+DEX (30%)</td>
+                    <td>60%</td>
+                  </tr>
+                  <tr>
+                    <td>Bagarre</td>
+                    <td>FOR+DEX (30%)</td>
+                    <td>60%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div class="span4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div> 
+
+        <div id="charOther" class="block form-horizontal">
+          <div class="row-fluid">
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div>
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div>
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div>
           </div>
-          <div class="span4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn" href="#">View details &raquo;</a></p>
-          </div>
-        </div>
-      </div> 
+        </div> 
+      </div>
 
 
       <hr>
+      <div class="magicsvg" ng-controller="svgCtrl"> 
+    <svg  width="180mm" height="260mm" version="1.1" viewBox="0 0 180 260"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+>
 
-      <footer>
-      <p>&copy; Company 2012</p>
-      </footer>
+      <defs>
+    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect fill="black" x="0" y="0" width="5" height="5" opacity="0.1"/>
+      <rect fill="white" x="5" y="0" width="5" height="5"/>
+      <rect fill="black" x="5" y="5" width="5" height="5" opacity="0.1"/>
+      <rect fill="white" x="0" y="5" width="5" height="5"/>
+    </pattern>
+
+</defs>
+      <desc>Hand drawn sequence diagram</desc>
+      <g font-family="Fondamento" text-anchor="left">
+        <!-- draw user boxes and the vertical lines -->
+        <!--
+        <rect x="4" y="4" rx="20" ry="20" width="150" height="150" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+        -->
+        <path stroke="blue" fill="url(#grid)" d="M 0 0 180 0 180 260 0 260 0 0"/>
+        <!-- Header -->
+        <svg x="1" y="0" version="1.1" width="178" height="34" viewBox="0 0 178 34" preserveAspectRatio="xMaxYMax meet">
+          <g font-family="Fondamento" text-anchor="left">
+            <rect x="1" y="1" width="176" height="28" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <!-- Logo -->
+            <g id="Logo" stroke="black" fill="white" font-weight="" stroke-width="0.3" font-variant="small-caps" lengthAdjust="spacingAndGlyphs">
+              <text x="5" y="22" font-size="25" textLength="13">R</text>
+              <text x="19" y="20" font-size="15" textLength="57">uneQuest</text>
+              <text x="75" y="22" font-size="25" textLength="13">II</text>
+            </g>
+            <g id="pj_head_name">
+              <text x="100" y="10" font-size="5"><tspan dy="-1">{{ pj.head.name }}</tspan></text>
+              <path stroke="black" stroke-width="0.5" d="M 100 10 h 70"/>
+              <text x="100" y="10" font-size="3" font-variant="small-caps"><tspan dy="3">Nom</tspan></text>
+            </g>
+            <g id="pj_head_player">
+              <text x="100" y="22" font-size="5"><tspan dy="-1">{{ pj.head.player }}</tspan></text>
+              <path stroke="black" stroke-width="0.5" d="M 100 22 h 30"/>
+              <text x="100" y="22" font-size="3" font-variant="small-caps"><tspan dy="3">Joueur</tspan></text>
+            </g>
+            <g id="pj_head_family">
+              <text x="135" y="22" font-size="5"><tspan dy="-1">{{ pj.head.family }}</tspan></text>
+              <path stroke="black" stroke-width="0.5" d="M 135 22 h 30"/>
+              <text x="135" y="22" font-size="3" font-variant="small-caps"><tspan dy="3">Famille</tspan></text>
+            </g>
+          </g>
+        </svg>
+        <!-- Infos -->
+        <svg x="1" y="29" version="1.1" width="178" height="50" viewBox="0 0 178 50" preserveAspectRatio="xMaxYMax meet">
+          <g font-family="Fondamento" text-anchor="left">
+            <rect x="1" y="1" width="176" height="30" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <g id="pj_head" transform="translate(3,3)">
+              <g id="pj_head_race">
+                <text x="0" y="5" font-size="4"><tspan dy="-1">{{ pj.head.race }}</tspan></text>
+                <path stroke="black" stroke-width="0.5" d="M 0 5 h 30"/>
+                <text x="0" y="5" font-size="3" font-variant="small-caps"><tspan dy="3">Race</tspan></text>
+              </g>
+              <g id="pj_head_age">
+                <text x="35" y="5" font-size="4"><tspan dy="-1">{{ pj.head.age }}</tspan></text>
+                <path stroke="black" stroke-width="0.5" d="M 35 5 h 10"/>
+                <text x="35" y="5" font-size="3" font-variant="small-caps"><tspan dy="3">Age</tspan></text>
+              </g>
+              <g id="pj_head_sex">
+                <text x="50" y="5" font-size="4"><tspan dy="-1">{{ pj.head.sex }}M</tspan></text>
+                <path stroke="black" stroke-width="0.5" d="M 50 5 h 10"/>
+                <text x="50" y="5" font-size="3" font-variant="small-caps"><tspan dy="3">Sexe</tspan></text>
+              </g>
+              <g id="pj_head_culture">
+                <text x="0" y="14" font-size="4"><tspan dy="-1">{{ pj.head.culture }}</tspan></text>
+                <path stroke="black" stroke-width="0.5" d="M 0 14 h 60"/>
+                <text x="0" y="14" font-size="3" font-variant="small-caps"><tspan dy="3">Culture</tspan></text>
+              </g>
+              <g id="pj_head_origin">
+                <text x="0" y="23" font-size="4"><tspan dy="-1">{{ pj.head.origin }}</tspan></text>
+                <path stroke="black" stroke-width="0.5" d="M 0 23 h 60"/>
+                <text x="0" y="23" font-size="3" font-variant="small-caps"><tspan dy="3">Terre d'origine</tspan></text>
+              </g>
+              <g id="pj_head_hair">
+                <text x="65" y="5" font-size="4"><tspan dy="-1">{{ pj.head.hair }}</tspan></text>
+                <path stroke="black" stroke-width="0.5" d="M 65 5 h 30"/>
+                <text x="65" y="5" font-size="3" font-variant="small-caps"><tspan dy="3">Cheveux</tspan></text>
+              </g>
+              <g id="pj_head_eyes">
+                <text x="65" y="14" font-size="4"><tspan dy="-1">{{ pj.head.eyes }}</tspan></text>
+                <path stroke="black" stroke-width="0.5" d="M 65 14 h 30"/>
+                <text x="65" y="14" font-size="3" font-variant="small-caps"><tspan dy="3">Yeux</tspan></text>
+              </g>
+              <g id="pj_head_weight">
+                <text x="65" y="23" font-size="4"><tspan dy="-1">{{ pj.head.weight }}</tspan></text>
+                <path stroke="black" stroke-width="0.5" d="M 65 23 h 30"/>
+                <text x="65" y="23" font-size="3" font-variant="small-caps"><tspan dy="3">Taille / Poids</tspan></text>
+              </g>
+              <g id="pj_head_job">
+                <text x="108" y="23" font-size="5"><tspan dy="-1">{{ pj.head.job }}</tspan></text>
+                <path stroke="black" stroke-width="0.5" d="M 108 23 h 60"/>
+                <text x="108" y="23" font-size="3" font-variant="small-caps"><tspan dy="3">Profession</tspan></text>
+              </g>
+            </g>
+            <!-- Heroisme -->
+              <rect x="110" y="3" width="60" rx="2" ry="2" height="12" fill="none" stroke="Black" stroke-width="0.7"/>
+              <text x="113" y="10" font-size="5" font-variant="small-caps">Points d'Héroisme : </text>
+          </g>
+        </svg>
+        <!-- Caracs -->
+        <svg x="1" y="60" version="1.1" width="178" height="75" viewBox="0 0 178 75" preserveAspectRatio="xMaxYMax meet">
+          <g font-family="Fondamento" text-anchor="left">
+            <rect x="1" y="1" width="176" height="73" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <g id="pj_stats_title" transform="translate(3,9)">
+              <text x="0" y="0" font-size="7" font-variant="small-caps">Caractéristiques et attributs</text>
+            </g>
+            <g id="pj_stats" font-size="4" font-weight="bol" transform="translate(4,10)" display="non">
+              <g id="pj_stats_for">
+                <path stroke="black" stroke-width="0.5" d="M 0 10 h 18"/>
+                <text x="0" y="10"><tspan dy="-3">FOR</tspan></text>
+                <text x="13" y="10"><tspan dy="-3">{{ pj.attributes.FOR }}</tspan></text>
+              </g>
+              <g id="pj_stats_con">
+                <path stroke="black" stroke-width="0.5" d="M 0 18 h 18"/>
+                <text x="0" y="18"><tspan dy="-3">CON</tspan></text>
+                <text x="13" y="18"><tspan dy="-3">{{ pj.attributes.CON }}</tspan></text>
+              </g>
+              <g id="pj_stats_tai">
+                <path stroke="black" stroke-width="0.5" d="M 0 26 h 18"/>
+                <text x="0" y="26"><tspan dy="-3">TAI</tspan></text>
+                <text x="13" y="26"><tspan dy="-3">{{ pj.attributes.TAI }}</tspan></text>
+              </g>
+              <g id="pj_stats_int">
+                <path stroke="black" stroke-width="0.5" d="M 0 34 h 18"/>
+                <text x="0" y="34"><tspan dy="-3">INT</tspan></text>
+                <text x="13" y="34"><tspan dy="-3">{{ pj.attributes.INT }}</tspan></text>
+              </g>
+              <g id="pj_stats_pou">
+                <path stroke="black" stroke-width="0.5" d="M 0 42 h 18"/>
+                <text x="0" y="42"><tspan dy="-3">POU</tspan></text>
+                <text x="13" y="42"><tspan dy="-3">{{ pj.attributes.POU }}</tspan></text>
+              </g>
+              <g id="pj_stats_dex">
+                <path stroke="black" stroke-width="0.5" d="M 0 50 h 18"/>
+                <text x="0" y="50"><tspan dy="-3">DEX</tspan></text>
+                <text x="13" y="50"><tspan dy="-3">{{ pj.attributes.DEX }}</tspan></text>
+              </g>
+              <g id="pj_stats_cha">
+                <text x="0" y="58"><tspan dy="-3">CHA</tspan></text>
+                <text x="13" y="58"><tspan dy="-3">{{ pj.attributes.CHA }}</tspan></text>
+              </g>
+            </g>
+            <g id="pj_attr" transform="translate(26,10)" font-size="4" font-variant="small-caps" font-weight="bol"  lengthAdjust="spacingAndGlyphs">
+              <g id="pj_attr_ac">
+                <path stroke="black" stroke-width="0.5" d="M 0 10 h 65"/>
+                <text x="0" y="10"><tspan dy="-3">Actions de combat</tspan></text>
+                <text x="60" y="10" text-anchor="middle"><tspan dy="-3">{{ pj.calc.ac }}</tspan></text>
+              </g>
+              <g id="pj_attr_md">
+                <path stroke="black" stroke-width="0.5" d="M 0 18 h 65"/>
+                <text x="0" y="18"><tspan font-size="4" textLengt="50" dy="-3">Modificateur de Dommages</tspan></text>
+                <text x="60" y="18" text-anchor="middle"><tspan dy="-3">{{ pj.calc.md }}</tspan></text>
+              </g>
+              <g id="pj_attr_ma">
+                <path stroke="black" stroke-width="0.5" d="M 0 26 h 65"/>
+                <text x="0" y="26"><tspan font-size="4" textLengt="50" dy="-3">Modificateur D'amélioration</tspan></text>
+                <text x="60" y="26" text-anchor="middle"><tspan dy="-3">{{ pj.calc.ma }}</tspan></text>
+              </g>
+              <g id="pj_attr_mv">
+                <path stroke="black" stroke-width="0.5" d="M 0 34 h 65"/>
+                <text x="0" y="34"><tspan dy="-3">Mouvement</tspan></text>
+                <text x="60" y="34" text-anchor="middle"><tspan dy="-3">{{ pj.calc.mv }}</tspan></text>
+              </g>
+              <g id="pj_attr_pd">
+                <path stroke="black" stroke-width="0.5" d="M 0 42 h 65"/>
+                <text x="0" y="42"><tspan dy="-3">Pouvoir dédié</tspan></text>
+                <text x="60" y="42" text-anchor="middle"><tspan dy="-3">{{ pj.calc.pd  }}</tspan></text>
+              </g>
+              <g id="pj_attr_pm">
+                <path stroke="black" stroke-width="0.5" d="M 0 50 h 65"/>
+                <text x="0" y="50"><tspan dy="-3">Points de magie</tspan></text>
+                <text x="60" y="50" text-anchor="middle"><tspan dy="-3">{{ pj.calc.pm }}</tspan></text>
+              </g>
+              <g id="pj_attr_ra">
+                <text x="0" y="58"><tspan dy="-3">Rang d'action</tspan></text>
+                <text x="60" y="58" text-anchor="middle"><tspan dy="-3">{{ pj.calc.ra }}</tspan></text>
+              </g>
+            </g>
+            <!-- Man -->
+            <g id="man" transform="translate(121,-2) scale(0.9, 0.9)">
+              <g transform="translate(15, 5) scale(0.135,0.115)" id="layer2" style="display:inline">
+                <g transform="translate(387.5,-8.96408)" id="g3260">
+                  <g id="g3250"
+                     fill="white"
+                     stroke-width="2"
+                     style="stroke:#000000;stroke-linejoin:miter;stroke-opacity:1">
+                    <path
+                       d="m -252,12 0,0 c 10.36136,0.545335 35.19884,-2.9659778 22.66667,64 -12.43638,66.45414 61.41971,18.442798 73.06004,66.25797 3.8317,15.73952 -2.39338,41.74203 -2.39338,41.74203 0,0 4.81551,21.9938 2.66667,41.33333 -0.79012,7.11111 -11.51107,35.65518 -10.81481,42.96297 0.5176,5.43272 5.2223,25.25195 5.08642,39.25926 -0.11359,11.70927 -3.97087,35.13131 -4.353,44.02194 -0.2244,5.22084 5.18978,37.62981 4.50114,43.63238 -0.5006,4.36355 -14.1938,27.75606 -16.5432,25.87654 -1.97531,-1.58025 7.06172,-25.92593 7.45678,-29.08642 0.49001,-3.92011 -4.74654,-17.42965 -6.66666,-17.33333 -3.20422,0.13822 0.23909,24.96553 -2.66667,24.96553 -2.54254,0 -9.21379,-15.39769 -9.21379,-22.29887 0,-5.81152 5.46693,-20.39899 5.21379,-29.33333 -0.4424,-15.61423 -9.7125,-35.05328 -10.1839,-50.66667 -0.28181,-9.33384 1.75481,-21.7216 1.33791,-31.02988 -0.59092,-13.19376 -5.82068,-43.63678 -5.82068,-43.63678 0,0 -7.62684,31.52823 -8,45.33333 -0.71857,26.58352 10.94953,61.40827 10.66667,88 -0.48135,45.25227 14.81594,49.74136 -4.98214,149.33333 5.78324,12.7221 5.90267,35.37466 3.39768,48.72644 -3.87875,20.67402 -14.5522,47.61192 -16.73102,63.27356 5.08508,14.5288 27.38853,36.72644 15.03905,36 0,0 -32.06298,1.33837 -36.37238,0 -3.55754,-1.10486 2.32163,-13.60291 1.49757,-35.58998 -0.62134,-16.57796 -6.57668,-39.67344 -6.66597,-61.96962 -0.051,-13.55937 -1.31331,-21.72871 4.95428,-50.00258 C -252.24816,433.72172 -252,382.35609 -252,382.35609"
+                       id="path2470"/>
+                    <path
+                       d="m -199.48452,225.32174 c 1.51182,0 8.39405,-55.59406 0,-55.59406"
+                       id="path2474"
+                       stroke-linecap="butt" />
+                    <path
+                       d="m -252.02544,107.39149 c 9.03076,-0.16894 19.15245,-15.081128 22.04661,-27.587735"
+                       id="path3258" />
+                  </g>
+                  <use
+                     transform="matrix(-1,0,0,1,-503,0)"
+                     id="use3256"
+                     x="0"
+                     y="0"
+                     width="270"
+                     height="648"
+                     xlink:href="#g3250" />
+                </g>
+              </g>
+
+              <g id="man_head" font-size="3" font-variant="small-caps">
+                <text x="40" y="10"><tspan font-weight="bold">19-20</tspan>: Tête</text>
+                <text x="47" y="15" text-anchor="middle" font-size="5">{{ pj.body.head.pa }}<tspan font-weight="bold"> / </tspan>{{ pj.body.head.pv }}</text>
+              </g>
+              <g id="man_torso" text-anchor="middle" font-size="3" font-variant="small-caps">
+                <text x="33" y="20"><tspan font-weight="bold">10-12:</tspan></text>
+                <text x="33" y="23">Poitrine</text>
+                <text x="33" y="28" font-size="5">{{ pj.body.chest.pa }}<tspan font-weight="bold"> / </tspan>{{ pj.body.chest.pv }}</text>
+              </g>
+              <g id="man_bide" text-anchor="middle" font-size="3" font-variant="small-caps">
+                <text x="33" y="38"><tspan font-weight="bold">10-12:</tspan></text>
+                <text x="33" y="41">Ventre</text>
+                <text x="33" y="46" font-size="5">{{ pj.body.bide.pa }}<tspan font-weight="bold"> / </tspan>{{ pj.body.bide.pv }}</text>
+              </g>
+              <g id="man_ra" font-size="3" font-variant="small-caps">
+                <text x="10" y="42"><tspan font-weight="bold">10-12:</tspan></text>
+                <text x="10" y="46">Bras D.</text>
+                <text x="10" y="51" font-size="5">{{ pj.body.rarm.pa }}<tspan font-weight="bold"> / </tspan>{{ pj.body.rarm.pv }}</text>
+              </g>
+              <g id="man_la" text-anchor="end" font-size="3" font-variant="small-caps">
+                <text x="58" y="42"><tspan font-weight="bold">10-12:</tspan></text>
+                <text x="58" y="46">Bras G.</text>
+                <text x="58" y="51" font-size="5">{{ pj.body.larm.pa }}<tspan font-weight="bold"> / </tspan>{{ pj.body.larm.pv }}</text>
+              </g>
+              <g id="man_rf" font-size="3" font-variant="small-caps">
+                <text x="12" y="66"><tspan font-weight="bold">10-12:</tspan></text>
+                <text x="12" y="70">Jambe D.</text>
+                <text x="12" y="75" font-size="5">{{ pj.body.rfoot.pa }}<tspan font-weight="bold"> / </tspan>{{ pj.body.rfoot.pv }}</text>
+              </g>
+              <g id="man_lf" text-anchor="end" font-size="3" font-variant="small-caps">
+                <text x="56" y="66"><tspan font-weight="bold">10-12:</tspan></text>
+                <text x="56" y="70">Bras G.</text>
+                <text x="56" y="75" font-size="5">{{ pj.body.lfoot.pa }}<tspan font-weight="bold"> / </tspan>{{ pj.body.lfoot.pv }}</text>
+              </g>
+            </g>
+
+            <g id="shield" transform="translate(98, 0)" font-size="4" font-variant="small-caps">
+              <text x="0" y="10">Types d'Armure:</text>
+              <text x="0" y="20">Pénalité de l'Armure:</text>
+            </g>
+          </g>
+        </svg>
+        <svg x="1" y="134" version="1.1" width="178" height="125" viewBox="0 0 178 125" preserveAspectRatio="xMaxYMax meet">
+          <g font-family="Fondamento" text-anchor="left">
+            <rect x="1" y="1" width="176" height="123" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <g id="pj_comp" font-size="3" transform="translate(3,10)" display="non">
+              <g id="pj_comp_title" transform="translate(0,-2)">
+                <text x="0" y="0" font-size="7" font-variant="small-caps">Competences de Base</text>
+              </g>
+              <g id="pj_comp title">
+                <text x="0" y="4" font-size="4" font-variant="small-caps">De Base</text>
+                <text x="32" y="4" font-size="4" textLength="15" font-variant="small-caps">% De Base</text>
+                <text x="55" y="4" font-size="4" font-variant="small-caps">%</text>
+              </g>
+              <g id="pj_comp list" transform="translate(0,6) scale(1, 1)">
+                <g ng:repeat="skill in pj.skills | orderBy:'name'" transform="translate(0,{{ $index*5 }})">
+                  <rect ng-hide="$index % 2" x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <rect ng-show="$index % 2" x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                  {{ skill.name }}
+                    </tspan></text>
+                    <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                  {{ getBase(skill) }}
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                  {{ skill.value }} %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+              </g>
+              <path stroke="black" stroke-width="0.5" d="M 30 0 v 111"/>
+              <path stroke="black" stroke-width="0.5" d="M 50 0 v 111"/>
+              <path stroke="black" stroke-width="0.5" d="M 65 0 v 111"/>
+            </g>
+            <g id="pj_compadv" font-size="3" transform="translate(70,10)" display="non">
+              <g id="pj_comp_title" transform="translate(0,-2)">
+                <text x="0" y="0" font-size="7" font-variant="small-caps">Competences Avancées</text>
+              </g>
+              <g id="pj_comp title">
+                <text x="0" y="4" font-size="4" font-variant="small-caps">Avancées</text>
+                <text x="32" y="4" font-size="4" textLength="15" font-variant="small-caps">% De Base</text>
+                <text x="55" y="4" font-size="4" font-variant="small-caps">%</text>
+              </g>
+              <g id="pj_comp list" transform="translate(0,6) scale(1, 1)">
+                <g id="pj_comp" transform="translate(0,0)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Athlétisme
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    FOR+DEX (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,5)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Bagarre
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    FOR+DEX (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,10)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Chant
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    CHA+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,15)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Conduite
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,20)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Connaisance (Régionale)
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INTx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,25)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Culture (d'Origine)
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INTx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,30)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Danse
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+CHA (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,35)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Discrétion
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+INT (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,40)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Endurance
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    CONx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,45)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Équitation
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,50)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Équitation
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+              </g>
+              <path stroke="black" stroke-width="0.5" d="M 30 0 v 61"/>
+              <path stroke="black" stroke-width="0.5" d="M 50 0 v 61"/>
+              <path stroke="black" stroke-width="0.5" d="M 65 0 v 61"/>
+            </g>
+            <g id="pj_compfg" font-size="3" transform="translate(70,80)" display="non">
+              <g id="pj_comp_title" transform="translate(0,-2)">
+                <text x="0" y="0" font-size="7" font-variant="small-caps">Styles de Combat</text>
+              </g>
+              <g id="pj_comp title">
+                <text x="0" y="4" font-size="4" font-variant="small-caps">De Base</text>
+                <text x="32" y="4" font-size="4" textLength="15" font-variant="small-caps">% De Base</text>
+                <text x="55" y="4" font-size="4" font-variant="small-caps">%</text>
+              </g>
+              <g id="pj_comp list" transform="translate(0,6) scale(1, 1)">
+                <g id="pj_comp" transform="translate(0,0)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Athlétisme
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    FOR+DEX (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,5)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Bagarre
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    FOR+DEX (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,10)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Chant
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    CHA+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,15)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Conduite
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,20)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Connaisance (Régionale)
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INTx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,25)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Culture (d'Origine)
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INTx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,30)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Danse
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+CHA (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+              </g>
+              <path stroke="black" stroke-width="0.5" d="M 30 0 v 41"/>
+              <path stroke="black" stroke-width="0.5" d="M 50 0 v 41"/>
+              <path stroke="black" stroke-width="0.5" d="M 65 0 v 41"/>
+            </g>
+            <g id="pj_grim" font-size="3" transform="translate(140,10)" display="non">
+              <rect x="0" y="0" width="34" rx="2" ry="2" height="112" fill="none" stroke="Black" stroke-width="0.7"/>
+              <text x="3" y="7" font-size="5" font-variant="small-caps">Sorts : </text>
+            </g>
+
+          </g>
+        </svg>
+      </g>
+      <!-- repeat head -->
+      <!-- endrepeat -->
+      <!-- EndHeader -->
+      <!-- Footer -->
+</svg>
+      </div> 
 
     </div> <!-- /container -->
 
