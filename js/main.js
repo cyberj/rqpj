@@ -24,14 +24,14 @@ myApp.factory('pjFactory', function () {
     POU: 0,
     CHA: 0,
   };
-  factory.vars.calc = {}
-  factory.vars.calc.ac = 0
-  factory.vars.calc.md = 0
-  factory.vars.calc.ma = 0
-  factory.vars.calc.mv = "8m"
-  factory.vars.calc.pd = 0
-  factory.vars.calc.pm = 0
-  factory.vars.calc.ra = 0
+  factory.vars.calc = {};
+  factory.vars.calc.ac = 0;
+  factory.vars.calc.md = 0;
+  factory.vars.calc.ma = 0;
+  factory.vars.calc.mv = "8m";
+  factory.vars.calc.pd = 0;
+  factory.vars.calc.pm = 0;
+  factory.vars.calc.ra = 0;
   factory.vars.body = {
     head: {pv: 0, pa: 0},
     chest: {pv: 0, pa: 0},
@@ -40,7 +40,7 @@ myApp.factory('pjFactory', function () {
     larm: {pv: 0, pa: 0},
     rfoot: {pv: 0, pa: 0},
     lfoot: {pv: 0, pa: 0},
-  }
+  };
   factory.vars.edit = false;
   factory.vars.head = {};
   factory.vars.head.name = "";
@@ -82,12 +82,16 @@ myApp.factory('pjFactory', function () {
     localStorage["pjhead"] = JSON.stringify(factory.vars.head);
     localStorage["pjskills"] = JSON.stringify(factory.vars.skills);
     localStorage["pjattributes"] = JSON.stringify(factory.vars.attributes);
+    localStorage["pjcalc"] = JSON.stringify(factory.vars.calc);
+    localStorage["pjbody"] = JSON.stringify(factory.vars.body);
     console.log("Saved");
   };
   factory.load = function () {
     factory.vars.head = JSON.parse(localStorage["pjhead"]);
     factory.vars.skills = JSON.parse(localStorage["pjskills"]);
     factory.vars.attributes = JSON.parse(localStorage["pjattributes"]);
+    factory.vars.calc = JSON.parse(localStorage["pjcalc"]);
+    factory.vars.body = JSON.parse(localStorage["pjbody"]);
     console.log("loaded");
   };
   factory.reset = function () {
@@ -100,6 +104,17 @@ myApp.factory('pjFactory', function () {
     angular.forEach(factory.vars.attributes, function (value, key) {
       factory.vars.attributes[key] = 0;
     });
+    factory.vars.calc.pm = 0;
+    factory.vars.calc.pd = 0;
+    factory.vars.body = {
+      head: {pv: 0, pa: 0},
+      chest: {pv: 0, pa: 0},
+      bide: {pv: 0, pa: 0},
+      rarm: {pv: 0, pa: 0},
+      larm: {pv: 0, pa: 0},
+      rfoot: {pv: 0, pa: 0},
+      lfoot: {pv: 0, pa: 0},
+    }
     angular.forEach(factory.vars.skills, function (value, key) {
       console.log(key);
       delete factory.vars.attributes[key]["base"];
@@ -129,6 +144,9 @@ myApp.factory('pjFactory', function () {
     factory.vars.head.hair = "Noir";
     factory.vars.head.eyes = "Noirs";
     factory.vars.head.weight = "75Kg";
+    factory.vars.body.chest.pa = 1;
+    factory.vars.body.bide.pa = 1;
+    factory.vars.body.head.pa = 1;
   };
   factory.periods = [
     {key: "3days", value: "3 days"},
