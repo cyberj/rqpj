@@ -261,10 +261,10 @@
         <svg x="1" y="134" version="1.1" width="178" height="125" viewBox="0 0 178 125" preserveAspectRatio="xMaxYMax meet">
           <g font-family="Fondamento" text-anchor="left">
             <rect x="1" y="1" width="176" height="123" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
-            <g id="pj_comp_title" transform="translate(4,8)">
-              <text x="0" y="0" font-size="7" font-variant="small-caps">Competences</text>
-            </g>
             <g id="pj_comp" font-size="3" transform="translate(3,10)" display="non">
+              <g id="pj_comp_title" transform="translate(0,-2)">
+                <text x="0" y="0" font-size="7" font-variant="small-caps">Competences de Base</text>
+              </g>
               <g id="pj_comp title">
                 <text x="0" y="4" font-size="4" font-variant="small-caps">De Base</text>
                 <text x="32" y="4" font-size="4" textLength="15" font-variant="small-caps">% De Base</text>
@@ -285,7 +285,7 @@
                   <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
                   <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
                 </g>
-                <g id="pj_comp" transform="translate(0,5)">
+                <g transform="translate(0,5)">
                   <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
                   <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
                     Bagarre
@@ -299,7 +299,7 @@
                   <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
                   <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
                 </g>
-                <g id="pj_comp" transform="translate(0,10)">
+                <g transform="translate(0,10)">
                   <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
                   <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
                     Chant
@@ -313,7 +313,7 @@
                   <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
                   <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
                 </g>
-                <g id="pj_comp" transform="translate(0,15)">
+                <g transform="translate(0,15)">
                   <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
                   <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
                     Conduite
@@ -327,10 +327,534 @@
                   <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
                   <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
                 </g>
+                <g transform="translate(0,20)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Connaisance (Régionale)
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INTx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,25)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Culture (d'Origine)
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INTx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,30)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Danse
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+CHA (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,35)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Discrétion
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+INT (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,40)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Endurance
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    CONx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,45)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Équitation
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,50)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Évaluer
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INT+CHA (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,55)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Évasion
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEXx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,60)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Évaluer
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INT+CHA (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,65)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Force Brute
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+TAI (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,70)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Influence
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    CHAx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,75)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Natation
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    FOR+CON (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,80)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Passe-passe
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+CHA (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,85)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Perception
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INT+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,90)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Persévérance
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    POUx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,95)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Perspicacité
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INT+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,100)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Premiers secours
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INT+DEX (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
               </g>
               <path stroke="black" stroke-width="0.5" d="M 30 0 v 111"/>
               <path stroke="black" stroke-width="0.5" d="M 50 0 v 111"/>
               <path stroke="black" stroke-width="0.5" d="M 65 0 v 111"/>
+            </g>
+            <g id="pj_compadv" font-size="3" transform="translate(70,10)" display="non">
+              <g id="pj_comp_title" transform="translate(0,-2)">
+                <text x="0" y="0" font-size="7" font-variant="small-caps">Competences Avancées</text>
+              </g>
+              <g id="pj_comp title">
+                <text x="0" y="4" font-size="4" font-variant="small-caps">Avancées</text>
+                <text x="32" y="4" font-size="4" textLength="15" font-variant="small-caps">% De Base</text>
+                <text x="55" y="4" font-size="4" font-variant="small-caps">%</text>
+              </g>
+              <g id="pj_comp list" transform="translate(0,6) scale(1, 1)">
+                <g id="pj_comp" transform="translate(0,0)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Athlétisme
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    FOR+DEX (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,5)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Bagarre
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    FOR+DEX (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,10)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Chant
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    CHA+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,15)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Conduite
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,20)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Connaisance (Régionale)
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INTx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,25)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Culture (d'Origine)
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INTx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,30)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Danse
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+CHA (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,35)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Discrétion
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+INT (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,40)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Endurance
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    CONx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,45)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Équitation
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,50)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Équitation
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+              </g>
+              <path stroke="black" stroke-width="0.5" d="M 30 0 v 61"/>
+              <path stroke="black" stroke-width="0.5" d="M 50 0 v 61"/>
+              <path stroke="black" stroke-width="0.5" d="M 65 0 v 61"/>
+            </g>
+            <g id="pj_compfg" font-size="3" transform="translate(70,80)" display="non">
+              <g id="pj_comp_title" transform="translate(0,-2)">
+                <text x="0" y="0" font-size="7" font-variant="small-caps">Styles de Combat</text>
+              </g>
+              <g id="pj_comp title">
+                <text x="0" y="4" font-size="4" font-variant="small-caps">De Base</text>
+                <text x="32" y="4" font-size="4" textLength="15" font-variant="small-caps">% De Base</text>
+                <text x="55" y="4" font-size="4" font-variant="small-caps">%</text>
+              </g>
+              <g id="pj_comp list" transform="translate(0,6) scale(1, 1)">
+                <g id="pj_comp" transform="translate(0,0)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Athlétisme
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    FOR+DEX (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,5)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Bagarre
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    FOR+DEX (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,10)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Chant
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    CHA+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,15)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Conduite
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+POU (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,20)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Connaisance (Régionale)
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INTx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,25)">
+                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Culture (d'Origine)
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    INTx2 (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+                <g transform="translate(0,30)">
+                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
+                    Danse
+                    </tspan></text>
+                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
+                    DEX+CHA (    %)
+                    </tspan></text>
+                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                    %
+                    </tspan></text>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
+                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
+                </g>
+              </g>
+              <path stroke="black" stroke-width="0.5" d="M 30 0 v 41"/>
+              <path stroke="black" stroke-width="0.5" d="M 50 0 v 41"/>
+              <path stroke="black" stroke-width="0.5" d="M 65 0 v 41"/>
+            </g>
+            <g id="pj_grim" font-size="3" transform="translate(140,10)" display="non">
+              <rect x="0" y="0" width="34" rx="2" ry="2" height="112" fill="none" stroke="Black" stroke-width="0.7"/>
+              <text x="3" y="7" font-size="5" font-variant="small-caps">Sorts : </text>
             </g>
 
           </g>
