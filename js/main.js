@@ -79,6 +79,7 @@ myApp.factory('pjFactory', function () {
   ];
   factory.vars.advskills = []
   factory.vars.cmbskills = []
+  factory.vars.div = {}
   // Helpers
   factory.save = function () {
     localStorage["pjhead"] = JSON.stringify(factory.vars.head);
@@ -88,6 +89,7 @@ myApp.factory('pjFactory', function () {
     localStorage["pjattributes"] = JSON.stringify(factory.vars.attributes);
     localStorage["pjcalc"] = JSON.stringify(factory.vars.calc);
     localStorage["pjbody"] = JSON.stringify(factory.vars.body);
+    localStorage["pjdiv"] = JSON.stringify(factory.vars.div);
     console.log("Saved");
   };
   factory.load = function () {
@@ -98,6 +100,7 @@ myApp.factory('pjFactory', function () {
     factory.vars.attributes = JSON.parse(localStorage["pjattributes"]);
     factory.vars.calc = JSON.parse(localStorage["pjcalc"]);
     factory.vars.body = JSON.parse(localStorage["pjbody"]);
+    factory.vars.div = JSON.parse(localStorage["pjdiv"]);
     console.log("loaded");
   };
   factory.reset = function () {
@@ -128,6 +131,7 @@ myApp.factory('pjFactory', function () {
     });
     factory.vars.advskills = []
     factory.vars.cmbskills = []
+    factory.vars.div = {}
     console.log("reset");
   };
   factory.example = function () {
@@ -155,14 +159,20 @@ myApp.factory('pjFactory', function () {
     factory.vars.body.chest.pa = 1;
     factory.vars.body.bide.pa = 1;
     factory.vars.body.head.pa = 1;
+    factory.vars.body.larm.pa = 1;
+    factory.vars.body.rarm.pa = 1;
+    factory.vars.advskills = [
+      {name: "Empathie", init:["CHA", "POU"], value:45, base: 26},
+      {name: "Conn (Le mur)", init:["INT", "INT"], value:60, base: 20},
+    ];
+    factory.vars.cmbskills = [
+      {name: "Épée a deux mains", init:["FOR", "DEX"], value:65, base: 26},
+    ];
+    factory.vars.div.armor = [
+      {name: "Cuir souple"},
+    ]
+
   };
-  factory.vars.advskills = [
-    {name: "Empathie", init:["CHA", "POU"], value:45, base: 26},
-    {name: "Conn (Le mur)", init:["INT", "INT"], value:60, base: 20},
-  ];
-  factory.vars.cmbskills = [
-    {name: "Épée a deux mains", init:["FOR", "DEX"], value:65, base: 26},
-  ];
   factory.cons = {};
   factory.cons.attrs = [
     "FOR", "CON", "DEX", "TAI", "INT", "POU", "CHA",
