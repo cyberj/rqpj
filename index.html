@@ -267,10 +267,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr ng-repeat="skill in vars.advskills | orderBy:'name'">
+                  <tr ng-repeat="skill in pj.advskills | orderBy:'name'">
                     <td>{{ skill.name }}</td>
                     <td>
-                      <div ng-show="vars.edit"><i ng-click="delete pj.advskills[$index]" class="icon-remove"></i></div>
+                      <div ng-show="vars.edit"><i ng-click="pj.advskills.pop($index)" class="icon-remove"></i></div>
                       <!--<div ng-hide="vars.edit">{{ getBase(skill) }}</div>-->
                       {{ getBase(skill) }}
                     </td>
@@ -290,6 +290,42 @@
                       </select>
                     </td>
                     <td>{{ pj.attributes[newskill.base1] + pj.attributes[newskill.base2] }} % <i ng-click="addSkill()" class="icon-plus"></i> </td>
+                  </tr>
+                </tbody>
+              </table>
+              <h4>Styles de combat</h4>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Style de combat</th>
+                    <th>% de Base</th>
+                    <th>Score Actuel</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="skill in pj.cmbskills | orderBy:'name'">
+                    <td>{{ skill.name }}</td>
+                    <td>
+                      <div ng-show="vars.edit"><i ng-click="pj.cmbskills.pop($index)" class="icon-remove"></i></div>
+                      <!--<div ng-hide="vars.edit">{{ getBase(skill) }}</div>-->
+                      {{ getBase(skill) }}
+                    </td>
+                    <td>
+                      <div ng-show="!vars.edit">{{ skill.value }}%</div>
+                      <div ng-show="vars.edit" class="input-append"><input ng-model="skill.value" type="number" class="input-mini">%<span class="add-on">%</span></div>
+                    </td>
+                  </tr>
+                  <tr id="cmbSkill" ng-show="vars.edit">
+                    <td>
+                      <input ng-model="newcskill.name" type="text" class="input-small">
+                    </td>
+                    <td>
+                      <select class="input-small" ng-model="newcskill.base1" default="FOR" ng-options="c for c in cons.attrs">
+                      </select>
+                      <select class="input-small" ng-model="newcskill.base2" default="FOR" ng-options="c for c in cons.attrs">
+                      </select>
+                    </td>
+                    <td>{{ pj.attributes[newsckill.base1] + pj.attributes[newsckill.base2] }} % <i ng-click="addcSkill()" class="icon-plus"></i> </td>
                   </tr>
                 </tbody>
               </table>
@@ -624,156 +660,16 @@
                 <text x="55" y="4" font-size="4" font-variant="small-caps">%</text>
               </g>
               <g id="pj_comp list" transform="translate(0,6) scale(1, 1)">
-                <g id="pj_comp" transform="translate(0,0)">
+                <g ng:repeat="skill in pj.advskills | orderBy:'name'" transform="translate(0,{{ $index*5 }})">
                   <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
                   <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Athlétisme
+                  {{ skill.name }}
                     </tspan></text>
                   <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    FOR+DEX (    %)
+                  {{ getBase(skill) }}
                     </tspan></text>
                   <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,5)">
-                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Bagarre
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    FOR+DEX (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,10)">
-                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Chant
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    CHA+POU (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,15)">
-                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Conduite
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    DEX+POU (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,20)">
-                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Connaisance (Régionale)
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    INTx2 (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,25)">
-                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Culture (d'Origine)
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    INTx2 (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,30)">
-                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Danse
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    DEX+CHA (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,35)">
-                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Discrétion
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    DEX+INT (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,40)">
-                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Endurance
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    CONx2 (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,45)">
-                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Équitation
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    DEX+POU (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,50)">
-                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Équitation
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    DEX+POU (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
+                  {{ skill.value }} %
                     </tspan></text>
                   <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
                   <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
@@ -793,100 +689,16 @@
                 <text x="55" y="4" font-size="4" font-variant="small-caps">%</text>
               </g>
               <g id="pj_comp list" transform="translate(0,6) scale(1, 1)">
-                <g id="pj_comp" transform="translate(0,0)">
+                <g ng:repeat="skill in pj.cmbskills | orderBy:'name'" transform="translate(0,{{ $index*5 }})">
                   <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
                   <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Athlétisme
+                  {{ skill.name }}
                     </tspan></text>
                   <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    FOR+DEX (    %)
+                  {{ getBase(skill) }}
                     </tspan></text>
                   <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,5)">
-                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Bagarre
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    FOR+DEX (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,10)">
-                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Chant
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    CHA+POU (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,15)">
-                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Conduite
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    DEX+POU (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,20)">
-                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Connaisance (Régionale)
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    INTx2 (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,25)">
-                  <rect x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Culture (d'Origine)
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    INTx2 (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
-                    </tspan></text>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
-                  <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>
-                </g>
-                <g transform="translate(0,30)">
-                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
-                  <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
-                    Danse
-                    </tspan></text>
-                  <text x="32" y="0" font-size="2"><tspan dy="3.5">
-                    DEX+CHA (    %)
-                    </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
-                    %
+                  {{ skill.value }} %
                     </tspan></text>
                   <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
                   <path stroke="grey" stroke-width="0.25" d="M 0 5 h 65"/>

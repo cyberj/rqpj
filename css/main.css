@@ -71,6 +71,9 @@ body {
 #advSkill input {
   text-align: left;
 }
+#cmbSkill input {
+  text-align: left;
+}
 #charStats label p {
   display: inline;
   margin-left: 2em;

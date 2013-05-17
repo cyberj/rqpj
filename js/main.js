@@ -78,11 +78,13 @@ myApp.factory('pjFactory', function () {
     {name: "Premiers soins", init:["INT", "DEX"]},
   ];
   factory.vars.advskills = []
+  factory.vars.cmbskills = []
   // Helpers
   factory.save = function () {
     localStorage["pjhead"] = JSON.stringify(factory.vars.head);
     localStorage["pjskills"] = JSON.stringify(factory.vars.skills);
     localStorage["pjadvskills"] = JSON.stringify(factory.vars.advskills);
+    localStorage["pjcmbskills"] = JSON.stringify(factory.vars.cmbskills);
     localStorage["pjattributes"] = JSON.stringify(factory.vars.attributes);
     localStorage["pjcalc"] = JSON.stringify(factory.vars.calc);
     localStorage["pjbody"] = JSON.stringify(factory.vars.body);
@@ -92,6 +94,7 @@ myApp.factory('pjFactory', function () {
     factory.vars.head = JSON.parse(localStorage["pjhead"]);
     factory.vars.skills = JSON.parse(localStorage["pjskills"]);
     factory.vars.advskills = JSON.parse(localStorage["pjadvskills"]);
+    factory.vars.cmbskills = JSON.parse(localStorage["pjcmbkills"]);
     factory.vars.attributes = JSON.parse(localStorage["pjattributes"]);
     factory.vars.calc = JSON.parse(localStorage["pjcalc"]);
     factory.vars.body = JSON.parse(localStorage["pjbody"]);
@@ -124,6 +127,7 @@ myApp.factory('pjFactory', function () {
       delete factory.vars.attributes[key]["value"];
     });
     factory.vars.advskills = []
+    factory.vars.cmbskills = []
     console.log("reset");
   };
   factory.example = function () {
@@ -155,7 +159,10 @@ myApp.factory('pjFactory', function () {
   factory.vars.advskills = [
     {name: "Empathie", init:["CHA", "POU"], value:45, base: 26},
     {name: "Conn (Le mur)", init:["INT", "INT"], value:60, base: 20},
-  ]
+  ];
+  factory.vars.cmbskills = [
+    {name: "Épée a deux mains", init:["FOR", "DEX"], value:65, base: 26},
+  ];
   factory.cons = {};
   factory.cons.attrs = [
     "FOR", "CON", "DEX", "TAI", "INT", "POU", "CHA",
@@ -179,6 +186,7 @@ myApp.controller('skillsCtrl', function ($scope, pjFactory) {
   $scope.vars = pjFactory.vars;
   $scope.pj = pjFactory.vars;
   $scope.newskill = {base1:"FOR", base2:"FOR"};
+  $scope.newcskill = {base1:"FOR", base2:"DEX"};
   $scope.getBase = function (skill) {
     var base = $scope.vars.attributes[skill.init[0]]+$scope.vars.attributes[skill.init[1]];
     var text = "";
@@ -201,6 +209,18 @@ myApp.controller('skillsCtrl', function ($scope, pjFactory) {
     $scope.pj.advskills.push(nskill);
     $scope.newskill = {base1:"FOR", base2:"FOR"};
     
+  };
+  $scope.addcSkill = function () {
+    ncskill = {name: $scope.newcskill.name, init: [$scope.newcskill.base1, $scope.newcskill.base2]}
+    $scope.pj.cmbskills.push(ncskill);
+    $scope.newcskill = {base1:"FOR", base2:"DEX"};
+    
+  };
+  $scope.rmSkill = function (index) {
+    $scope.pj.advskills.pop(index);
+  };
+  $scope.rmcSkill = function (index) {
+    $scope.pj.cmbskills.pop(index);
   };
 });
 
