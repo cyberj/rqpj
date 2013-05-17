@@ -152,6 +152,10 @@ myApp.factory('pjFactory', function () {
     factory.vars.body.bide.pa = 1;
     factory.vars.body.head.pa = 1;
   };
+  factory.vars.advskills = [
+    {name: "Empathie", init:["CHA", "POU"], value:45, base: 26},
+    {name: "Conn (Le mur)", init:["INT", "INT"], value:60, base: 20},
+  ]
   factory.cons = {};
   factory.cons.attrs = [
     "FOR", "CON", "DEX", "TAI", "INT", "POU", "CHA",
