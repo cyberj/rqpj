@@ -1,9 +1,6 @@
 .dynamic {
   display: none;
 }
-.dynamic #charHead {
-  display: block;
-}
 hr {
   display: none;
 }
