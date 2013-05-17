@@ -28,7 +28,7 @@ myApp.factory('pjFactory', function () {
   factory.vars.calc.ac = 0;
   factory.vars.calc.md = 0;
   factory.vars.calc.ma = 0;
-  factory.vars.calc.mv = "8m";
+  factory.vars.calc.mv = "";
   factory.vars.calc.pd = 0;
   factory.vars.calc.pm = 0;
   factory.vars.calc.ra = 0;
@@ -115,6 +115,7 @@ myApp.factory('pjFactory', function () {
     });
     factory.vars.calc.pm = 0;
     factory.vars.calc.pd = 0;
+    factory.vars.calc.mv = "";
     factory.vars.body = {
       head: {pv: 0, pa: 0},
       chest: {pv: 0, pa: 0},
@@ -125,12 +126,14 @@ myApp.factory('pjFactory', function () {
       lfoot: {pv: 0, pa: 0},
     }
     angular.forEach(factory.vars.skills, function (value, key) {
-      console.log(key);
-      delete factory.vars.attributes[key]["base"];
-      delete factory.vars.attributes[key]["value"];
+      obj = factory.vars.attributes[key];
+      if (obj) {
+        delete factory.vars.attributes[key]["base"];
+        delete factory.vars.attributes[key]["value"];
+      };
     });
-    factory.vars.advskills = []
-    factory.vars.cmbskills = []
+    factory.vars.advskills.length = 0;
+    factory.vars.cmbskills.length = 0;
     factory.vars.div = {}
     console.log("reset");
   };
@@ -156,6 +159,7 @@ myApp.factory('pjFactory', function () {
     factory.vars.head.hair = "Noir";
     factory.vars.head.eyes = "Noirs";
     factory.vars.head.weight = "75Kg";
+    factory.vars.calc.mv = "8m";
     factory.vars.body.chest.pa = 1;
     factory.vars.body.bide.pa = 1;
     factory.vars.body.head.pa = 1;
@@ -270,10 +274,10 @@ myApp.controller('svgCtrl', function ($scope, pjFactory) {
         "+1D2", "+1D4", "+1D6", "+1D8", "+1D10", "+1D12",
         "+2D6", "+2D8", "+2D10", "+2D12",
         ];
-      dm = dicetable[Math.floor((newval.FOR + newval.TAI) / 5)];
-      $scope.pj.calc.dm = dm;
+      md = dicetable[Math.floor((newval.FOR + newval.TAI) / 5)];
+      $scope.pj.calc.md = md;
     } else {
-      $scope.pj.calc.dm = "+0"
+      $scope.pj.calc.md = "";
     };
     // Modificateur d'amélioration
     if (newval.CHA) { 
@@ -306,6 +310,18 @@ myApp.controller('svgCtrl', function ($scope, pjFactory) {
         $scope.pj.body.rfoot.pv = Math.ceil((contai-5)/5);
         $scope.pj.body.lfoot.pv = Math.ceil((contai-5)/5);
       };
+    } else {
+      $scope.pj.body.head.pv = 0;
+      $scope.pj.body.chest.pv = 0;
+      $scope.pj.body.bide.pv = 0;
+      $scope.pj.body.rarm.pv = 0;
+      $scope.pj.body.larm.pv = 0;
+    };
+    // Rang d'action
+    if (newval.DEX || newval.INT) { 
+      $scope.pj.calc.ra = Math.ceil((newval.INT+newval.DEX)/2);
+    } else { 
+      $scope.pj.calc.ra = 0;
     };
   }, true);
   
@@ -338,6 +354,10 @@ myApp.controller('svgCtrl', function ($scope, pjFactory) {
     } else {
       text = skill.init[0]+"+"+skill.init[1];
     };
-    return text + " ("+base+"%)"
+    if (base != 0) {
+      return text + " ("+base+"%)";
+    } else { 
+      return text
+    };
   };
 });

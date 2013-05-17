@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+  <svg version="1.1" width="180mm" height="250mm" viewBox="0 0 180 250"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+
+  <defs>
+  <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+  <rect fill="black" x="0" y="0" width="5" height="5" opacity="0.1"/>
+  <rect fill="white" x="5" y="0" width="5" height="5"/>
+  <rect fill="black" x="5" y="5" width="5" height="5" opacity="0.1"/>
+  <rect fill="white" x="0" y="5" width="5" height="5"/>
+  </pattern>
+
+</defs>
+      <desc>Hand drawn sequence diagram</desc>
+      <g font-family="Fondamento" text-anchor="left">
+        <!-- draw user boxes and the vertical lines -->
+        <!--
+        <rect x="4" y="4" rx="20" ry="20" width="150" height="150" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+        -->
+        <path stroke="blue" fill="url(#grid)" d="M 0 0 180 0 180 250 0 250 0 0"/>
+        <!-- Header -->
+        <svg x="1" y="0" version="1.1" width="178" height="34" viewBox="0 0 178 34" preserveAspectRatio="xMaxYMax meet">
+          <g font-family="Fondamento" text-anchor="left">
+            <rect x="1" y="1" width="176" height="28" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <!-- Logo -->
+            <g id="Logo" stroke="black" fill="white" font-weight="" stroke-width="0.3" font-variant="small-caps" lengthAdjust="spacingAndGlyphs">
+              <text x="5" y="22" font-size="25" textLength="13">R</text>
+              <text x="19" y="20" font-size="15" textLength="57">uneQuest</text>
+              <text x="75" y="22" font-size="25" textLength="13">II</text>
+            </g>
+            <g id="pj_head_name">
+              <text x="100" y="10" font-size="5"><tspan dy="-1">Jon</tspan></text>
+              <path stroke="black" stroke-width="0.5" d="M 100 10 h 70"/>
+              <text x="100" y="10" font-size="3" font-variant="small-caps"><tspan dy="3">Nom</tspan></text>
+            </g>
+            <g id="pj_head_player">
+              <text x="100" y="22" font-size="5"><tspan dy="-1">Johan</tspan></text>
+              <path stroke="black" stroke-width="0.5" d="M 100 22 h 30"/>
+              <text x="100" y="22" font-size="3" font-variant="small-caps"><tspan dy="3">Joueur</tspan></text>
+            </g>
+            <g id="pj_head_family">
+              <text x="135" y="22" font-size="5"><tspan dy="-1">Starck</tspan></text>
+              <path stroke="black" stroke-width="0.5" d="M 135 22 h 30"/>
+              <text x="135" y="22" font-size="3" font-variant="small-caps"><tspan dy="3">Famille</tspan></text>
+            </g>
+          </g>
+        </svg>
+        <!-- Armes -->
+        <svg x="1" y="29" version="1.1" width="178" height="50" viewBox="0 0 178 50" preserveAspectRatio="xMaxYMax meet">
+          <g font-family="Fondamento" text-anchor="left">
+            <rect x="1" y="1" width="176" height="30" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <g>
+              <g font-variant="small-caps" font-size="4" transform="translate(0,5)" lengthAdjust="spacingAndGlyphs">
+                <text x="10" y="0">Arme</text>
+                <text x="35" y="0" textLength="9">Taille</text>
+                <text x="46" y="0" textLength="11">Allonge</text>
+                <text x="60" y="0" textLength="15">Dommages</text>
+                <text x="80" y="0" font-size="3.5">PA</text>
+                <text x="88" y="0" font-size="3.5">PV</text>
+                <text x="95" y="0" textLength="35">Manoeuvres de Combat</text>
+                <text x="132" y="0">Portée</text>
+                <text x="145" y="0">Recharge</text>
+                <text x="163" y="0" font-size="3.5">ENC</text>
+                <path stroke="grey" stroke-width="0.25" d="M 34 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 45 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 59 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 79 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 86 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 94 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 131 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 144 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 162 -3 v 26"/>
+                <path stroke="black" stroke-width="0.25" d="M 5 2 h 170"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <!-- Fatigue -->
+        <svg x="1" y="60" version="1.1" width="178" height="47" viewBox="0 0 178 47" preserveAspectRatio="xMaxYMax meet">
+          <g font-family="Fondamento" text-anchor="left">
+            <rect x="1" y="1" width="176" height="46" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <g id="pj_stats_title" transform="translate(3,9)">
+              <text x="0" y="0" font-size="6" font-variant="small-caps">Fatigue</text>
+            </g>
+            <g id="pj_grim" font-size="3" transform="translate(115,5)" display="non">
+              <rect x="0" y="0" width="54" rx="2" ry="2" height="39" fill="none" stroke="Black" stroke-width="0.7"/>
+              <text x="3" y="7" font-size="5" font-variant="small-caps">Maladie, Poisons, Santé</text>
+            </g>
+          </g>
+        </svg>
+        <!-- Stuff -->
+        <svg x="1" y="107" version="1.1" width="178" height="69" viewBox="0 0 178 69" preserveAspectRatio="xMaxYMax meet">
+          <g font-family="Fondamento" text-anchor="left">
+            <rect x="1" y="1" width="176" height="68" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <g id="pj_grim" font-size="3" transform="translate(90,5)" display="non">
+              <rect x="0" y="0" width="80" rx="2" ry="2" height="20" fill="none" stroke="Black" stroke-width="0.7"/>
+              <text x="3" y="7" font-size="5" font-variant="small-caps">Argent, Richesse et Possessions</text>
+            </g>
+            <g id="pj_grim" font-size="3" transform="translate(90,29)" display="non">
+              <rect x="0" y="0" width="80" rx="2" ry="2" height="35" fill="none" stroke="Black" stroke-width="0.7"/>
+              <text x="3" y="7" font-size="5" font-variant="small-caps">Contacts, Amis, Ennemis et Rivaux</text>
+            </g>
+            <g font-variant="small-caps" font-size="4" transform="translate(0,8)">
+              <text x="10" y="0">Équipement</text>
+              <text x="70" y="0" font-size="3.5">ENC</text>
+              <path stroke="black" stroke-width="0.25" d="M 65 -3 v 57"/>
+              <path stroke="black" stroke-width="0.25" d="M 5 2 h 78"/>
+            </g>
+          </g>
+        </svg>
+        <!-- Notes -->
+        <svg x="1" y="176" version="1.1" width="178" height="69" viewBox="0 0 178 69" preserveAspectRatio="xMaxYMax meet">
+          <g font-family="Fondamento" text-anchor="left">
+            <rect x="1" y="1" width="176" height="68" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <g id="pj_grim" font-size="3" transform="translate(5,5)" display="non">
+              <rect x="0" y="0" width="165" rx="2" ry="2" height="60" fill="none" stroke="Black" stroke-width="0.7"/>
+              <text x="3" y="7" font-size="5" font-variant="small-caps">Notes</text>
+            </g>
+          </g>
+        </svg>
+      </g>
+      <!-- repeat head -->
+      <!-- endrepeat -->
+      <!-- EndHeader -->
+      <!-- Footer -->
+</svg>

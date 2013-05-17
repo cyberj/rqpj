@@ -16,7 +16,8 @@
   </head>
   <body>
 
-    <div class="container" ng-app="myApp">
+    <div ng-app="myApp">
+    <div class="container">
       <div class="dynamic">
         <!-- Example row of columns -->
         <div id="charHead" class="block form-horizontal" ng-controller="headCtrl">
@@ -143,7 +144,7 @@
             </div>
             <div class="span2">
               <label>Actions de Combat <p>{{ pj.calc.ac }}</p></label>
-              <label>Mouvement <p>{{ pj.calc.mv }}</p></label>
+              <label>Mouvement <p ng-show="!vars.edit">{{ pj.calc.mv }}</p><input ng-show="vars.edit" ng-model="pj.calc.mv" type="text" class="input-mini"></label>
             </div>
             <div class="span2">
               <label>Mod de dommage <p>{{ pj.calc.md }}</p></label>
@@ -156,7 +157,7 @@
             <div class="span3">
               <!--<label>Point d'Héroïsme <input type="number" class="input-mini"></label>-->
               <label>Pénalité d'armure <p>{{ pj.calc.pa }}</p></label>
-              <label>Rang d'Action <p>{{ pj.calc.dm }}</p></label>
+              <label>Rang d'Action <p>{{ pj.calc.ra }}</p></label>
             </div>
           </div>
           <div class="row-fluid" id="attributes">
@@ -353,33 +354,32 @@
           </div>
         </div> 
       </div>
+    </div>
 
 
-      <hr>
-      <div class="magicsvg" ng-controller="svgCtrl"> 
-    <svg  width="180mm" height="260mm" version="1.1" viewBox="0 0 180 260"
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
->
+      <div class="magicsvg" ng-controller="svgCtrl"><div class="page1 page"> 
+        <svg  width="180mm" height="260mm" version="1.1" viewBox="0 0 180 260"
+             xmlns:dc="http://purl.org/dc/elements/1.1/"
+             xmlns:cc="http://creativecommons.org/ns#"
+             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+             xmlns:svg="http://www.w3.org/2000/svg"
+             xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
 
-      <defs>
-    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-      <rect fill="black" x="0" y="0" width="5" height="5" opacity="0.1"/>
-      <rect fill="white" x="5" y="0" width="5" height="5"/>
-      <rect fill="black" x="5" y="5" width="5" height="5" opacity="0.1"/>
-      <rect fill="white" x="0" y="5" width="5" height="5"/>
-    </pattern>
+        <defs>
+        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+          <rect fill="black" x="0" y="0" width="5" height="5" opacity="0.1"/>
+          <rect fill="white" x="5" y="0" width="5" height="5"/>
+          <rect fill="black" x="5" y="5" width="5" height="5" opacity="0.1"/>
+          <rect fill="white" x="0" y="5" width="5" height="5"/>
+        </pattern>
 
-</defs>
+        </defs>
       <desc>Hand drawn sequence diagram</desc>
       <g font-family="Fondamento" text-anchor="left">
         <!-- draw user boxes and the vertical lines -->
         <!--
-        <rect x="4" y="4" rx="20" ry="20" width="150" height="150" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
         -->
         <path stroke="blue" fill="url(#grid)" d="M 0 0 180 0 180 260 0 260 0 0"/>
         <!-- Header -->
@@ -425,7 +425,7 @@
                 <text x="35" y="5" font-size="3" font-variant="small-caps"><tspan dy="3">Age</tspan></text>
               </g>
               <g id="pj_head_sex">
-                <text x="50" y="5" font-size="4"><tspan dy="-1">{{ pj.head.sex }}M</tspan></text>
+                <text x="50" y="5" font-size="4"><tspan dy="-1">{{ pj.head.sex }}</tspan></text>
                 <path stroke="black" stroke-width="0.5" d="M 50 5 h 10"/>
                 <text x="50" y="5" font-size="3" font-variant="small-caps"><tspan dy="3">Sexe</tspan></text>
               </g>
@@ -476,72 +476,72 @@
               <g id="pj_stats_for">
                 <path stroke="black" stroke-width="0.5" d="M 0 10 h 18"/>
                 <text x="0" y="10"><tspan dy="-3">FOR</tspan></text>
-                <text x="13" y="10"><tspan dy="-3">{{ pj.attributes.FOR }}</tspan></text>
+                <text x="13" y="10"><tspan ng-show="pj.attributes.FOR != 0" dy="-3">{{ pj.attributes.FOR }}</tspan></text>
               </g>
               <g id="pj_stats_con">
                 <path stroke="black" stroke-width="0.5" d="M 0 18 h 18"/>
                 <text x="0" y="18"><tspan dy="-3">CON</tspan></text>
-                <text x="13" y="18"><tspan dy="-3">{{ pj.attributes.CON }}</tspan></text>
+                <text x="13" y="18"><tspan ng-show="pj.attributes.CON != 0" dy="-3">{{ pj.attributes.CON }}</tspan></text>
               </g>
               <g id="pj_stats_tai">
                 <path stroke="black" stroke-width="0.5" d="M 0 26 h 18"/>
                 <text x="0" y="26"><tspan dy="-3">TAI</tspan></text>
-                <text x="13" y="26"><tspan dy="-3">{{ pj.attributes.TAI }}</tspan></text>
+                <text x="13" y="26"><tspan ng-show="pj.attributes.TAI != 0" dy="-3">{{ pj.attributes.TAI }}</tspan></text>
               </g>
               <g id="pj_stats_int">
                 <path stroke="black" stroke-width="0.5" d="M 0 34 h 18"/>
                 <text x="0" y="34"><tspan dy="-3">INT</tspan></text>
-                <text x="13" y="34"><tspan dy="-3">{{ pj.attributes.INT }}</tspan></text>
+                <text x="13" y="34"><tspan ng-show="pj.attributes.INT != 0" dy="-3">{{ pj.attributes.INT }}</tspan></text>
               </g>
               <g id="pj_stats_pou">
                 <path stroke="black" stroke-width="0.5" d="M 0 42 h 18"/>
                 <text x="0" y="42"><tspan dy="-3">POU</tspan></text>
-                <text x="13" y="42"><tspan dy="-3">{{ pj.attributes.POU }}</tspan></text>
+                <text x="13" y="42"><tspan ng-show="pj.attributes.POU != 0" dy="-3">{{ pj.attributes.POU }}</tspan></text>
               </g>
               <g id="pj_stats_dex">
                 <path stroke="black" stroke-width="0.5" d="M 0 50 h 18"/>
                 <text x="0" y="50"><tspan dy="-3">DEX</tspan></text>
-                <text x="13" y="50"><tspan dy="-3">{{ pj.attributes.DEX }}</tspan></text>
+                <text x="13" y="50"><tspan ng-show="pj.attributes.DEX != 0" dy="-3">{{ pj.attributes.DEX }}</tspan></text>
               </g>
               <g id="pj_stats_cha">
                 <text x="0" y="58"><tspan dy="-3">CHA</tspan></text>
-                <text x="13" y="58"><tspan dy="-3">{{ pj.attributes.CHA }}</tspan></text>
+                <text x="13" y="58"><tspan ng-show="pj.attributes.CHA != 0" dy="-3">{{ pj.attributes.CHA }}</tspan></text>
               </g>
             </g>
             <g id="pj_attr" transform="translate(26,10)" font-size="4" font-variant="small-caps" font-weight="bol"  lengthAdjust="spacingAndGlyphs">
               <g id="pj_attr_ac">
                 <path stroke="black" stroke-width="0.5" d="M 0 10 h 65"/>
                 <text x="0" y="10"><tspan dy="-3">Actions de combat</tspan></text>
-                <text x="60" y="10" text-anchor="middle"><tspan dy="-3">{{ pj.calc.ac }}</tspan></text>
+                <text x="60" y="10" text-anchor="middle"><tspan ng-show="pj.calc.ac != 0" dy="-3">{{ pj.calc.ac }}</tspan></text>
               </g>
               <g id="pj_attr_md">
                 <path stroke="black" stroke-width="0.5" d="M 0 18 h 65"/>
                 <text x="0" y="18"><tspan font-size="4" textLengt="50" dy="-3">Modificateur de Dommages</tspan></text>
-                <text x="60" y="18" text-anchor="middle"><tspan dy="-3">{{ pj.calc.md }}</tspan></text>
+                <text x="60" y="18" text-anchor="middle"><tspan ng-show="pj.calc.md != ''" dy="-3">{{ pj.calc.md }}</tspan></text>
               </g>
               <g id="pj_attr_ma">
                 <path stroke="black" stroke-width="0.5" d="M 0 26 h 65"/>
                 <text x="0" y="26"><tspan font-size="4" textLengt="50" dy="-3">Modificateur D'amélioration</tspan></text>
-                <text x="60" y="26" text-anchor="middle"><tspan dy="-3">{{ pj.calc.ma }}</tspan></text>
+                <text x="60" y="26" text-anchor="middle"><tspan ng-show="pj.calc.ma != 0" dy="-3">{{ pj.calc.ma }}</tspan></text>
               </g>
               <g id="pj_attr_mv">
                 <path stroke="black" stroke-width="0.5" d="M 0 34 h 65"/>
                 <text x="0" y="34"><tspan dy="-3">Mouvement</tspan></text>
-                <text x="60" y="34" text-anchor="middle"><tspan dy="-3">{{ pj.calc.mv }}</tspan></text>
+                <text x="60" y="34" text-anchor="middle"><tspan ng-show="pj.calc.mv != mv" dy="-3">{{ pj.calc.mv }}</tspan></text>
               </g>
               <g id="pj_attr_pd">
                 <path stroke="black" stroke-width="0.5" d="M 0 42 h 65"/>
                 <text x="0" y="42"><tspan dy="-3">Pouvoir dédié</tspan></text>
-                <text x="60" y="42" text-anchor="middle"><tspan dy="-3">{{ pj.calc.pd  }}</tspan></text>
+                <text x="60" y="42" text-anchor="middle"><tspan ng-show="pj.calc.pd != 0" dy="-3">{{ pj.calc.pd  }}</tspan></text>
               </g>
               <g id="pj_attr_pm">
                 <path stroke="black" stroke-width="0.5" d="M 0 50 h 65"/>
                 <text x="0" y="50"><tspan dy="-3">Points de magie</tspan></text>
-                <text x="60" y="50" text-anchor="middle"><tspan dy="-3">{{ pj.calc.pm }}</tspan></text>
+                <text x="60" y="50" text-anchor="middle"><tspan ng-show="pj.calc.pm != 0" dy="-3">{{ pj.calc.pm }}</tspan></text>
               </g>
               <g id="pj_attr_ra">
                 <text x="0" y="58"><tspan dy="-3">Rang d'action</tspan></text>
-                <text x="60" y="58" text-anchor="middle"><tspan dy="-3">{{ pj.calc.ra }}</tspan></text>
+                <text x="60" y="58" text-anchor="middle"><tspan ng-show="pj.calc.ra != 0" dy="-3">{{ pj.calc.ra }}</tspan></text>
               </g>
             </g>
             <!-- Man -->
@@ -576,44 +576,64 @@
 
               <g id="man_head" font-size="3" font-variant="small-caps">
                 <text x="40" y="10"><tspan font-weight="bold">19-20</tspan>: Tête</text>
-                <text x="47" y="15" text-anchor="middle" font-size="5">{{ pj.body.head.pa }}<tspan font-weight="bold"> / </tspan>{{ pj.body.head.pv }}</text>
+                <text x="47" y="15" text-anchor="middle" font-size="5">
+                  <tspan ng-show="pj.body.head.pa">{{ pj.body.head.pa }}</tspan><tspan font-weight="bold"> / </tspan>
+                  <tspan ng-show="pj.body.head.pv">{{ pj.body.head.pv }}</tspan></text>
               </g>
               <g id="man_torso" text-anchor="middle" font-size="3" font-variant="small-caps">
                 <text x="33" y="20"><tspan font-weight="bold">10-12:</tspan></text>
                 <text x="33" y="23">Poitrine</text>
-                <text x="33" y="28" font-size="5">{{ pj.body.chest.pa }}<tspan font-weight="bold"> / </tspan>{{ pj.body.chest.pv }}</text>
+                <text x="33" y="28" font-size="5">
+                  <tspan ng-show="pj.body.chest.pa">{{ pj.body.chest.pa }}</tspan><tspan font-weight="bold"> / </tspan>
+                  <tspan ng-show="pj.body.chest.pv">{{ pj.body.chest.pv }}</tspan></text>
+                </text>
               </g>
               <g id="man_bide" text-anchor="middle" font-size="3" font-variant="small-caps">
                 <text x="33" y="38"><tspan font-weight="bold">07-09:</tspan></text>
                 <text x="33" y="41">Ventre</text>
-                <text x="33" y="46" font-size="5">{{ pj.body.bide.pa }}<tspan font-weight="bold"> / </tspan>{{ pj.body.bide.pv }}</text>
+                <text x="33" y="46" font-size="5">
+                  <tspan ng-show="pj.body.bide.pa">{{ pj.body.bide.pa }}</tspan><tspan font-weight="bold"> / </tspan>
+                  <tspan ng-show="pj.body.bide.pv">{{ pj.body.bide.pv }}</tspan></text>
+                </text>
               </g>
               <g id="man_ra" font-size="3" font-variant="small-caps">
                 <text x="10" y="42"><tspan font-weight="bold">13-15:</tspan></text>
                 <text x="10" y="46">Bras D.</text>
-                <text x="10" y="51" font-size="5">{{ pj.body.rarm.pa }}<tspan font-weight="bold"> / </tspan>{{ pj.body.rarm.pv }}</text>
+                <text x="10" y="51" font-size="5">
+                  <tspan ng-show="pj.body.rarm.pa">{{ pj.body.rarm.pa }}</tspan><tspan font-weight="bold"> / </tspan>
+                  <tspan ng-show="pj.body.rarm.pv">{{ pj.body.rarm.pv }}</tspan></text>
+                </text>
               </g>
               <g id="man_la" text-anchor="end" font-size="3" font-variant="small-caps">
                 <text x="58" y="42"><tspan font-weight="bold">16-18:</tspan></text>
                 <text x="58" y="46">Bras G.</text>
-                <text x="58" y="51" font-size="5">{{ pj.body.larm.pa }}<tspan font-weight="bold"> / </tspan>{{ pj.body.larm.pv }}</text>
+                <text x="58" y="51" font-size="5">
+                  <tspan ng-show="pj.body.larm.pa">{{ pj.body.larm.pa }}</tspan><tspan font-weight="bold"> / </tspan>
+                  <tspan ng-show="pj.body.larm.pv">{{ pj.body.larm.pv }}</tspan></text>
+                </text>
               </g>
               <g id="man_rf" font-size="3" font-variant="small-caps">
                 <text x="12" y="66"><tspan font-weight="bold">01-03:</tspan></text>
                 <text x="12" y="70">Jambe D.</text>
-                <text x="12" y="75" font-size="5">{{ pj.body.rfoot.pa }}<tspan font-weight="bold"> / </tspan>{{ pj.body.rfoot.pv }}</text>
+                <text x="12" y="75" font-size="5">
+                  <tspan ng-show="pj.body.rfoot.pa">{{ pj.body.rfoot.pa }}</tspan><tspan font-weight="bold"> / </tspan>
+                  <tspan ng-show="pj.body.rfoot.pv">{{ pj.body.rfoot.pv }}</tspan></text>
+                </text>
               </g>
               <g id="man_lf" text-anchor="end" font-size="3" font-variant="small-caps">
                 <text x="56" y="66"><tspan font-weight="bold">04-06:</tspan></text>
-                <text x="56" y="70">Bras G.</text>
-                <text x="56" y="75" font-size="5">{{ pj.body.lfoot.pa }}<tspan font-weight="bold"> / </tspan>{{ pj.body.lfoot.pv }}</text>
+                <text x="56" y="70">Jambe G.</text>
+                <text x="56" y="75" font-size="5">
+                  <tspan ng-show="pj.body.lfoot.pa">{{ pj.body.lfoot.pa }}</tspan><tspan font-weight="bold"> / </tspan>
+                  <tspan ng-show="pj.body.lfoot.pv">{{ pj.body.lfoot.pv }}</tspan></text>
+                </text>
               </g>
             </g>
 
             <g id="shield" transform="translate(98, 0)" font-size="4" font-variant="small-caps">
               <text x="0" y="10">Types d'Armure:</text>
               <text x="0" y="25">Pénalité de l'Armure:</text>
-              <text x="5" y="30">{{ pj.calc.pa }}</text>
+              <text ng-show="pj.calc.pa != 0" x="5" y="30">{{ pj.calc.pa }}</text>
             </g>
           </g>
         </svg>
@@ -639,7 +659,7 @@
                     <text x="32" y="0" font-size="2"><tspan dy="3.5">
                   {{ getBase(skill) }}
                     </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                  <text ng-show="skill.value" x="57" y="0" text-anchor="middle" fill="black" font-weight="" font-size="2.75"><tspan dy="3.5">
                   {{ skill.value }} %
                     </tspan></text>
                   <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
@@ -661,14 +681,15 @@
               </g>
               <g id="pj_comp list" transform="translate(0,6) scale(1, 1)">
                 <g ng:repeat="skill in pj.advskills | orderBy:'name'" transform="translate(0,{{ $index*5 }})">
-                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <rect ng-hide="$index % 2" x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <rect ng-show="$index % 2" x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
                   <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
                   {{ skill.name }}
                     </tspan></text>
                   <text x="32" y="0" font-size="2"><tspan dy="3.5">
                   {{ getBase(skill) }}
                     </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                  <text x="57" y="0" text-anchor="middle" font-weight="" font-size="2.75"><tspan dy="3.5">
                   {{ skill.value }} %
                     </tspan></text>
                   <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
@@ -684,20 +705,21 @@
                 <text x="0" y="0" font-size="7" font-variant="small-caps">Styles de Combat</text>
               </g>
               <g id="pj_comp title">
-                <text x="0" y="4" font-size="4" font-variant="small-caps">De Base</text>
+                <text x="0" y="4" font-size="4" font-variant="small-caps">Styles</text>
                 <text x="32" y="4" font-size="4" textLength="15" font-variant="small-caps">% De Base</text>
                 <text x="55" y="4" font-size="4" font-variant="small-caps">%</text>
               </g>
               <g id="pj_comp list" transform="translate(0,6) scale(1, 1)">
                 <g ng:repeat="skill in pj.cmbskills | orderBy:'name'" transform="translate(0,{{ $index*5 }})">
-                  <rect x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <rect ng-hide="$index % 2" x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
+                  <rect ng-show="$index % 2" x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
                   <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
                   {{ skill.name }}
                     </tspan></text>
                   <text x="32" y="0" font-size="2"><tspan dy="3.5">
                   {{ getBase(skill) }}
                     </tspan></text>
-                  <text x="57" y="0" text-anchor="middle" font-weight="bold" font-size="2.75"><tspan dy="3.5">
+                  <text x="57" y="0" text-anchor="middle" font-weight="" font-size="2.75"><tspan dy="3.5">
                   {{ skill.value }} %
                     </tspan></text>
                   <path stroke="grey" stroke-width="0.25" d="M 0 0 h 65"/>
@@ -720,7 +742,143 @@
       <!-- endrepeat -->
       <!-- EndHeader -->
       <!-- Footer -->
+      </svg>
+  </div>
+  <div class="printbreak"></div>
+  <div class="page2 page">
+  <svg version="1.1" width="180mm" height="250mm" viewBox="0 0 180 250"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+
+  <defs>
+  <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+  <rect fill="black" x="0" y="0" width="5" height="5" opacity="0.1"/>
+  <rect fill="white" x="5" y="0" width="5" height="5"/>
+  <rect fill="black" x="5" y="5" width="5" height="5" opacity="0.1"/>
+  <rect fill="white" x="0" y="5" width="5" height="5"/>
+  </pattern>
+
+</defs>
+      <desc>Hand drawn sequence diagram</desc>
+      <g font-family="Fondamento" text-anchor="left">
+        <!-- draw user boxes and the vertical lines -->
+        <!--
+        <rect x="4" y="4" rx="20" ry="20" width="150" height="150" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+        -->
+        <path stroke="blue" fill="url(#grid)" d="M 0 0 180 0 180 250 0 250 0 0"/>
+        <!-- Header -->
+        <svg x="1" y="0" version="1.1" width="178" height="34" viewBox="0 0 178 34" preserveAspectRatio="xMaxYMax meet">
+          <g font-family="Fondamento" text-anchor="left">
+            <rect x="1" y="1" width="176" height="28" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <!-- Logo -->
+            <g id="Logo" stroke="black" fill="white" font-weight="" stroke-width="0.3" font-variant="small-caps" lengthAdjust="spacingAndGlyphs">
+              <text x="5" y="22" font-size="25" textLength="13">R</text>
+              <text x="19" y="20" font-size="15" textLength="57">uneQuest</text>
+              <text x="75" y="22" font-size="25" textLength="13">II</text>
+            </g>
+            <g id="pj_head_name">
+              <text x="100" y="10" font-size="5"><tspan dy="-1">Jon</tspan></text>
+              <path stroke="black" stroke-width="0.5" d="M 100 10 h 70"/>
+              <text x="100" y="10" font-size="3" font-variant="small-caps"><tspan dy="3">Nom</tspan></text>
+            </g>
+            <g id="pj_head_player">
+              <text x="100" y="22" font-size="5"><tspan dy="-1">Johan</tspan></text>
+              <path stroke="black" stroke-width="0.5" d="M 100 22 h 30"/>
+              <text x="100" y="22" font-size="3" font-variant="small-caps"><tspan dy="3">Joueur</tspan></text>
+            </g>
+            <g id="pj_head_family">
+              <text x="135" y="22" font-size="5"><tspan dy="-1">Starck</tspan></text>
+              <path stroke="black" stroke-width="0.5" d="M 135 22 h 30"/>
+              <text x="135" y="22" font-size="3" font-variant="small-caps"><tspan dy="3">Famille</tspan></text>
+            </g>
+          </g>
+        </svg>
+        <!-- Armes -->
+        <svg x="1" y="29" version="1.1" width="178" height="50" viewBox="0 0 178 50" preserveAspectRatio="xMaxYMax meet">
+          <g font-family="Fondamento" text-anchor="left">
+            <rect x="1" y="1" width="176" height="30" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <g>
+              <g font-variant="small-caps" font-size="4" transform="translate(0,5)" lengthAdjust="spacingAndGlyphs">
+                <text x="10" y="0">Arme</text>
+                <text x="35" y="0" textLength="9">Taille</text>
+                <text x="46" y="0" textLength="11">Allonge</text>
+                <text x="60" y="0" textLength="15">Dommages</text>
+                <text x="80" y="0" font-size="3.5">PA</text>
+                <text x="88" y="0" font-size="3.5">PV</text>
+                <text x="95" y="0" textLength="35">Manoeuvres de Combat</text>
+                <text x="132" y="0">Portée</text>
+                <text x="145" y="0">Recharge</text>
+                <text x="163" y="0" font-size="3.5">ENC</text>
+                <path stroke="grey" stroke-width="0.25" d="M 34 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 45 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 59 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 79 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 86 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 94 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 131 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 144 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 162 -3 v 26"/>
+                <path stroke="black" stroke-width="0.25" d="M 5 2 h 170"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <!-- Fatigue -->
+        <svg x="1" y="60" version="1.1" width="178" height="47" viewBox="0 0 178 47" preserveAspectRatio="xMaxYMax meet">
+          <g font-family="Fondamento" text-anchor="left">
+            <rect x="1" y="1" width="176" height="46" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <g id="pj_stats_title" transform="translate(3,9)">
+              <text x="0" y="0" font-size="6" font-variant="small-caps">Fatigue</text>
+            </g>
+            <g id="pj_grim" font-size="3" transform="translate(115,5)" display="non">
+              <rect x="0" y="0" width="54" rx="2" ry="2" height="39" fill="none" stroke="Black" stroke-width="0.7"/>
+              <text x="3" y="7" font-size="5" font-variant="small-caps">Maladie, Poisons, Santé</text>
+            </g>
+          </g>
+        </svg>
+        <!-- Stuff -->
+        <svg x="1" y="107" version="1.1" width="178" height="69" viewBox="0 0 178 69" preserveAspectRatio="xMaxYMax meet">
+          <g font-family="Fondamento" text-anchor="left">
+            <rect x="1" y="1" width="176" height="68" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <g id="pj_grim" font-size="3" transform="translate(90,5)" display="non">
+              <rect x="0" y="0" width="80" rx="2" ry="2" height="20" fill="none" stroke="Black" stroke-width="0.7"/>
+              <text x="3" y="7" font-size="5" font-variant="small-caps">Argent, Richesse et Possessions</text>
+            </g>
+            <g id="pj_grim" font-size="3" transform="translate(90,29)" display="non">
+              <rect x="0" y="0" width="80" rx="2" ry="2" height="35" fill="none" stroke="Black" stroke-width="0.7"/>
+              <text x="3" y="7" font-size="5" font-variant="small-caps">Contacts, Amis, Ennemis et Rivaux</text>
+            </g>
+            <g font-variant="small-caps" font-size="4" transform="translate(0,8)">
+              <text x="10" y="0">Équipement</text>
+              <text x="70" y="0" font-size="3.5">ENC</text>
+              <path stroke="black" stroke-width="0.25" d="M 65 -3 v 57"/>
+              <path stroke="black" stroke-width="0.25" d="M 5 2 h 78"/>
+            </g>
+          </g>
+        </svg>
+        <!-- Notes -->
+        <svg x="1" y="176" version="1.1" width="178" height="69" viewBox="0 0 178 69" preserveAspectRatio="xMaxYMax meet">
+          <g font-family="Fondamento" text-anchor="left">
+            <rect x="1" y="1" width="176" height="68" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <g id="pj_grim" font-size="3" transform="translate(5,5)" display="non">
+              <rect x="0" y="0" width="165" rx="2" ry="2" height="60" fill="none" stroke="Black" stroke-width="0.7"/>
+              <text x="3" y="7" font-size="5" font-variant="small-caps">Notes</text>
+            </g>
+          </g>
+        </svg>
+      </g>
+      <!-- repeat head -->
+      <!-- endrepeat -->
+      <!-- EndHeader -->
+      <!-- Footer -->
 </svg>
+
+
       </div> 
 
     </div> <!-- /container -->
