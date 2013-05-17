@@ -77,10 +77,12 @@ myApp.factory('pjFactory', function () {
     {name: "Perspicacité", init:["INT", "POU"]},
     {name: "Premiers soins", init:["INT", "DEX"]},
   ];
+  factory.vars.advskills = []
   // Helpers
   factory.save = function () {
     localStorage["pjhead"] = JSON.stringify(factory.vars.head);
     localStorage["pjskills"] = JSON.stringify(factory.vars.skills);
+    localStorage["pjadvskills"] = JSON.stringify(factory.vars.advskills);
     localStorage["pjattributes"] = JSON.stringify(factory.vars.attributes);
     localStorage["pjcalc"] = JSON.stringify(factory.vars.calc);
     localStorage["pjbody"] = JSON.stringify(factory.vars.body);
@@ -89,6 +91,7 @@ myApp.factory('pjFactory', function () {
   factory.load = function () {
     factory.vars.head = JSON.parse(localStorage["pjhead"]);
     factory.vars.skills = JSON.parse(localStorage["pjskills"]);
+    factory.vars.advskills = JSON.parse(localStorage["pjadvskills"]);
     factory.vars.attributes = JSON.parse(localStorage["pjattributes"]);
     factory.vars.calc = JSON.parse(localStorage["pjcalc"]);
     factory.vars.body = JSON.parse(localStorage["pjbody"]);
@@ -120,6 +123,7 @@ myApp.factory('pjFactory', function () {
       delete factory.vars.attributes[key]["base"];
       delete factory.vars.attributes[key]["value"];
     });
+    factory.vars.advskills = []
     console.log("reset");
   };
   factory.example = function () {
@@ -148,6 +152,10 @@ myApp.factory('pjFactory', function () {
     factory.vars.body.bide.pa = 1;
     factory.vars.body.head.pa = 1;
   };
+  factory.cons = {};
+  factory.cons.attrs = [
+    "FOR", "CON", "DEX", "TAI", "INT", "POU", "CHA",
+  ];
   factory.periods = [
     {key: "3days", value: "3 days"},
     {key: "curweek", value: "Current week"},
@@ -163,7 +171,10 @@ myApp.factory('pjFactory', function () {
 });
 
 myApp.controller('skillsCtrl', function ($scope, pjFactory) {
+  $scope.cons = pjFactory.cons;
   $scope.vars = pjFactory.vars;
+  $scope.pj = pjFactory.vars;
+  $scope.newskill = {base1:"FOR", base2:"FOR"};
   $scope.getBase = function (skill) {
     var base = $scope.vars.attributes[skill.init[0]]+$scope.vars.attributes[skill.init[1]];
     var text = "";
@@ -180,6 +191,12 @@ myApp.controller('skillsCtrl', function ($scope, pjFactory) {
       text = skill.init[0]+"+"+skill.init[1];
     };
     return text + " ("+base+"%)"
+  };
+  $scope.addSkill = function () {
+    nskill = {name: $scope.newskill.name, init: [$scope.newskill.base1, $scope.newskill.base2]}
+    $scope.pj.advskills.push(nskill);
+    $scope.newskill = {base1:"FOR", base2:"FOR"};
+    
   };
 });
 
@@ -199,6 +216,11 @@ myApp.controller('headCtrl', function ($scope, pjFactory) {
 
 myApp.controller('svgCtrl', function ($scope, pjFactory) {
   $scope.pj = pjFactory.vars;
+  $scope.cons = pjFactory.cons;
+  
+
+  // TODO : Move the watchers in service/factory ?
+  // Attributes watcher
   $scope.$watch('pj.attributes', function(newval, oldval) {
     // Combat Actions
     if (newval.DEX && newval.INT) { 
@@ -253,6 +275,7 @@ myApp.controller('svgCtrl', function ($scope, pjFactory) {
     };
   }, true);
   
+  // Attributes body
   $scope.$watch('pj.body', function(newval, oldval) {
     // Pénalité d'armure
     totalpa = newval.head.pa +

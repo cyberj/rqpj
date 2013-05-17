@@ -68,6 +68,9 @@ body {
 #charSkills input {
   text-align: right;
 }
+#advSkill input {
+  text-align: left;
+}
 #charStats label p {
   display: inline;
   margin-left: 2em;
@@ -84,7 +87,7 @@ hr {
   display: none;
 }
 .magicsvg svg {
-  display: none;
+  display: block;
   width:  100%
   height:  100%
 }

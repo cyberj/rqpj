@@ -239,7 +239,7 @@
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>Compétence</th>
+                    <th>Compétence de base</th>
                     <th>% de Base</th>
                     <th>Score Actuel <i ng-click="vars.edit = !vars.edit;" class="icon-edit"></i></th>
                   </tr>
@@ -261,26 +261,35 @@
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>Compétence</th>
+                    <th>Compétence avancée</th>
                     <th>% de Base</th>
                     <th>Score Actuel</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Athlétisme</td>
-                    <td>FOR+DEX (30%)</td>
-                    <td><div class="input-append"><input type="number" class="input-mini">%<span class="add-on">%</span></div></td>
+                  <tr ng-repeat="skill in vars.advskills | orderBy:'name'">
+                    <td>{{ skill.name }}</td>
+                    <td>
+                      <div ng-show="vars.edit"><i ng-click="delete pj.advskills[$index]" class="icon-remove"></i></div>
+                      <!--<div ng-hide="vars.edit">{{ getBase(skill) }}</div>-->
+                      {{ getBase(skill) }}
+                    </td>
+                    <td>
+                      <div ng-show="!vars.edit">{{ skill.value }}%</div>
+                      <div ng-show="vars.edit" class="input-append"><input ng-model="skill.value" type="number" class="input-mini">%<span class="add-on">%</span></div>
+                    </td>
                   </tr>
-                  <tr>
-                    <td>Bagarre</td>
-                    <td>FOR+DEX (30%)</td>
-                    <td>60%</td>
-                  </tr>
-                  <tr>
-                    <td>Bagarre</td>
-                    <td>FOR+DEX (30%)</td>
-                    <td>60%</td>
+                  <tr id="advSkill" ng-show="vars.edit">
+                    <td>
+                      <input ng-model="newskill.name" type="text" class="input-small">
+                    </td>
+                    <td>
+                      <select class="input-small" ng-model="newskill.base1" default="FOR" ng-options="c for c in cons.attrs">
+                      </select>
+                      <select class="input-small" ng-model="newskill.base2" default="FOR" ng-options="c for c in cons.attrs">
+                      </select>
+                    </td>
+                    <td>{{ pj.attributes[newskill.base1] + pj.attributes[newskill.base2] }} % <i ng-click="addSkill()" class="icon-plus"></i> </td>
                   </tr>
                 </tbody>
               </table>
