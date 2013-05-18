@@ -10,8 +10,8 @@
 }
 .page2 {
   display: block;
-  margin: 40mm, 0, 0, 10mm;
   page-break-after: always;
 }
 .printbreak {
+//  margin: 100mm, 0, 0, 10mm;
 }
