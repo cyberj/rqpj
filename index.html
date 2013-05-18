@@ -27,6 +27,7 @@
             <i ng-click="load()" class="icon-arrow-down"></i>
             <i ng-click="reset()" class="icon-remove"></i>
             <i ng-click="example()" class="icon-heart"></i>
+            <i ng-click="share()" class="icon-share"></i>
           </p>
           <div class="row-fluid">
 
@@ -356,7 +357,6 @@
       </div>
     </div>
 
-
       <div class="magicsvg" ng-controller="svgCtrl"><div class="page1 page"> 
         <svg  width="180mm" height="260mm" version="1.1" viewBox="0 0 180 260"
              xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -650,7 +650,7 @@
                 <text x="55" y="4" font-size="4" font-variant="small-caps">%</text>
               </g>
               <g id="pj_comp list" transform="translate(0,6) scale(1, 1)">
-                <g ng:repeat="skill in pj.skills | orderBy:'name'" transform="translate(0,{{ $index*5 }})">
+                <g ng-repeat="skill in pj.skills | orderBy:'name'" transform="translate(0,{{ $index*5 }})">
                   <rect ng-hide="$index % 2" x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
                   <rect ng-show="$index % 2" x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
                   <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
@@ -680,7 +680,7 @@
                 <text x="55" y="4" font-size="4" font-variant="small-caps">%</text>
               </g>
               <g id="pj_comp list" transform="translate(0,6) scale(1, 1)">
-                <g ng:repeat="skill in pj.advskills | orderBy:'name'" transform="translate(0,{{ $index*5 }})">
+                <g ng-repeat="skill in pj.advskills | orderBy:'name'" transform="translate(0,{{ $index*5 }})">
                   <rect ng-hide="$index % 2" x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
                   <rect ng-show="$index % 2" x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
                   <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
@@ -710,7 +710,7 @@
                 <text x="55" y="4" font-size="4" font-variant="small-caps">%</text>
               </g>
               <g id="pj_comp list" transform="translate(0,6) scale(1, 1)">
-                <g ng:repeat="skill in pj.cmbskills | orderBy:'name'" transform="translate(0,{{ $index*5 }})">
+                <g ng-repeat="skill in pj.cmbskills | orderBy:'name'" transform="translate(0,{{ $index*5 }})">
                   <rect ng-hide="$index % 2" x="0" y="0" width="65" height="5" fill="white" stroke="none"/>
                   <rect ng-show="$index % 2" x="0" y="0" width="65" height="5" fill="ghostwhite" stroke="none"/>
                   <text x="0" y="0" font-size="2.25"><tspan dy="3.5">
@@ -745,8 +745,8 @@
       </svg>
     </div>
   <div class="printbreak">&nbsp;</div>
-  <div class="page2 page">&nbsp;
-  <svg version="1.1" width="180mm" height="250mm" viewBox="0 0 180 250"
+  <div class="page2 page">
+  <svg version="1.1" width="180mm" height="255mm" viewBox="0 0 180 255"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -782,17 +782,17 @@
               <text x="75" y="22" font-size="25" textLength="13">II</text>
             </g>
             <g id="pj_head_name">
-              <text x="100" y="10" font-size="5"><tspan dy="-1">Jon</tspan></text>
+              <text x="100" y="10" font-size="5"><tspan dy="-1">{{ pj.head.name }}</tspan></text>
               <path stroke="black" stroke-width="0.5" d="M 100 10 h 70"/>
               <text x="100" y="10" font-size="3" font-variant="small-caps"><tspan dy="3">Nom</tspan></text>
             </g>
             <g id="pj_head_player">
-              <text x="100" y="22" font-size="5"><tspan dy="-1">Johan</tspan></text>
+              <text x="100" y="22" font-size="5"><tspan dy="-1">{{ pj.head.player }}</tspan></text>
               <path stroke="black" stroke-width="0.5" d="M 100 22 h 30"/>
               <text x="100" y="22" font-size="3" font-variant="small-caps"><tspan dy="3">Joueur</tspan></text>
             </g>
             <g id="pj_head_family">
-              <text x="135" y="22" font-size="5"><tspan dy="-1">Starck</tspan></text>
+              <text x="135" y="22" font-size="5"><tspan dy="-1">{{ pj.head.family }}</tspan></text>
               <path stroke="black" stroke-width="0.5" d="M 135 22 h 30"/>
               <text x="135" y="22" font-size="3" font-variant="small-caps"><tspan dy="3">Famille</tspan></text>
             </g>
@@ -801,7 +801,7 @@
         <!-- Armes -->
         <svg x="1" y="29" version="1.1" width="178" height="50" viewBox="0 0 178 50" preserveAspectRatio="xMaxYMax meet">
           <g font-family="Fondamento" text-anchor="left">
-            <rect x="1" y="1" width="176" height="30" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <rect x="1" y="1" width="176" height="49" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
             <g>
               <g font-variant="small-caps" font-size="4" transform="translate(0,5)" lengthAdjust="spacingAndGlyphs">
                 <text x="10" y="0">Arme</text>
@@ -814,22 +814,22 @@
                 <text x="132" y="0">Portée</text>
                 <text x="145" y="0">Recharge</text>
                 <text x="163" y="0" font-size="3.5">ENC</text>
-                <path stroke="grey" stroke-width="0.25" d="M 34 -3 v 26"/>
-                <path stroke="grey" stroke-width="0.25" d="M 45 -3 v 26"/>
-                <path stroke="grey" stroke-width="0.25" d="M 59 -3 v 26"/>
-                <path stroke="grey" stroke-width="0.25" d="M 79 -3 v 26"/>
-                <path stroke="grey" stroke-width="0.25" d="M 86 -3 v 26"/>
-                <path stroke="grey" stroke-width="0.25" d="M 94 -3 v 26"/>
-                <path stroke="grey" stroke-width="0.25" d="M 131 -3 v 26"/>
-                <path stroke="grey" stroke-width="0.25" d="M 144 -3 v 26"/>
-                <path stroke="grey" stroke-width="0.25" d="M 162 -3 v 26"/>
+                <path stroke="grey" stroke-width="0.25" d="M 34 -3 v 46"/>
+                <path stroke="grey" stroke-width="0.25" d="M 45 -3 v 46"/>
+                <path stroke="grey" stroke-width="0.25" d="M 59 -3 v 46"/>
+                <path stroke="grey" stroke-width="0.25" d="M 79 -3 v 46"/>
+                <path stroke="grey" stroke-width="0.25" d="M 86 -3 v 46"/>
+                <path stroke="grey" stroke-width="0.25" d="M 94 -3 v 46"/>
+                <path stroke="grey" stroke-width="0.25" d="M 131 -3 v 46"/>
+                <path stroke="grey" stroke-width="0.25" d="M 144 -3 v 46"/>
+                <path stroke="grey" stroke-width="0.25" d="M 162 -3 v 46"/>
                 <path stroke="black" stroke-width="0.25" d="M 5 2 h 170"/>
               </g>
             </g>
           </g>
         </svg>
         <!-- Fatigue -->
-        <svg x="1" y="60" version="1.1" width="178" height="47" viewBox="0 0 178 47" preserveAspectRatio="xMaxYMax meet">
+        <svg x="1" y="80" version="1.1" width="178" height="47" viewBox="0 0 178 47" preserveAspectRatio="xMaxYMax meet">
           <g font-family="Fondamento" text-anchor="left">
             <rect x="1" y="1" width="176" height="46" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
             <g id="pj_stats_title" transform="translate(3,9)">
@@ -837,12 +837,12 @@
             </g>
             <g id="pj_grim" font-size="3" transform="translate(115,5)" display="non">
               <rect x="0" y="0" width="54" rx="2" ry="2" height="39" fill="none" stroke="Black" stroke-width="0.7"/>
-              <text x="3" y="7" font-size="5" font-variant="small-caps">Maladie, Poisons, Santé</text>
+              <text x="3" y="7" font-size="4" font-variant="small-caps">Maladie, Poisons, Santé</text>
             </g>
           </g>
         </svg>
         <!-- Stuff -->
-        <svg x="1" y="107" version="1.1" width="178" height="69" viewBox="0 0 178 69" preserveAspectRatio="xMaxYMax meet">
+        <svg x="1" y="127" version="1.1" width="178" height="69" viewBox="0 0 178 69" preserveAspectRatio="xMaxYMax meet">
           <g font-family="Fondamento" text-anchor="left">
             <rect x="1" y="1" width="176" height="68" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
             <g id="pj_grim" font-size="3" transform="translate(90,5)" display="non">
@@ -862,11 +862,11 @@
           </g>
         </svg>
         <!-- Notes -->
-        <svg x="1" y="176" version="1.1" width="178" height="69" viewBox="0 0 178 69" preserveAspectRatio="xMaxYMax meet">
+        <svg x="1" y="196" version="1.1" width="178" height="54" viewBox="0 0 178 54" preserveAspectRatio="xMaxYMax meet">
           <g font-family="Fondamento" text-anchor="left">
-            <rect x="1" y="1" width="176" height="68" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+            <rect x="1" y="1" width="176" height="53" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
             <g id="pj_grim" font-size="3" transform="translate(5,5)" display="non">
-              <rect x="0" y="0" width="165" rx="2" ry="2" height="60" fill="none" stroke="Black" stroke-width="0.7"/>
+              <rect x="0" y="0" width="165" rx="2" ry="2" height="45" fill="none" stroke="Black" stroke-width="0.7"/>
               <text x="3" y="7" font-size="5" font-variant="small-caps">Notes</text>
             </g>
           </g>
@@ -884,6 +884,7 @@
     </div> <!-- /container -->
 
     <script src="js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="js/vendor/FileSaver.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/angular.min.js"></script>
 

@@ -77,9 +77,9 @@ myApp.factory('pjFactory', function () {
     {name: "Perspicacité", init:["INT", "POU"]},
     {name: "Premiers soins", init:["INT", "DEX"]},
   ];
-  factory.vars.advskills = []
-  factory.vars.cmbskills = []
-  factory.vars.div = {}
+  factory.vars.advskills = [];
+  factory.vars.cmbskills = [];
+  factory.vars.div = {};
   // Helpers
   factory.save = function () {
     localStorage["pjhead"] = JSON.stringify(factory.vars.head);
@@ -96,7 +96,7 @@ myApp.factory('pjFactory', function () {
     factory.vars.head = JSON.parse(localStorage["pjhead"]);
     factory.vars.skills = JSON.parse(localStorage["pjskills"]);
     factory.vars.advskills = JSON.parse(localStorage["pjadvskills"]);
-    factory.vars.cmbskills = JSON.parse(localStorage["pjcmbkills"]);
+    factory.vars.cmbskills = JSON.parse(localStorage["pjcmbskills"]);
     factory.vars.attributes = JSON.parse(localStorage["pjattributes"]);
     factory.vars.calc = JSON.parse(localStorage["pjcalc"]);
     factory.vars.body = JSON.parse(localStorage["pjbody"]);
@@ -191,7 +191,6 @@ myApp.factory('pjFactory', function () {
     {key: "year", value: "A year"},
     {key: "all", value: "Whole mailbox"},
   ];
-  factory.example();
   return factory;
 });
 
@@ -250,6 +249,12 @@ myApp.controller('headCtrl', function ($scope, pjFactory) {
   $scope.load = pjFactory.load;
   $scope.reset = pjFactory.reset;
   $scope.example = pjFactory.example;
+  $scope.share = function () {
+    var blob = new Blob(['<?xml version="1.0" encoding="UTF-8" standalone="no"?>'+$('.page1').html()], {type: "image/svg;charset=utf-8"});
+    saveAs(blob, "recto.svg");
+    var blob = new Blob(['<?xml version="1.0" encoding="UTF-8" standalone="no"?>'+$('.page2').html()], {type: "image/svg;charset=utf-8"});
+    saveAs(blob, "verso.svg");
+  };
 });
 
 myApp.controller('svgCtrl', function ($scope, pjFactory) {
@@ -299,8 +304,8 @@ myApp.controller('svgCtrl', function ($scope, pjFactory) {
     if (newval.CON || newval.TAI) { 
       contai = newval.CON + newval.TAI;
       $scope.pj.body.head.pv = Math.ceil(contai/5);
-      $scope.pj.body.chest.pv = Math.ceil((contai+5)/5);
-      $scope.pj.body.bide.pv = Math.ceil((contai+10)/5);
+      $scope.pj.body.chest.pv = Math.ceil((contai+10)/5);
+      $scope.pj.body.bide.pv = Math.ceil((contai+5)/5);
       $scope.pj.body.rarm.pv = Math.ceil(contai/5);
       $scope.pj.body.larm.pv = Math.ceil(contai/5);
       if (contai < 6) {
