@@ -60,7 +60,7 @@ myApp.factory('pjFactory', function () {
     {name: "Bagarre", init:["FOR", "DEX"]},
     {name: "Chant", init:["CHA", "POU"]},
     {name: "Conduite", init:["DEX", "POU"]},
-    {name: "Conn (Régionale)", init:["INT", "INT"]},
+    {name: "Conn. (Régionale)", init:["INT", "INT"]},
     {name: "Culture (d'origine)", init:["INT", "INT"]},
     {name: "Danse", init:["DEX", "CHA"]},
     {name: "Discretion", init:["INT", "DEX"]},
