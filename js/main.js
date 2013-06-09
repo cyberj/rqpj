@@ -279,7 +279,7 @@ myApp.controller('svgCtrl', function ($scope, pjFactory) {
         "+1D2", "+1D4", "+1D6", "+1D8", "+1D10", "+1D12",
         "+2D6", "+2D8", "+2D10", "+2D12",
         ];
-      md = dicetable[Math.floor((newval.FOR + newval.TAI) / 5)];
+      md = dicetable[Math.floor((newval.FOR + newval.TAI) / 5)+1];
       $scope.pj.calc.md = md;
     } else {
       $scope.pj.calc.md = "";
