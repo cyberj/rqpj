@@ -306,14 +306,14 @@ myApp.controller('svgCtrl', function ($scope, pjFactory) {
       $scope.pj.body.head.pv = Math.ceil(contai/5);
       $scope.pj.body.chest.pv = Math.ceil((contai+10)/5);
       $scope.pj.body.bide.pv = Math.ceil((contai+5)/5);
-      $scope.pj.body.rarm.pv = Math.ceil(contai/5);
-      $scope.pj.body.larm.pv = Math.ceil(contai/5);
+      $scope.pj.body.rfoot.pv = Math.ceil(contai/5);
+      $scope.pj.body.lfoot.pv = Math.ceil(contai/5);
       if (contai < 6) {
-        $scope.pj.body.rfoot.pv = 1;
-        $scope.pj.body.lfoot.pv = 1;
+        $scope.pj.body.rarm.pv = 1;
+        $scope.pj.body.larm.pv = 1;
       } else {
-        $scope.pj.body.rfoot.pv = Math.ceil((contai-5)/5);
-        $scope.pj.body.lfoot.pv = Math.ceil((contai-5)/5);
+        $scope.pj.body.rarm.pv = Math.ceil((contai-5)/5);
+        $scope.pj.body.larm.pv = Math.ceil((contai-5)/5);
       };
     } else {
       $scope.pj.body.head.pv = 0;
