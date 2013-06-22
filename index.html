@@ -802,21 +802,23 @@
               <path stroke="black" stroke-width="0.5" d="M 50 0 v 29"/>
               <path stroke="black" stroke-width="0.5" d="M 65 0 v 29"/>
             </g>
-            <g id="pj_grim" font-size="3" transform="translate(124,10)" display="non">
-              <rect x="0" y="0" width="47" rx="2" ry="2" height="52" fill="none" stroke="Black" stroke-width="0.5"/>
-              <text x="3" y="7" font-size="5" font-variant="small-caps">Sorts : </text>
+            <g id="pj_grim" font-size="3" transform="translate(124,3)" display="non">
+              <rect x="0" y="0" width="50" rx="2" ry="2" height="56" fill="none" stroke="Black" stroke-width="0.5"/>
+              <text x="2" y="5" font-size="5" font-variant="small-caps">Sorts : </text>
             </g>
-            <g id="pj_fatigue_title" transform="translate(127,68) scale(0.9,0.9)">
-              <text x="0" y="0" font-size="5" font-variant="small-caps">Fatigue</text>
+            <g id="pj_fatigue_title" transform="translate(130,66)">
+              <rect x="-6" y="-5" width="50" rx="2" ry="2" height="37" fill="CornSilk" stroke="Black" stroke-width="0.5"/>
+              <text x="-5" y="0" font-size="5" font-variant="small-caps">Fatigue</text>
               <g transform="translate(0,5)" font-variant="small-caps">
                 <text x="0" y="0" font-size="3">Niveau</text>
                 <text x="10" y="0" font-size="2.5">Compétences</text>
                 <text x="24" y="0" font-size="3">Mvt</text>
                 <text x="31" y="0" font-size="3">RA</text>
                 <text x="37" y="0" font-size="3">CA</text>
-                <path stroke="black" stroke-width="0.25" d="M 0 2 h 42"/>
+                <path stroke="black" stroke-width="0.25" d="M -4 2 h 46"/>
                 <g transform="translate(0,5)" font-variant="normal" font-size="2.5">
                   <g transform="translate(0,0)">
+                    <rect x="-4" y="-2" stroke="black" stroke-width="0.25" fill="none" width="2" height="2"/>
                     <text x="0" y="0">Frais</text>
                     <text x="12" y="0">-</text>
                     <text x="25" y="0"></text>
@@ -824,6 +826,7 @@
                     <text x="37" y="0"></text>
                   </g>
                   <g transform="translate(0,4)">
+                    <rect x="-4" y="-2" stroke="black" stroke-width="0.25" fill="none" width="2" height="2"/>
                     <text x="0" y="0">Éssouflé</text>
                     <text x="12" y="0">-10%</text>
                     <text x="25" y="0"></text>
@@ -831,6 +834,7 @@
                     <text x="37" y="0"></text>
                   </g>
                   <g transform="translate(0,8)">
+                    <rect x="-4" y="-2" stroke="black" stroke-width="0.25" fill="none" width="2" height="2"/>
                     <text x="0" y="0">Fatigué</text>
                     <text x="12" y="0">-20%</text>
                     <text x="25" y="0">-1m</text>
@@ -838,6 +842,7 @@
                     <text x="37" y="0"></text>
                   </g>
                   <g transform="translate(0,12)">
+                    <rect x="-4" y="-2" stroke="black" stroke-width="0.25" fill="none" width="2" height="2"/>
                     <text x="0" y="0">Épuisé</text>
                     <text x="12" y="0">-30%</text>
                     <text x="25" y="0">-1m</text>
@@ -845,6 +850,7 @@
                     <text x="37" y="0"></text>
                   </g>
                   <g transform="translate(0,16)">
+                    <rect x="-4" y="-2" stroke="black" stroke-width="0.25" fill="none" width="2" height="2"/>
                     <text x="0" y="0">Harrassé</text>
                     <text x="12" y="0">-40%</text>
                     <text x="25" y="0">-1/2</text>
@@ -852,6 +858,7 @@
                     <text x="37" y="0">-1</text>
                   </g>
                   <g transform="translate(0,20)">
+                    <rect x="-4" y="-2" stroke="black" stroke-width="0.25" fill="none" width="2" height="2"/>
                     <text x="0" y="0">Extenué</text>
                     <text x="12" y="0">-50%</text>
                     <text x="25" y="0">-1/2</text>
@@ -898,102 +905,224 @@
         -->
         <path stroke="blue" fill="url(#grid)" d="M 0 0 180 0 180 250 0 250 0 0"/>
         <!-- Header -->
-        <svg x="1" y="0" version="1.1" width="178" height="34" viewBox="0 0 178 34" preserveAspectRatio="xMaxYMax meet">
-          <g font-family="Fondamento" text-anchor="left">
-            <rect x="1" y="1" width="176" height="28" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
-            <!-- Logo -->
-            <g id="Logo" stroke="black" fill="white" font-weight="" stroke-width="0.3" font-variant="small-caps" lengthAdjust="spacingAndGlyphs">
-              <text x="5" y="22" font-size="25" textLength="13">R</text>
-              <text x="19" y="20" font-size="15" textLength="57">uneQuest</text>
-              <text x="75" y="22" font-size="25" textLength="13">II</text>
-            </g>
-            <g id="pj_head_name">
-              <text x="100" y="10" font-size="5"><tspan dy="-1">{{ pj.head.name }}</tspan></text>
-              <path stroke="black" stroke-width="0.5" d="M 100 10 h 70"/>
-              <text x="100" y="10" font-size="3" font-variant="small-caps"><tspan dy="3">Nom</tspan></text>
-            </g>
-            <g id="pj_head_player">
-              <text x="100" y="22" font-size="5"><tspan dy="-1">{{ pj.head.player }}</tspan></text>
-              <path stroke="black" stroke-width="0.5" d="M 100 22 h 30"/>
-              <text x="100" y="22" font-size="3" font-variant="small-caps"><tspan dy="3">Joueur</tspan></text>
-            </g>
-            <g id="pj_head_family">
-              <text x="135" y="22" font-size="5"><tspan dy="-1">{{ pj.head.family }}</tspan></text>
-              <path stroke="black" stroke-width="0.5" d="M 135 22 h 30"/>
-              <text x="135" y="22" font-size="3" font-variant="small-caps"><tspan dy="3">Famille</tspan></text>
-            </g>
+        <g font-family="Fondamento" text-anchor="left" transform="translate(1, 0)">
+          <rect x="1" y="1" width="176" height="28" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+          <!-- Logo -->
+          <g id="Logo" stroke="black" fill="white" font-weight="" stroke-width="0.3" font-variant="small-caps" lengthAdjust="spacingAndGlyphs">
+            <text x="5" y="22" font-size="25" textLength="13">R</text>
+            <text x="19" y="20" font-size="15" textLength="57">uneQuest</text>
+            <text x="75" y="22" font-size="25" textLength="13">II</text>
           </g>
-        </svg>
+          <g id="pj_head_name">
+            <text x="100" y="10" font-size="5"><tspan dy="-1">{{ pj.head.name }}</tspan></text>
+            <path stroke="black" stroke-width="0.5" d="M 100 10 h 70"/>
+            <text x="100" y="10" font-size="3" font-variant="small-caps"><tspan dy="3">Nom</tspan></text>
+          </g>
+          <g id="pj_head_player">
+            <text x="100" y="22" font-size="5"><tspan dy="-1">{{ pj.head.player }}</tspan></text>
+            <path stroke="black" stroke-width="0.5" d="M 100 22 h 30"/>
+            <text x="100" y="22" font-size="3" font-variant="small-caps"><tspan dy="3">Joueur</tspan></text>
+          </g>
+          <g id="pj_head_family">
+            <text x="135" y="22" font-size="5"><tspan dy="-1">{{ pj.head.family }}</tspan></text>
+            <path stroke="black" stroke-width="0.5" d="M 135 22 h 30"/>
+            <text x="135" y="22" font-size="3" font-variant="small-caps"><tspan dy="3">Famille</tspan></text>
+          </g>
+        </g>
         <!-- Armes -->
-        <svg x="1" y="29" version="1.1" width="178" height="50" viewBox="0 0 178 50" preserveAspectRatio="xMaxYMax meet">
-          <g font-family="Fondamento" text-anchor="left">
-            <rect x="1" y="1" width="176" height="49" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
-            <g>
-              <g font-variant="small-caps" font-size="4" transform="translate(0,5)" lengthAdjust="spacingAndGlyphs">
-                <text x="10" y="0">Arme</text>
-                <text x="35" y="0" textLength="9">Taille</text>
-                <text x="46" y="0" textLength="11">Allonge</text>
-                <text x="60" y="0" textLength="15">Dommages</text>
-                <text x="80" y="0" font-size="3.5">PA</text>
-                <text x="88" y="0" font-size="3.5">PV</text>
-                <text x="95" y="0" textLength="35">Manoeuvres de Combat</text>
-                <text x="132" y="0">Portée</text>
-                <text x="145" y="0">Recharge</text>
-                <text x="163" y="0" font-size="3.5">ENC</text>
-                <path stroke="grey" stroke-width="0.25" d="M 34 -3 v 46"/>
-                <path stroke="grey" stroke-width="0.25" d="M 45 -3 v 46"/>
-                <path stroke="grey" stroke-width="0.25" d="M 59 -3 v 46"/>
-                <path stroke="grey" stroke-width="0.25" d="M 79 -3 v 46"/>
-                <path stroke="grey" stroke-width="0.25" d="M 86 -3 v 46"/>
-                <path stroke="grey" stroke-width="0.25" d="M 94 -3 v 46"/>
-                <path stroke="grey" stroke-width="0.25" d="M 131 -3 v 46"/>
-                <path stroke="grey" stroke-width="0.25" d="M 144 -3 v 46"/>
-                <path stroke="grey" stroke-width="0.25" d="M 162 -3 v 46"/>
-                <path stroke="black" stroke-width="0.25" d="M 5 2 h 170"/>
+        <g font-family="Fondamento" text-anchor="left" transform="translate(1, 29)">
+          <rect x="1" y="1" width="176" height="97" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+          <g font-size="3" transform="translate(3,5)" display="non">
+            <!--<text x="2" y="5" font-size="4" font-variant="small-caps">Sac 1</text>-->
+            <rect x="0" y="0" width="54" rx="2" ry="2" height="90" fill="none" stroke="Black" stroke-width="0.5"/>
+            <g font-variant="small-caps" font-size="4" transform="translate(2,13)">
+              <text x="0" y="0">Équipement</text>
+              <text x="46" y="0" font-size="2.5">ENC</text>
+              <path stroke="black" stroke-width="0.25" d="M 45 -3 v 78"/>
+              <path stroke="black" stroke-width="0.25" d="M 0 2 h 50"/>
+            </g>
+            <g transform="translate(22,2)" stroke-width="0.2" stroke="Black" fill="none">
+              <g transform="translate(0,0)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
+              <g transform="translate(0,3)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
+              <g transform="translate(16,0)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
+              <g transform="translate(16,3)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
               </g>
             </g>
           </g>
-        </svg>
-        <!-- Fatigue -->
-        <svg x="1" y="80" version="1.1" width="178" height="47" viewBox="0 0 178 47" preserveAspectRatio="xMaxYMax meet">
-          <g font-family="Fondamento" text-anchor="left">
-            <rect x="1" y="1" width="176" height="46" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
-            <g id="pj_grim" font-size="3" transform="translate(115,5)" display="non">
-              <rect x="0" y="0" width="54" rx="2" ry="2" height="39" fill="none" stroke="Black" stroke-width="0.7"/>
-              <text x="3" y="7" font-size="4" font-variant="small-caps">Maladie, Poisons, Santé</text>
+          <g font-size="3" transform="translate(61,5)" display="non">
+            <!--<text x="2" y="5" font-size="4" font-variant="small-caps">Sac 1</text>-->
+            <rect x="0" y="0" width="54" rx="2" ry="2" height="90" fill="none" stroke="Black" stroke-width="0.5"/>
+            <g font-variant="small-caps" font-size="4" transform="translate(2,13)">
+              <text x="0" y="0">Équipement</text>
+              <text x="46" y="0" font-size="2.5">ENC</text>
+              <path stroke="black" stroke-width="0.25" d="M 45 -3 v 78"/>
+              <path stroke="black" stroke-width="0.25" d="M 0 2 h 50"/>
+            </g>
+            <g transform="translate(22,2)" stroke-width="0.2" stroke="Black" fill="none">
+              <g transform="translate(0,0)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
+              <g transform="translate(0,3)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
+              <g transform="translate(16,0)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
+              <g transform="translate(16,3)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
             </g>
           </g>
-        </svg>
+          <g font-size="3" transform="translate(120,5)" display="non">
+            <rect x="0" y="0" width="54" rx="2" ry="2" height="17" fill="CornSilk" stroke="Black" stroke-width="0.5"/>
+            <g font-variant="small-caps" font-size="4" transform="translate(2,5)">
+              <text x="0" y="0">Encombrement</text>
+              <text x="33" y="0" font-size="3">(FOR + TAI)</text>
+            </g>
+            <g font-variant="small-caps" font-size="4" transform="translate(25,8)">
+              <text ng-hide="(pj.attributes.FOR + pj.attributes.TAI) == 0" x="4" y="5">{{ pj.attributes.FOR + pj.attributes.TAI }}</text>
+              <path stroke="black" stroke-width="0.25" d="M 0 5 5 0"/>
+            </g>
+          </g>
+          <g font-size="3" transform="translate(120,24)" display="non">
+            <!--<text x="2" y="5" font-size="4" font-variant="small-caps">Sac 1</text>-->
+            <rect x="0" y="0" width="54" rx="2" ry="2" height="52" fill="none" stroke="Black" stroke-width="0.5"/>
+            <g font-variant="small-caps" font-size="4" transform="translate(2,5)">
+              <text x="0" y="0">Équipé</text>
+              <text x="46" y="0" font-size="2.5">ENC</text>
+              <path stroke="black" stroke-width="0.25" d="M 45 -3 v 48"/>
+              <path stroke="black" stroke-width="0.25" d="M 0 2 h 50"/>
+            </g>
+          </g>
+          <g font-size="3" transform="translate(120,78)" display="non">
+            <!--<text x="2" y="5" font-size="4" font-variant="small-caps">Sac 1</text>-->
+            <rect x="0" y="0" width="54" rx="2" ry="2" height="17" fill="none" stroke="Black" stroke-width="0.5"/>
+            <g transform="translate(22,2)" stroke-width="0.2" stroke="Black" fill="none">
+              <g transform="translate(0,0)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
+              <g transform="translate(0,3)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
+              <g transform="translate(16,0)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
+              <g transform="translate(16,3)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
+            </g>
+            <g transform="translate(22,9)" stroke-width="0.2" stroke="Black" fill="none">
+              <g transform="translate(0,0)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
+              <g transform="translate(0,3)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
+              <g transform="translate(16,0)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
+              <g transform="translate(16,3)">
+                <rect x="0" y="0" width="2" height="2"/>
+                <rect x="3" y="0" width="2" height="2"/>
+                <rect x="6" y="0" width="2" height="2"/>
+                <rect x="9" y="0" width="2" height="2"/>
+                <rect x="12" y="0" width="2" height="2"/>
+              </g>
+            </g>
+          </g>
+        </g>
         <!-- Stuff -->
-        <svg x="1" y="127" version="1.1" width="178" height="69" viewBox="0 0 178 69" preserveAspectRatio="xMaxYMax meet">
-          <g font-family="Fondamento" text-anchor="left">
-            <rect x="1" y="1" width="176" height="68" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
-            <g id="pj_grim" font-size="3" transform="translate(90,5)" display="non">
-              <rect x="0" y="0" width="80" rx="2" ry="2" height="20" fill="none" stroke="Black" stroke-width="0.7"/>
-              <text x="3" y="7" font-size="5" font-variant="small-caps">Argent, Richesse et Possessions</text>
-            </g>
-            <g id="pj_grim" font-size="3" transform="translate(90,29)" display="non">
-              <rect x="0" y="0" width="80" rx="2" ry="2" height="35" fill="none" stroke="Black" stroke-width="0.7"/>
-              <text x="3" y="7" font-size="5" font-variant="small-caps">Contacts, Amis, Ennemis et Rivaux</text>
-            </g>
-            <g font-variant="small-caps" font-size="4" transform="translate(0,8)">
-              <text x="10" y="0">Équipement</text>
-              <text x="70" y="0" font-size="3.5">ENC</text>
-              <path stroke="black" stroke-width="0.25" d="M 65 -3 v 57"/>
-              <path stroke="black" stroke-width="0.25" d="M 5 2 h 78"/>
-            </g>
+        <g font-family="Fondamento" text-anchor="left" transform="translate(1, 127)">
+          <!-- Fatigue -->
+          <rect x="1" y="1" width="176" height="68" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+          <g id="pj_grim" font-size="3" transform="translate(5,45)" display="non">
+            <rect x="0" y="0" width="80" rx="2" ry="2" height="20" fill="none" stroke="Black" stroke-width="0.7"/>
+            <text x="3" y="7" font-size="4" font-variant="small-caps">Maladie, Poisons, Santé</text>
           </g>
-        </svg>
+          <g id="pj_grim" font-size="3" transform="translate(5,5)" display="non">
+            <rect x="0" y="0" width="80" rx="2" ry="2" height="38" fill="none" stroke="Black" stroke-width="0.7"/>
+            <text x="3" y="7" font-size="5" font-variant="small-caps">Argent, Richesse et Possessions</text>
+          </g>
+          <g id="pj_grim" font-size="3" transform="translate(90,5)" display="non">
+            <rect x="0" y="0" width="80" rx="2" ry="2" height="60" fill="none" stroke="Black" stroke-width="0.7"/>
+            <text x="3" y="7" font-size="5" font-variant="small-caps">Contacts, Amis, Ennemis et Rivaux</text>
+          </g>
+        </g>
         <!-- Notes -->
-        <svg x="1" y="196" version="1.1" width="178" height="54" viewBox="0 0 178 54" preserveAspectRatio="xMaxYMax meet">
-          <g font-family="Fondamento" text-anchor="left">
-            <rect x="1" y="1" width="176" height="53" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
-            <g id="pj_grim" font-size="3" transform="translate(5,5)" display="non">
-              <rect x="0" y="0" width="165" rx="2" ry="2" height="45" fill="none" stroke="Black" stroke-width="0.7"/>
-              <text x="3" y="7" font-size="5" font-variant="small-caps">Notes</text>
-            </g>
+        <g font-family="Fondamento" text-anchor="left" transform="translate(1, 196)">
+          <rect x="1" y="1" width="176" height="53" fill="CornSilk" stroke="BurlyWood" stroke-width="0.5"/>
+          <g id="pj_grim" font-size="3" transform="translate(5,5)" display="non">
+            <rect x="0" y="0" width="165" rx="2" ry="2" height="45" fill="none" stroke="Black" stroke-width="0.7"/>
+            <text x="3" y="7" font-size="5" font-variant="small-caps">Notes</text>
           </g>
-        </svg>
+        </g>
       </g>
       <!-- repeat head -->
       <!-- endrepeat -->
