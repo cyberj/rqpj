@@ -1,15 +1,5 @@
 var myApp = angular.module("myApp", []);
 
-// Directive template for later usage
-myApp.directive("editable", function () {
-  return {
-    restrict: 'E',
-    link: function (scope, element, attrs) {
-      element.html("<div>Hello there</div>")
-    }
-  }
-});
-
 // Global parameters for pagination
 myApp.factory('pjFactory', function () {
   factory = {};
