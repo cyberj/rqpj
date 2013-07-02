@@ -45,6 +45,7 @@ myApp.factory('pjFactory', function () {
   factory.vars.head.hair = "";
   factory.vars.head.eyes = "";
   factory.vars.head.weight = "";
+  // Base list of skills
   factory.vars.skills = [
     {name: "Athlétisme", init:["FOR", "DEX"]},
     {name: "Bagarre", init:["FOR", "DEX"]},
@@ -71,6 +72,8 @@ myApp.factory('pjFactory', function () {
   factory.vars.cmbskills = [];
   factory.vars.div = {};
   // Helpers
+  // 
+  // Save function : Store into browser's LocalStorage
   factory.save = function () {
     localStorage["pjhead"] = JSON.stringify(factory.vars.head);
     localStorage["pjskills"] = JSON.stringify(factory.vars.skills);
@@ -82,6 +85,7 @@ myApp.factory('pjFactory', function () {
     localStorage["pjdiv"] = JSON.stringify(factory.vars.div);
     console.log("Saved");
   };
+  // Load function : Loads from browser's LocalStorage
   factory.load = function () {
     factory.vars.head = JSON.parse(localStorage["pjhead"]);
     factory.vars.skills = JSON.parse(localStorage["pjskills"]);
@@ -94,9 +98,6 @@ myApp.factory('pjFactory', function () {
     console.log("loaded");
   };
   factory.reset = function () {
-    //localStorage.removeItem("pjhead");
-    //localStorage.removeItem("pjskills");
-    //localStorage.removeItem("pjattributes");
     angular.forEach(factory.vars.head, function (value, key) {
       factory.vars.head[key] = "";
     });
@@ -170,16 +171,6 @@ myApp.factory('pjFactory', function () {
   factory.cons = {};
   factory.cons.attrs = [
     "FOR", "CON", "DEX", "TAI", "INT", "POU", "CHA",
-  ];
-  factory.periods = [
-    {key: "3days", value: "3 days"},
-    {key: "curweek", value: "Current week"},
-    {key: "curmonth", value: "Current month"},
-    {key: "curyear", value: "Current year"},
-    {key: "week", value: "A week"},
-    {key: "month", value: "A month"},
-    {key: "year", value: "A year"},
-    {key: "all", value: "Whole mailbox"},
   ];
   return factory;
 });
@@ -286,11 +277,11 @@ myApp.controller('svgCtrl', function ($scope, pjFactory) {
     } else {
       $scope.pj.calc.ma = "0";
     };
-    // Points de magie 
+    // POW points 
     if (newval.POU) { 
       $scope.pj.calc.pm = newval.POU - $scope.pj.calc.pd;
     };
-    // Points de vie
+    // Hit Locations
     if (newval.CON || newval.TAI) { 
       contai = newval.CON + newval.TAI;
       $scope.pj.body.head.pv = Math.ceil(contai/5);
@@ -312,7 +303,7 @@ myApp.controller('svgCtrl', function ($scope, pjFactory) {
       $scope.pj.body.rarm.pv = 0;
       $scope.pj.body.larm.pv = 0;
     };
-    // Rang d'action
+    // Action Rank
     if (newval.DEX || newval.INT) { 
       $scope.pj.calc.ra = Math.ceil((newval.INT+newval.DEX)/2);
     } else { 
@@ -322,7 +313,7 @@ myApp.controller('svgCtrl', function ($scope, pjFactory) {
   
   // Attributes body
   $scope.$watch('pj.body', function(newval, oldval) {
-    // Pénalité d'armure
+    // Armor penalty
     totalpa = newval.head.pa +
       newval.chest.pa +
       newval.bide.pa +
