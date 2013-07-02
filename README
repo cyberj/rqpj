@@ -1,4 +1,18 @@
-Experiments
+Legend / MRQII Character sheet helper
+( http://www.mongoosepublishing.com/rpgs/legend/legend.html ) 
 
+WORK IN PROGRESS (I suppose?)
 
-Some fun with angularJS with a RPG character sheet
+For some of my players I've made a simple page to optimize the Skill
+calculation duty. This can be an excuse for this poor commented code.
+We are French so this sheet is. If any want to localise it feel free !
+
+It's just HTML and JS (AngularJS).
+
+Features :
+
+ * Edit your character with some automatic calculations
+ * Save/load it with your browser LocalStorage feature (only one sheet)
+ * Export it in 2 SVG files
+
+Oh : and yeah my CSS skills are terrible.
