@@ -11,15 +11,15 @@ body {
   font-family: 'Fondamento', cursive;
 }
 
-.control-group {
+.form-group {
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.controls p {
+.form-group p {
   margin-bottom: 5px;
-  padding-top: 5px;
-  padding-left: 10px;
+  padding-left: 1em;
+  padding-bottom: 1.1em;
   font-size: 16px;
   border-bottom: 1px solid black;
   height: 1em ;
@@ -31,7 +31,7 @@ body {
 .form-horizontal .control-label {
   text-align: left;
 }
-.form-horizontal .control-group {
+.form-horizontal .form-group {
   margin-bottom: 10px;
 }
 .block {
@@ -48,7 +48,6 @@ body {
 .block label {
 }
 .stats label {
-  margin-left: 1em;
   font-weight:bold;
 }
 #attributes {

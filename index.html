@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="css/fondamento.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/print.css" media="print">
@@ -20,362 +19,364 @@
 
     <div ng-app="myApp">
     <div class="container">
-      <div class="dynamic">
-        <!-- Example row of columns -->
-        <div id="charHead" class="block form-horizontal" ng-controller="headCtrl">
-          <p>
-            <a href="" ng-click="vars.edit=!vars.edit" title="Edit"><i class="icon-edit"></i></a>
-            <a href="" ng-click="save()" title="Save"><i class="icon-arrow-up"></i></a>
-            <a href="" ng-click="load()" title="Load"><i class="icon-arrow-down"></i></a>
-            <a href="" ng-click="reset()" title="Erase"><i class="icon-remove"></i></a>
-            <a href="" ng-click="example()" title="Example"><i class="icon-heart"></i></a>
-            <a href="" ng-click="share()" title="Export to SVG"><i class="icon-share"></i></a>
-          </p>
-          <div class="row-fluid">
+    	<div class="row">
+	      <div class="col-md-12 dynamic">
+	        <!-- Example row of columns -->
+	        <div id="charHead" class="block" ng-controller="headCtrl">
+	          <p>
+	            <a href="" ng-click="vars.edit=!vars.edit" title="Edit"><i class="glyphicon glyphicon-edit"></i></a>
+	            <a href="" ng-click="save()" title="Save"><i class="glyphicon glyphicon-arrow-up"></i></a>
+	            <a href="" ng-click="load()" title="Load"><i class="glyphicon glyphicon-arrow-down"></i></a>
+	            <a href="" ng-click="reset()" title="Erase"><i class="glyphicon glyphicon-remove"></i></a>
+	            <a href="" ng-click="example()" title="Example"><i class="glyphicon glyphicon-heart"></i></a>
+	            <a href="" ng-click="share()" title="Export to SVG"><i class="glyphicon glyphicon-share"></i></a>
+	          </p>
+	          <div class="row form-horizontal">
 
-            <div class="span4">
-              <div class="control-group" id="pjName">
-                <label ng-click="vars.edit=true" class="control-label" for="charHeadName">Nom</label>
-                <div class="controls">
-                  <p ng-show="!vars.edit">{{ pj.head.name }}</p>
-                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.name" type="text">
-                </div>
-              </div>
-              <div class="control-group">
-                <label ng-click="vars.edit=true" class="control-label" for="charHeadPlayer">Joueur</label>
-                <div class="controls">
-                  <p ng-show="!vars.edit">{{ pj.head.player }}</p>
-                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.player" type="text">
-                </div>
-              </div>
-              <div class="control-group">
-                <label ng-click="vars.edit=true" class="control-label" for="charHeadRace">Race</label>
-                <div class="controls">
-                  <p ng-show="!vars.edit">{{ pj.head.race }}</p>
-                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.race" type="text">
-                </div>
-              </div>
-              <div class="control-group">
-                <label ng-click="vars.edit=true" class="control-label" for="charHeadSex">Sexe</label>
-                <div class="controls">
-                  <p ng-show="!vars.edit">{{ pj.head.sex }}</p>
-                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.sex" type="text">
-                </div>
-              </div>
-            </div>
-            <div class="span4">
-              <div class="control-group">
-                <label ng-click="vars.edit=true" class="control-label" for="charHeadCulture">Culture</label>
-                <div class="controls">
-                  <p ng-show="!vars.edit">{{ pj.head.culture }}</p>
-                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.culture" type="text">
-                </div>
-              </div>
-              <div class="control-group">
-                <label ng-click="vars.edit=true" class="control-label" for="charHeadOrigin">Origin</label>
-                <div class="controls">
-                  <p ng-show="!vars.edit">{{ pj.head.origin }}</p>
-                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.origin" type="text">
-                </div>
-              </div>
-              <div class="control-group">
-                <label ng-click="vars.edit=true" class="control-label" for="charHeadProfession">Profession</label>
-                <div class="controls">
-                  <p ng-show="!vars.edit">{{ pj.head.job }}</p>
-                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.job" type="text">
-                </div>
-              </div>
-              <div class="control-group">
-                <label ng-click="vars.edit=true" class="control-label" for="charHeadFamily">Famille</label>
-                <div class="controls">
-                  <p ng-show="!vars.edit">{{ pj.head.family }}</p>
-                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.family" type="text">
-                </div>
-              </div>
-            </div>
-            <div class="span4">
-              <div class="control-group">
-                <label ng-click="vars.edit=true" class="control-label" for="charHeadAge">Age</label>
-                <div class="controls">
-                  <p ng-show="!vars.edit">{{ pj.head.age }}</p>
-                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.age" type="text">
-                </div>
-              </div>
-              <div class="control-group">
-                <label ng-click="vars.edit=true" class="control-label" for="charHeadHair">Cheveux</label>
-                <div class="controls">
-                  <p ng-show="!vars.edit">{{ pj.head.hair }}</p>
-                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.hair" type="text">
-                </div>
-              </div>
-              <div class="control-group">
-                <label ng-click="vars.edit=true" class="control-label" for="charHeadEyes">Yeux</label>
-                <div class="controls">
-                  <p ng-show="!vars.edit">{{ pj.head.eyes }}</p>
-                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.eyes" type="text">
-                </div>
-              </div>
-              <div class="control-group">
-                <label ng-click="vars.edit=true" class="control-label" for="charHeadWeight">Taille / Poids</label>
-                <div class="controls">
-                  <p ng-show="!vars.edit">{{ pj.head.weight }}</p>
-                  <input ng-show="vars.edit" class="pull-right input-medium" ng-model="pj.head.weight" type="text">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+	            <div class="col-md-4">
+	              <div class="form-group" id="pjName">
+	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadName">Nom</label>
+	                <div class="col-md-8">
+	                	<p ng-show="!vars.edit">{{ pj.head.name }}</p>
+	                	<input id="charHeadName" ng-show="vars.edit" class="form-control" ng-model="pj.head.name" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadPlayer">Joueur</label>
+	                <div class="col-md-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.player }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.player" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadRace">Race</label>
+	                <div class="col-md-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.race }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.race" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadSex">Sexe</label>
+	                <div class="col-md-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.sex }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.sex" type="text">
+	                </div>
+	              </div>
+	            </div>
+	            <div class="col-md-4">
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadCulture">Culture</label>
+	                <div class="col-md-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.culture }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.culture" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadOrigin">Origin</label>
+	                <div class="col-md-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.origin }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.origin" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadProfession">Profession</label>
+	                <div class="col-md-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.job }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.job" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadFamily">Famille</label>
+	                <div class="col-md-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.family }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.family" type="text">
+	                </div>
+	              </div>
+	            </div>
+	            <div class="col-md-4">
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadAge">Age</label>
+	                <div class="col-md-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.age }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.age" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadHair">Cheveux</label>
+	                <div class="col-md-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.hair }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.hair" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadEyes">Yeux</label>
+	                <div class="col-md-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.eyes }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.eyes" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadWeight">Taille / Poids</label>
+	                <div class="col-md-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.weight }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.weight" type="text">
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
 
-        <div id="charStats" class="block" ng-controller="attrCtrl">
-          <div class="row-fluid">
-            <div class="span2 complist">
-              <p>Caractéristiques</p>
-            </div>
-            <div class="stats span10 form-inline">
-              <label>FOR <p ng-show="!vars.edit">{{ pj.attributes.FOR }}</p><input ng-show="vars.edit" ng-model="pj.attributes.FOR" type="number" class="input-mini"></label>
-              <label>CON <p ng-show="!vars.edit">{{ pj.attributes.CON }}</p><input ng-show="vars.edit" ng-model="pj.attributes.CON" type="number" class="input-mini"></label>
-              <label>DEX <p ng-show="!vars.edit">{{ pj.attributes.DEX }}</p><input ng-show="vars.edit" ng-model="pj.attributes.DEX" type="number" class="input-mini"></label>
-              <label>TAI <p ng-show="!vars.edit">{{ pj.attributes.TAI }}</p><input ng-show="vars.edit" ng-model="pj.attributes.TAI" type="number" class="input-mini"></label>
-              <label>INT <p ng-show="!vars.edit">{{ pj.attributes.INT }}</p><input ng-show="vars.edit" ng-model="pj.attributes.INT" type="number" class="input-mini"></label>
-              <label>POU <p ng-show="!vars.edit">{{ pj.attributes.POU }}</p><input ng-show="vars.edit" ng-model="pj.attributes.POU" type="number" class="input-mini"></label>
-              <label>CHA <p ng-show="!vars.edit">{{ pj.attributes.CHA }}</p><input ng-show="vars.edit" ng-model="pj.attributes.CHA" type="number" class="input-mini"></label>
-            </div>
-          </div>
-          <div class="row-fluid" id="attributes">
-            <div class="span1">
-              <p>Attributs</p>
-            </div>
-            <div class="span2">
-              <label>Actions de Combat <p>{{ pj.calc.ac }}</p></label>
-              <label>Mouvement <p ng-show="!vars.edit">{{ pj.calc.mv }}</p><input ng-show="vars.edit" ng-model="pj.calc.mv" type="text" class="input-mini"></label>
-            </div>
-            <div class="span2">
-              <label>Mod de dommage <p>{{ pj.calc.md }}</p></label>
-              <label>Jet d'amélioration <p>{{ pj.calc.ma }}</p></label>
-            </div>
-            <div class="span3">
-              <label>Pouvoir dédié <p ng-show="!vars.edit">{{ pj.calc.pd }}</p><input ng-show="vars.edit" ng-model="pj.calc.pd" type="number" class="input-mini"></label>
-              <label>Points de magie <p>{{ pj.calc.pm }}</label>
-            </div>
-            <div class="span3">
-              <!--<label>Point d'Héroïsme <input type="number" class="input-mini"></label>-->
-              <label>Pénalité d'armure <p>{{ pj.calc.pa }}</p></label>
-              <label>Rang d'Action <p>{{ pj.calc.ra }}</p></label>
-            </div>
-          </div>
-          <div class="row-fluid" id="attributes">
-            <div class="span6">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Emplacement</th>
-                  <th>Armure</th>
-                  <th>Points de vie</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Tête</td>
-                  <td>
-                    <div ng-show="!vars.edit">{{ pj.body.head.pa }}</div>
-                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.head.pa" type="number" class="input-mini"></div>
-                  </td>
-                  <td>{{ pj.body.head.pv }}</td>
-                </tr>
-                <tr>
-                  <td>Poitrine</td>
-                  <td>
-                    <div ng-show="!vars.edit">{{ pj.body.chest.pa }}</div>
-                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.chest.pa" type="number" class="input-mini"></div>
-                  </td>
-                  <td>{{ pj.body.chest.pv }}</td>
-                </tr>
-                <tr>
-                  <td>Ventre</td>
-                  <td>
-                    <div ng-show="!vars.edit">{{ pj.body.bide.pa }}</div>
-                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.bide.pa" type="number" class="input-mini"></span></div>
-                  </td>
-                  <td>{{ pj.body.bide.pv }}</td>
-                </tr>
-                <tr>
-                  <td>Bras droit</td>
-                  <td>
-                    <div ng-show="!vars.edit">{{ pj.body.rarm.pa }}</div>
-                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.rarm.pa" type="number" class="input-mini"></div>
-                  </td>
-                  <td>{{ pj.body.rarm.pv }}</td>
-                </tr>
-                <tr>
-                  <td>Bras gauche</td>
-                  <td>
-                    <div ng-show="!vars.edit">{{ pj.body.larm.pa }}</div>
-                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.larm.pa" type="number" class="input-mini"></div>
-                  </td>
-                  <td>{{ pj.body.larm.pv }}</td>
-                </tr>
-                <tr>
-                  <td>Jambe droite</td>
-                  <td>
-                    <div ng-show="!vars.edit">{{ pj.body.rfoot.pa }}</div>
-                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.rfoot.pa" type="number" class="input-mini"></div>
-                  </td>
-                  <td>{{ pj.body.rfoot.pv }}</td>
-                </tr>
-                <tr>
-                  <td>Jambe gauche</td>
-                  <td>
-                    <div ng-show="!vars.edit">{{ pj.body.lfoot.pa }}</div>
-                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.lfoot.pa" type="number" class="input-mini"></div>
-                  </td>
-                  <td>{{ pj.body.lfoot.pv }}</td>
-                </tr>
-              </tbody>
-            </table>
-            </div>
-          </div>
-        </div>
+	        <div id="charStats" class="block" ng-controller="attrCtrl">
+	          <div class="row">
+	            <div class="col-md-2 complist">
+	              <span>Caractéristiques</span>
+	            </div>
+	            <div class="stats col-md-10 form-inline">
+	              <label>FOR <p ng-show="!vars.edit">{{ pj.attributes.FOR }}</p><input ng-show="vars.edit" ng-model="pj.attributes.FOR" type="number" class="input-mini"></label>
+	              <label>CON <p ng-show="!vars.edit">{{ pj.attributes.CON }}</p><input ng-show="vars.edit" ng-model="pj.attributes.CON" type="number" class="input-mini"></label>
+	              <label>DEX <p ng-show="!vars.edit">{{ pj.attributes.DEX }}</p><input ng-show="vars.edit" ng-model="pj.attributes.DEX" type="number" class="input-mini"></label>
+	              <label>TAI <p ng-show="!vars.edit">{{ pj.attributes.TAI }}</p><input ng-show="vars.edit" ng-model="pj.attributes.TAI" type="number" class="input-mini"></label>
+	              <label>INT <p ng-show="!vars.edit">{{ pj.attributes.INT }}</p><input ng-show="vars.edit" ng-model="pj.attributes.INT" type="number" class="input-mini"></label>
+	              <label>POU <p ng-show="!vars.edit">{{ pj.attributes.POU }}</p><input ng-show="vars.edit" ng-model="pj.attributes.POU" type="number" class="input-mini"></label>
+	              <label>CHA <p ng-show="!vars.edit">{{ pj.attributes.CHA }}</p><input ng-show="vars.edit" ng-model="pj.attributes.CHA" type="number" class="input-mini"></label>
+	            </div>
+	          </div>
+	          <div class="row" id="attributes">
+	            <div class="col-md-1">
+	              <p>Attributs</p>
+	            </div>
+	            <div class="col-md-2">
+	              <label>Actions de Combat <p>{{ pj.calc.ac }}</p></label>
+	              <label>Mouvement <p ng-show="!vars.edit">{{ pj.calc.mv }}</p><input ng-show="vars.edit" ng-model="pj.calc.mv" type="text" class="input-mini"></label>
+	            </div>
+	            <div class="col-md-2">
+	              <label>Mod de dommage <p>{{ pj.calc.md }}</p></label>
+	              <label>Jet d'amélioration <p>{{ pj.calc.ma }}</p></label>
+	            </div>
+	            <div class="col-md-3">
+	              <label>Pouvoir dédié <p ng-show="!vars.edit">{{ pj.calc.pd }}</p><input ng-show="vars.edit" ng-model="pj.calc.pd" type="number" class="input-mini"></label>
+	              <label>Points de magie <p>{{ pj.calc.pm }}</label>
+	            </div>
+	            <div class="col-md-3">
+	              <!--<label>Point d'Héroïsme <input type="number" class="input-mini"></label>-->
+	              <label>Pénalité d'armure <p>{{ pj.calc.pa }}</p></label>
+	              <label>Rang d'Action <p>{{ pj.calc.ra }}</p></label>
+	            </div>
+	          </div>
+	          <div class="row" id="attributes">
+	            <div class="col-md-6">
+	            <table class="table table-striped">
+	              <thead>
+	                <tr>
+	                  <th>Emplacement</th>
+	                  <th>Armure</th>
+	                  <th>Points de vie</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	                <tr>
+	                  <td>Tête</td>
+	                  <td>
+	                    <div ng-show="!vars.edit">{{ pj.body.head.pa }}</div>
+	                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.head.pa" type="number" class="input-mini"></div>
+	                  </td>
+	                  <td>{{ pj.body.head.pv }}</td>
+	                </tr>
+	                <tr>
+	                  <td>Poitrine</td>
+	                  <td>
+	                    <div ng-show="!vars.edit">{{ pj.body.chest.pa }}</div>
+	                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.chest.pa" type="number" class="input-mini"></div>
+	                  </td>
+	                  <td>{{ pj.body.chest.pv }}</td>
+	                </tr>
+	                <tr>
+	                  <td>Ventre</td>
+	                  <td>
+	                    <div ng-show="!vars.edit">{{ pj.body.bide.pa }}</div>
+	                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.bide.pa" type="number" class="input-mini"></span></div>
+	                  </td>
+	                  <td>{{ pj.body.bide.pv }}</td>
+	                </tr>
+	                <tr>
+	                  <td>Bras droit</td>
+	                  <td>
+	                    <div ng-show="!vars.edit">{{ pj.body.rarm.pa }}</div>
+	                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.rarm.pa" type="number" class="input-mini"></div>
+	                  </td>
+	                  <td>{{ pj.body.rarm.pv }}</td>
+	                </tr>
+	                <tr>
+	                  <td>Bras gauche</td>
+	                  <td>
+	                    <div ng-show="!vars.edit">{{ pj.body.larm.pa }}</div>
+	                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.larm.pa" type="number" class="input-mini"></div>
+	                  </td>
+	                  <td>{{ pj.body.larm.pv }}</td>
+	                </tr>
+	                <tr>
+	                  <td>Jambe droite</td>
+	                  <td>
+	                    <div ng-show="!vars.edit">{{ pj.body.rfoot.pa }}</div>
+	                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.rfoot.pa" type="number" class="input-mini"></div>
+	                  </td>
+	                  <td>{{ pj.body.rfoot.pv }}</td>
+	                </tr>
+	                <tr>
+	                  <td>Jambe gauche</td>
+	                  <td>
+	                    <div ng-show="!vars.edit">{{ pj.body.lfoot.pa }}</div>
+	                    <div ng-show="vars.edit" class="input-append"><input ng-model="pj.body.lfoot.pa" type="number" class="input-mini"></div>
+	                  </td>
+	                  <td>{{ pj.body.lfoot.pv }}</td>
+	                </tr>
+	              </tbody>
+	            </table>
+	            </div>
+	          </div>
+	        </div>
 
-        <div id="charSkills" class="block" ng-controller="skillsCtrl">
-          <div class="row-fluid">
-            <div class="span6 complist">
-              <h4>Compétences</h4>
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Compétence de base</th>
-                    <th>% de Base</th>
-                    <th>Score Actuel <i ng-click="vars.edit = !vars.edit;" class="icon-edit"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr ng-repeat="skill in vars.skills | orderBy:'name'">
-                    <td>{{ skill.name }}</td>
-                    <td>{{ getBase(skill) }}</td>
-                    <td>
-                      <div ng-show="!vars.edit">{{ skill.value }}%</div>
-                      <div ng-show="vars.edit" class="input-append"><input ng-model="skill.value" type="number" class="input-mini">%<span class="add-on">%</span></div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="span6">
-              <h4>Compétences avancées</h4>
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Compétence avancée</th>
-                    <th>% de Base</th>
-                    <th>Score Actuel</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr ng-repeat="skill in pj.advskills | orderBy:'name'">
-                    <td>{{ skill.name }}</td>
-                    <td>
-                      <div ng-show="vars.edit"><i ng-click="pj.advskills.pop($index)" class="icon-remove"></i></div>
-                      <!--<div ng-hide="vars.edit">{{ getBase(skill) }}</div>-->
-                      {{ getBase(skill) }}
-                    </td>
-                    <td>
-                      <div ng-show="!vars.edit">{{ skill.value }}%</div>
-                      <div ng-show="vars.edit" class="input-append"><input ng-model="skill.value" type="number" class="input-mini">%<span class="add-on">%</span></div>
-                    </td>
-                  </tr>
-                  <tr id="advSkill" ng-show="vars.edit">
-                    <td>
-                      <input ng-model="newskill.name" type="text" class="input-small">
-                    </td>
-                    <td>
-                      <select class="input-small" ng-model="newskill.base1" default="FOR" ng-options="c for c in cons.attrs">
-                      </select>
-                      <select class="input-small" ng-model="newskill.base2" default="FOR" ng-options="c for c in cons.attrs">
-                      </select>
-                    </td>
-                    <td>{{ pj.attributes[newskill.base1] + pj.attributes[newskill.base2] }} % <i ng-click="addSkill()" class="icon-plus"></i> </td>
-                  </tr>
-                </tbody>
-              </table>
-              <h4>Styles de combat</h4>
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>Style de combat</th>
-                    <th>% de Base</th>
-                    <th>Score Actuel</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr ng-repeat="skill in pj.cmbskills | orderBy:'name'">
-                    <td>{{ skill.name }}</td>
-                    <td>
-                      <div ng-show="vars.edit"><i ng-click="pj.cmbskills.pop($index)" class="icon-remove"></i></div>
-                      <!--<div ng-hide="vars.edit">{{ getBase(skill) }}</div>-->
-                      {{ getBase(skill) }}
-                    </td>
-                    <td>
-                      <div ng-show="!vars.edit">{{ skill.value }}%</div>
-                      <div ng-show="vars.edit" class="input-append"><input ng-model="skill.value" type="number" class="input-mini">%<span class="add-on">%</span></div>
-                    </td>
-                  </tr>
-                  <tr id="cmbSkill" ng-show="vars.edit">
-                    <td>
-                      <input ng-model="newcskill.name" type="text" class="input-small">
-                    </td>
-                    <td>
-                      <select class="input-small" ng-model="newcskill.base1" default="FOR" ng-options="c for c in cons.attrs">
-                      </select>
-                      <select class="input-small" ng-model="newcskill.base2" default="FOR" ng-options="c for c in cons.attrs">
-                      </select>
-                    </td>
-                    <td>{{ pj.attributes[newsckill.base1] + pj.attributes[newsckill.base2] }} % <i ng-click="addcSkill()" class="icon-plus"></i> </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+	        <div id="charSkills" class="block" ng-controller="skillsCtrl">
+	          <div class="row">
+	            <div class="col-md-6 complist">
+	              <h4>Compétences</h4>
+	              <table class="table table-striped">
+	                <thead>
+	                  <tr>
+	                    <th>Compétence de base</th>
+	                    <th>% de Base</th>
+	                    <th>Score Actuel <i ng-click="vars.edit = !vars.edit;" class="glyphicon glyphicon-edit"></i></th>
+	                  </tr>
+	                </thead>
+	                <tbody>
+	                  <tr ng-repeat="skill in vars.skills | orderBy:'name'">
+	                    <td>{{ skill.name }}</td>
+	                    <td>{{ getBase(skill) }}</td>
+	                    <td>
+	                      <div ng-show="!vars.edit">{{ skill.value }}%</div>
+	                      <div ng-show="vars.edit" class="input-append"><input ng-model="skill.value" type="number" class="input-mini">%<span class="add-on">%</span></div>
+	                    </td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	            </div>
+	            <div class="col-md-6">
+	              <h4>Compétences avancées</h4>
+	              <table class="table table-striped">
+	                <thead>
+	                  <tr>
+	                    <th>Compétence avancée</th>
+	                    <th>% de Base</th>
+	                    <th>Score Actuel</th>
+	                  </tr>
+	                </thead>
+	                <tbody>
+	                  <tr ng-repeat="skill in pj.advskills | orderBy:'name'">
+	                    <td>{{ skill.name }}</td>
+	                    <td>
+	                      <div ng-show="vars.edit"><i ng-click="pj.advskills.pop($index)" class="glyphicon glyphicon-remove"></i></div>
+	                      <!--<div ng-hide="vars.edit">{{ getBase(skill) }}</div>-->
+	                      {{ getBase(skill) }}
+	                    </td>
+	                    <td>
+	                      <div ng-show="!vars.edit">{{ skill.value }}%</div>
+	                      <div ng-show="vars.edit" class="input-append"><input ng-model="skill.value" type="number" class="input-mini">%<span class="add-on">%</span></div>
+	                    </td>
+	                  </tr>
+	                  <tr id="advSkill" ng-show="vars.edit">
+	                    <td>
+	                      <input ng-model="newskill.name" type="text" class="input-small">
+	                    </td>
+	                    <td>
+	                      <select class="input-small" ng-model="newskill.base1" default="FOR" ng-options="c for c in cons.attrs">
+	                      </select>
+	                      <select class="input-small" ng-model="newskill.base2" default="FOR" ng-options="c for c in cons.attrs">
+	                      </select>
+	                    </td>
+	                    <td>{{ pj.attributes[newskill.base1] + pj.attributes[newskill.base2] }} % <i ng-click="addSkill()" class="glyphicon glyphicon-plus"></i> </td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	              <h4>Styles de combat</h4>
+	              <table class="table table-striped">
+	                <thead>
+	                  <tr>
+	                    <th>Style de combat</th>
+	                    <th>% de Base</th>
+	                    <th>Score Actuel</th>
+	                  </tr>
+	                </thead>
+	                <tbody>
+	                  <tr ng-repeat="skill in pj.cmbskills | orderBy:'name'">
+	                    <td>{{ skill.name }}</td>
+	                    <td>
+	                      <div ng-show="vars.edit"><i ng-click="pj.cmbskills.pop($index)" class="glyphicon glyphicon-remove"></i></div>
+	                      <!--<div ng-hide="vars.edit">{{ getBase(skill) }}</div>-->
+	                      {{ getBase(skill) }}
+	                    </td>
+	                    <td>
+	                      <div ng-show="!vars.edit">{{ skill.value }}%</div>
+	                      <div ng-show="vars.edit" class="input-append"><input ng-model="skill.value" type="number" class="input-mini">%<span class="add-on">%</span></div>
+	                    </td>
+	                  </tr>
+	                  <tr id="cmbSkill" ng-show="vars.edit">
+	                    <td>
+	                      <input ng-model="newcskill.name" type="text" class="input-small">
+	                    </td>
+	                    <td>
+	                      <select class="input-small" ng-model="newcskill.base1" default="FOR" ng-options="c for c in cons.attrs">
+	                      </select>
+	                      <select class="input-small" ng-model="newcskill.base2" default="FOR" ng-options="c for c in cons.attrs">
+	                      </select>
+	                    </td>
+	                    <td>{{ pj.attributes[newsckill.base1] + pj.attributes[newsckill.base2] }} % <i ng-click="addcSkill()" class="glyphicon glyphicon-plus"></i> </td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	            </div>
+	          </div>
+	        </div>
 
-        <div id="charOther" class="block form-horizontal" ng-controller="headCtrl">
-          <div class="row-fluid">
-            <div class="span4">
-              <h2>Edit</h2>
-              <p>
-                Click on the "<i ng-click="vars.edit=!vars.edit" class="icon-edit"></i>" button on top of the page to start/stop editing your character
-              </p>
-              https://github.com/cyberj/rqpj
-            </div>
-            <div class="span4">
-              <h2>Save/Edit/Reset</h2>
-              <p>
-                You can save a character sheet on your browser with the save "<i ng-click="save()" class="icon-arrow-up"></i>" button. There is only one slot ATM.
-              </p>
-              <p>
-                You can load a character sheet from your browser with the load "<i ng-click="load()" class="icon-arrow-down"></i>" button.
-              </p>
-              <p>
-                The reset "<i ng-click="reset()" class="icon-remove"></i>" button will erase your curent sheet.
-              </p>
-              <p>
-                The heart "<i ng-click="example()" class="icon-heart"></i>" button will load a default character just for layout purposes 
-              </p>
-            </div>
-            <div class="span4">
-              <h2>Export/Print</h2>
-              <p>
-                At the end of the page you will see 2 fancy character sheets. These pages are the print preview of your printing. Due to some limitations with print layout from HTML documents theses to page are almost A4 sized svg.
-              </p>
-              <p>
-                The export "<i ng-click="share()" class="icon-share"></i>" will export your character on 2 svg files. 
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+	        <div id="charOther" class="block form-horizontal" ng-controller="headCtrl">
+	          <div class="row">
+	            <div class="col-md-4">
+	              <h2>Edit</h2>
+	              <p>
+	                Click on the "<i ng-click="vars.edit=!vars.edit" class="glyphicon glyphicon-edit"></i>" button on top of the page to start/stop editing your character
+	              </p>
+	              https://github.com/cyberj/rqpj
+	            </div>
+	            <div class="col-md-4">
+	              <h2>Save/Edit/Reset</h2>
+	              <p>
+	                You can save a character sheet on your browser with the save "<i ng-click="save()" class="glyphicon glyphicon-arrow-up"></i>" button. There is only one slot ATM.
+	              </p>
+	              <p>
+	                You can load a character sheet from your browser with the load "<i ng-click="load()" class="glyphicon glyphicon-arrow-down"></i>" button.
+	              </p>
+	              <p>
+	                The reset "<i ng-click="reset()" class="glyphicon glyphicon-remove"></i>" button will erase your curent sheet.
+	              </p>
+	              <p>
+	                The heart "<i ng-click="example()" class="glyphicon glyphicon-heart"></i>" button will load a default character just for layout purposes 
+	              </p>
+	            </div>
+	            <div class="col-md-4">
+	              <h2>Export/Print</h2>
+	              <p>
+	                At the end of the page you will see 2 fancy character sheets. These pages are the print preview of your printing. Due to some limitations with print layout from HTML documents theses to page are almost A4 sized svg.
+	              </p>
+	              <p>
+	                The export "<i ng-click="share()" class="glyphicon glyphicon-share"></i>" will export your character on 2 svg files. 
+	              </p>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
     </div>
 
-      <div class="magicsvg" ng-controller="svgCtrl"><div class="page1 page">
+      <div class="magicsvg visible-md visible-lg" ng-controller="svgCtrl"><div class="page1 page">
         <svg  width="180mm" height="260mm" version="1.1" viewBox="0 0 180 260"
              xmlns:dc="http://purl.org/dc/elements/1.1/"
              xmlns:cc="http://creativecommons.org/ns#"
