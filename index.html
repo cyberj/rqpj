@@ -33,112 +33,289 @@
 	          </p>
 	          <div class="row form-horizontal">
 
-	            <div class="col-md-4">
+	          	<!-- desktop -->
+	            <div class="col-md-4 hidden-sm hidden-xs">
 	              <div class="form-group" id="pjName">
-	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadName">Nom</label>
-	                <div class="col-md-8">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadName">Nom</label>
+	                <div class="col-sm-8">
 	                	<p ng-show="!vars.edit">{{ pj.head.name }}</p>
 	                	<input id="charHeadName" ng-show="vars.edit" class="form-control" ng-model="pj.head.name" type="text">
 	                </div>
 	              </div>
 	              <div class="form-group">
-	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadPlayer">Joueur</label>
-	                <div class="col-md-8">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadPlayer">Joueur</label>
+	                <div class="col-sm-8">
 	                  <p ng-show="!vars.edit">{{ pj.head.player }}</p>
 	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.player" type="text">
 	                </div>
 	              </div>
 	              <div class="form-group">
-	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadRace">Race</label>
-	                <div class="col-md-8">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadRace">Race</label>
+	                <div class="col-sm-8">
 	                  <p ng-show="!vars.edit">{{ pj.head.race }}</p>
 	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.race" type="text">
 	                </div>
 	              </div>
 	              <div class="form-group">
-	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadSex">Sexe</label>
-	                <div class="col-md-8">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadSex">Sexe</label>
+	                <div class="col-sm-8">
 	                  <p ng-show="!vars.edit">{{ pj.head.sex }}</p>
 	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.sex" type="text">
 	                </div>
 	              </div>
 	            </div>
-	            <div class="col-md-4">
+	            <div class="col-md-4 hidden-sm hidden-xs">
 	              <div class="form-group">
-	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadCulture">Culture</label>
-	                <div class="col-md-8">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadCulture">Culture</label>
+	                <div class="col-sm-8">
 	                  <p ng-show="!vars.edit">{{ pj.head.culture }}</p>
 	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.culture" type="text">
 	                </div>
 	              </div>
 	              <div class="form-group">
-	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadOrigin">Origin</label>
-	                <div class="col-md-8">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadOrigin">Origin</label>
+	                <div class="col-sm-8">
 	                  <p ng-show="!vars.edit">{{ pj.head.origin }}</p>
 	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.origin" type="text">
 	                </div>
 	              </div>
 	              <div class="form-group">
-	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadProfession">Profession</label>
-	                <div class="col-md-8">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadProfession">Profession</label>
+	                <div class="col-sm-8">
 	                  <p ng-show="!vars.edit">{{ pj.head.job }}</p>
 	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.job" type="text">
 	                </div>
 	              </div>
 	              <div class="form-group">
-	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadFamily">Famille</label>
-	                <div class="col-md-8">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadFamily">Famille</label>
+	                <div class="col-sm-8">
 	                  <p ng-show="!vars.edit">{{ pj.head.family }}</p>
 	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.family" type="text">
 	                </div>
 	              </div>
 	            </div>
-	            <div class="col-md-4">
+	            <div class="col-md-4 hidden-sm hidden-xs">
 	              <div class="form-group">
-	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadAge">Age</label>
-	                <div class="col-md-8">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadAge">Age</label>
+	                <div class="col-sm-8">
 	                  <p ng-show="!vars.edit">{{ pj.head.age }}</p>
 	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.age" type="text">
 	                </div>
 	              </div>
 	              <div class="form-group">
-	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadHair">Cheveux</label>
-	                <div class="col-md-8">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadHair">Cheveux</label>
+	                <div class="col-sm-8">
 	                  <p ng-show="!vars.edit">{{ pj.head.hair }}</p>
 	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.hair" type="text">
 	                </div>
 	              </div>
 	              <div class="form-group">
-	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadEyes">Yeux</label>
-	                <div class="col-md-8">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadEyes">Yeux</label>
+	                <div class="col-sm-8">
 	                  <p ng-show="!vars.edit">{{ pj.head.eyes }}</p>
 	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.eyes" type="text">
 	                </div>
 	              </div>
 	              <div class="form-group">
-	                <label ng-click="vars.edit=true" class="control-label col-md-4" for="charHeadWeight">Taille / Poids</label>
-	                <div class="col-md-8">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadWeight">Taille / Poids</label>
+	                <div class="col-sm-8">
 	                  <p ng-show="!vars.edit">{{ pj.head.weight }}</p>
 	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.weight" type="text">
 	                </div>
 	              </div>
 	            </div>
+	            <!-- /desktop -->
+
+	            <!-- tablets -->
+	            <div class="col-sm-6 hidden-md hidden-lg">
+	            	<div class="form-group" id="pjName">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadName">Nom</label>
+	                <div class="col-sm-8">
+	                	<p ng-show="!vars.edit">{{ pj.head.name }}</p>
+	                	<input id="charHeadName" ng-show="vars.edit" class="form-control" ng-model="pj.head.name" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadPlayer">Joueur</label>
+	                <div class="col-sm-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.player }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.player" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadRace">Race</label>
+	                <div class="col-sm-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.race }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.race" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadSex">Sexe</label>
+	                <div class="col-sm-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.sex }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.sex" type="text">
+	                </div>
+	              </div>
+								<div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadCulture">Culture</label>
+	                <div class="col-sm-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.culture }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.culture" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadOrigin">Origin</label>
+	                <div class="col-sm-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.origin }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.origin" type="text">
+	                </div>
+	              </div>
+	            </div>
+	            <div class="col-sm-6 hidden-md hidden-lg">
+	            	<div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadProfession">Profession</label>
+	                <div class="col-sm-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.job }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.job" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadFamily">Famille</label>
+	                <div class="col-sm-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.family }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.family" type="text">
+	                </div>
+	              </div>
+								<div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadAge">Age</label>
+	                <div class="col-sm-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.age }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.age" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadHair">Cheveux</label>
+	                <div class="col-sm-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.hair }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.hair" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadEyes">Yeux</label>
+	                <div class="col-sm-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.eyes }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.eyes" type="text">
+	                </div>
+	              </div>
+	              <div class="form-group">
+	                <label ng-click="vars.edit=true" class="control-label col-sm-4" for="charHeadWeight">Taille / Poids</label>
+	                <div class="col-sm-8">
+	                  <p ng-show="!vars.edit">{{ pj.head.weight }}</p>
+	                  <input ng-show="vars.edit" class="form-control" ng-model="pj.head.weight" type="text">
+	                </div>
+	              </div>
+	            </div>
+	            <!-- /tablets -->
+
 	          </div>
 	        </div>
 
 	        <div id="charStats" class="block" ng-controller="attrCtrl">
 	          <div class="row">
-	            <div class="col-md-2 complist">
-	              <span>Caractéristiques</span>
-	            </div>
-	            <div class="stats col-md-10 form-inline">
-	              <label>FOR <p ng-show="!vars.edit">{{ pj.attributes.FOR }}</p><input ng-show="vars.edit" ng-model="pj.attributes.FOR" type="number" class="input-mini"></label>
-	              <label>CON <p ng-show="!vars.edit">{{ pj.attributes.CON }}</p><input ng-show="vars.edit" ng-model="pj.attributes.CON" type="number" class="input-mini"></label>
-	              <label>DEX <p ng-show="!vars.edit">{{ pj.attributes.DEX }}</p><input ng-show="vars.edit" ng-model="pj.attributes.DEX" type="number" class="input-mini"></label>
-	              <label>TAI <p ng-show="!vars.edit">{{ pj.attributes.TAI }}</p><input ng-show="vars.edit" ng-model="pj.attributes.TAI" type="number" class="input-mini"></label>
-	              <label>INT <p ng-show="!vars.edit">{{ pj.attributes.INT }}</p><input ng-show="vars.edit" ng-model="pj.attributes.INT" type="number" class="input-mini"></label>
-	              <label>POU <p ng-show="!vars.edit">{{ pj.attributes.POU }}</p><input ng-show="vars.edit" ng-model="pj.attributes.POU" type="number" class="input-mini"></label>
-	              <label>CHA <p ng-show="!vars.edit">{{ pj.attributes.CHA }}</p><input ng-show="vars.edit" ng-model="pj.attributes.CHA" type="number" class="input-mini"></label>
+	            <div class="col-md-12">
+	              <div>Caractéristiques et attributs</div>
+	              <div class="row form-horizontal">
+	              	<div class="stats col-xs-6">
+	              		<div class="form-group">
+			                <label ng-click="vars.edit=true" class="control-label col-sm-2" for="charStatsStreight">FOR</label>
+			                <div class="col-sm-2">
+			                  <p ng-show="!vars.edit">{{ pj.attributes.FOR }}</p>
+			                  <input ng-show="vars.edit" class="form-control" ng-model="pj.attributes.FOR" type="text">
+			                </div>
+			              </div>
+			              <div class="form-group">
+			                <label ng-click="vars.edit=true" class="control-label col-sm-2" for="charStatsConstitution">CON</label>
+			                <div class="col-sm-2">
+			                  <p ng-show="!vars.edit">{{ pj.attributes.CON }}</p>
+			                  <input ng-show="vars.edit" class="form-control" ng-model="pj.attributes.CON" type="text">
+			                </div>
+			              </div>
+			              <div class="form-group">
+			                <label ng-click="vars.edit=true" class="control-label col-sm-2" for="charStatsSize">TAI</label>
+			                <div class="col-sm-2">
+			                  <p ng-show="!vars.edit">{{ pj.attributes.TAI }}</p>
+			                  <input ng-show="vars.edit" class="form-control" ng-model="pj.attributes.TAI" type="text">
+			                </div>
+			              </div>
+			              <div class="form-group">
+			                <label ng-click="vars.edit=true" class="control-label col-sm-2" for="charStatsIntelligence">INT</label>
+			                <div class="col-sm-2">
+			                  <p ng-show="!vars.edit">{{ pj.attributes.INT }}</p>
+			                  <input ng-show="vars.edit" class="form-control" ng-model="pj.attributes.INT" type="text">
+			                </div>
+			              </div>
+			              <div class="form-group">
+			                <label ng-click="vars.edit=true" class="control-label col-sm-2" for="charStatsPower">POU</label>
+			                <div class="col-sm-2">
+			                  <p ng-show="!vars.edit">{{ pj.attributes.POU }}</p>
+			                  <input ng-show="vars.edit" class="form-control" ng-model="pj.attributes.POU" type="text">
+			                </div>
+			              </div>
+			              <div class="form-group">
+			                <label ng-click="vars.edit=true" class="control-label col-sm-2" for="charStatsDexterity">DEX</label>
+			                <div class="col-sm-2">
+			                  <p ng-show="!vars.edit">{{ pj.attributes.DEX }}</p>
+			                  <input ng-show="vars.edit" class="form-control" ng-model="pj.attributes.DEX" type="text">
+			                </div>
+			              </div>
+			              <div class="form-group">
+			                <label ng-click="vars.edit=true" class="control-label col-sm-2" for="charStatsCharisma">CHA</label>
+			                <div class="col-sm-2">
+			                  <p ng-show="!vars.edit">{{ pj.attributes.CHA }}</p>
+			                  <input ng-show="vars.edit" class="form-control" ng-model="pj.attributes.CHA" type="text">
+			                </div>
+			              </div>
+			              <!--<label>FOR <p ng-show="!vars.edit">{{ pj.attributes.FOR }}</p><input ng-show="vars.edit" ng-model="pj.attributes.FOR" type="number" class="input-mini"></label>
+			              <label>CON <p ng-show="!vars.edit">{{ pj.attributes.CON }}</p><input ng-show="vars.edit" ng-model="pj.attributes.CON" type="number" class="input-mini"></label>
+			              <label>DEX <p ng-show="!vars.edit">{{ pj.attributes.DEX }}</p><input ng-show="vars.edit" ng-model="pj.attributes.DEX" type="number" class="input-mini"></label>
+			              <label>TAI <p ng-show="!vars.edit">{{ pj.attributes.TAI }}</p><input ng-show="vars.edit" ng-model="pj.attributes.TAI" type="number" class="input-mini"></label>
+			              <label>INT <p ng-show="!vars.edit">{{ pj.attributes.INT }}</p><input ng-show="vars.edit" ng-model="pj.attributes.INT" type="number" class="input-mini"></label>
+			              <label>POU <p ng-show="!vars.edit">{{ pj.attributes.POU }}</p><input ng-show="vars.edit" ng-model="pj.attributes.POU" type="number" class="input-mini"></label>
+			              <label>CHA <p ng-show="!vars.edit">{{ pj.attributes.CHA }}</p><input ng-show="vars.edit" ng-model="pj.attributes.CHA" type="number" class="input-mini"></label>-->
+			            </div>
+			            <div class="stats col-md-6">
+			            	<div class="row">
+			            		<div class="col-xs-1">
+			            			<div>FOR</div>
+			            			<div><p ng-show="!vars.edit">{{ pj.attributes.FOR }}</p><input ng-show="vars.edit" class="form-control" ng-model="pj.attributes.FOR" type="text"></div>
+			            		</div>
+			            		<div class="col-xs-1">
+			            			<div>CON</div>
+			            			<div><p ng-show="!vars.edit">{{ pj.attributes.CON }}</p><input ng-show="vars.edit" class="form-control" ng-model="pj.attributes.CON" type="text"></div>
+			            		</div>
+			            		<div class="col-xs-1">
+			            			<div>TAI</div>
+			            			<div><p ng-show="!vars.edit">{{ pj.attributes.TAI }}</p><input ng-show="vars.edit" class="form-control" ng-model="pj.attributes.TAI" type="text"></div>
+			            		</div>
+			            		<div class="col-xs-1">
+			            			<div>INT</div>
+			            			<div><p ng-show="!vars.edit">{{ pj.attributes.INT }}</p><input ng-show="vars.edit" class="form-control" ng-model="pj.attributes.INT" type="text"></div>
+			            		</div>
+			            		<div class="col-xs-1">
+			            			<div>POU</div>
+			            			<div><p ng-show="!vars.edit">{{ pj.attributes.POU }}</p><input ng-show="vars.edit" class="form-control" ng-model="pj.attributes.POU" type="text"></div>
+			            		</div>
+			            		<div class="col-xs-1">
+			            			<div>DEX</div>
+			            			<div><p ng-show="!vars.edit">{{ pj.attributes.DEX }}</p><input ng-show="vars.edit" class="form-control" ng-model="pj.attributes.DEX" type="text"></div>
+			            		</div>
+			            		<div class="col-xs-1">
+			            			<div>CHA</div>
+			            			<div><p ng-show="!vars.edit">{{ pj.attributes.CHA }}</p><input ng-show="vars.edit" class="form-control" ng-model="pj.attributes.CHA" type="text"></div>
+			            		</div>
+			            	</div>
+			            </div>
+	              </div>
 	            </div>
 	          </div>
 	          <div class="row" id="attributes">
